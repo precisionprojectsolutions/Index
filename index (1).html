@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Premium Project Management Consultancy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {font-family:'Montserrat',sans-serif;background:#f6fafd;color:#23233c;}
+    header {background:#253a5a;color:#fff;padding:2em 0;text-align:center;}
+    nav a {color:#fff;margin:0 1.2em;text-decoration:none;font-weight:700;}
+    nav a:hover {color:#f9b60b;}
+    .hero {
+      background:url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1050&q=80') center/cover no-repeat;
+      color:#fff; text-align: center; padding:6em 1em 8em 1em; position:relative;}
+    .hero::after {content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(37,58,90,0.78);z-index:0;}
+    .hero > * {position:relative;z-index:2;}
+    .hero h1 {font-size:2.8em;font-weight:700;}
+    .hero p {font-size:1.2em;}
+    .hero button {background:#f9b60b;color:#253a5a;font-weight:700;border:none;padding:1em 2.2em;border-radius:8px;font-size:1.1em;margin-top:1.5em;}
+    section {max-width:1100px;margin:3em auto;padding:2.5em 2em;background:#fff;border-radius:14px;box-shadow:0 2px 22px rgba(37,58,90,0.07);}
+    h2 {color:#253a5a;font-size:2em;}
+    .about {display:flex;flex-wrap:wrap;gap:3em;align-items:center;}
+    .about-img {flex:1 1 340px;}
+    .about-img img {width:100%;border-radius:12px;}
+    .about-content {flex:2 1 340px;}
+    .values {display:flex;gap:1.2em;flex-wrap:wrap;margin:2em 0;}
+    .values div {flex:1 1 185px;background:#f6fafd;border-radius:8px;padding:1em;font-weight:500;}
+    .services-wrap {display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2em;}
+    .service-box {background:#f6fafd;padding:2em;border-radius:12px;box-shadow:0 1px 6px rgba(37,58,90,0.08);}
+    .service-box h3 {margin-top:0;}
+    .package {background:#f9f9f9;border-left:6px solid #f9b60b;padding:1.5em;border-radius:11px;margin:2em 0;}
+    .results-grid {display:flex;flex-wrap:wrap;gap:2em;}
+    .result {flex:1 1 315px;background:#f6fafd;padding:1em;border-radius:7px;margin-bottom:1em;}
+    .testimonial {font-style:italic;color:#f9b60b;}
+    .blog-img {width:100%;max-width:620px;border-radius:7px;margin-bottom:1.4em;}
+    .blog-list li {margin-bottom:1em;}
+    .contact-form {max-width:430px;margin:0 auto;}
+    .contact-form input, .contact-form textarea {width:100%;padding:0.7em;margin-bottom:1em;border-radius:7px;border:1px solid #ccc;}
+    .contact-form button {background:#f9b60b;color:#253a5a;border:none;border-radius:7px;padding:1em 2em;cursor:pointer;font-weight:700;}
+    .contact-form button:hover {background:#ffd166;}
+    .contact-info {margin-top:2em;font-size:1.1em;}
+    footer {background:#253a5a;color:#fff;padding:2em 0;text-align:center;}
+    .footer-links a {color:#fff;margin:0 1em;font-weight:500;}
+    @media (max-width:900px){
+      .about {flex-direction:column;}
+      .services-wrap {grid-template-columns:1fr;}
+      .results-grid {flex-direction:column;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#services">Services</a>
+      <a href="#results">Results</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <section class="hero" id="home">
+    <h1>Delivering Project Success, Every Time</h1>
+    <p>A premium consulting partner for ambitious businesses</p>
+    <a href="#contact"><button>Book a Free Consultation</button></a>
+  </section>
+  <section id="about">
+    <h2>About Us</h2>
+    <div class="about">
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=750&q=80" alt="Consulting Team"/>
+      </div>
+      <div class="about-content">
+        <p>We are certified project managers dedicated to helping organizations achieve their goals with integrity, collaboration, and innovation.</p>
+        <div class="values">
+          <div><strong>Integrity</strong><br/>Transparent, ethical, focused.</div>
+          <div><strong>Results</strong><br/>Impactful project outcomes.</div>
+          <div><strong>Growth</strong><br/>Empowering teams to scale.</div>
+          <div><strong>Collaboration</strong><br/>Success through partnership.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services-wrap">
+      <div class="service-box">
+        <h3>Project Planning & Controls</h3>
+        <p>Advanced scheduling, stakeholder reporting, and resource management for project success.</p>
+      </div>
+      <div class="service-box">
+        <h3>Risk & Change Management</h3>
+        <p>Proactive risk identification and change adoption for seamless project execution.</p>
+      </div>
+      <div class="service-box">
+        <h3>PMO Setup & Training</h3>
+        <p>Design and training for lasting project management maturity.</p>
+      </div>
+      <div class="service-box">
+        <h3>Contract & Vendor Management</h3>
+        <p>Contract drafting, review, and vendor management for resourceful execution.</p>
+      </div>
+      <div class="service-box">
+        <h3>Software Implementation</h3>
+        <p>Tool selection and onboarding for optimized project workflows.</p>
+      </div>
+      <div class="service-box">
+        <h3>Interim Project Management</h3>
+        <p>Experienced managers embedded in teams to lead key projects.</p>
+      </div>
+    </div>
+    <div class="package">
+      <h3>Complete Project Success Suite</h3>
+      <p>All-in-one solution: planning, risk mgmt, PMO setup, vendor support, tool onboarding, and team training.<br/>
+        <strong>Terms:</strong> 6-month minimum | 30% upfront, 40% mid-project, 30% on delivery.<br/>
+        <strong>Pricing:</strong> INR 8-12 lakh for 6 months (retainer options from INR 1.5 lakh/month)
+      </p>
+    </div>
+  </section>
+  <section id="results">
+    <h2>Client Results</h2>
+    <div class="results-grid">
+      <div class="result"><strong>Case Study:</strong> Launched startup early via Agile planning.</div>
+      <div class="result testimonial">“Their risk management insights saved us time and money!” – Senior Manager, InfraCo</div>
+      <div class="result"><strong>Case Study:</strong> Set up PMO, reduced budget overruns 20%.</div>
+    </div>
+  </section>
+  <section id="blog">
+    <h2>From Our Blog</h2>
+    <img class="blog-img" src="https://images.unsplash.com/photo-1522202195461-5f81b0b09015?auto=format&fit=crop&w=800&q=80" alt="Consultants working"/>
+    <ul class="blog-list">
+      <li>Top 5 Project Management Trends to Watch in 2025</li>
+      <li>How to Successfully Implement a PMO in Your Organization</li>
+      <li>Risk Management Best Practices Every Project Manager Must Know</li>
+      <li>Choosing the Right Project Management Software for Your Team</li>
+      <li>Effective Change Management Techniques to Improve Project Outcomes</li>
+      <li>Role of Project Controls in Keeping Projects on Track</li>
+      <li>Step-by-Step Guide to Creating a Project Plan</li>
+      <li>Case Study: Launching On Time with Agile PM</li>
+      <li>Why Team Project Management Training Pays Off</li>
+      <li>The Future: AI & Automation in PM</li>
+    </ul>
+  </section>
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required/>
+      <input type="email" name="email" placeholder="Your Email" required/>
+      <input type="text" name="company" placeholder="Company Name"/>
+      <textarea name="message" placeholder="How can we help you?" rows="5" required></textarea>
+      <button type="submit">Submit Inquiry</button>
+    </form>
+    <div class="contact-info">
+      <p><strong>Office:</strong> 123 Business Ave, Your City</p>
+      <p><strong>Email:</strong> info@yourpmconsultancy.com</p>
+      <p><strong>Phone:</strong> +91-XXXXX-XXXXX</p>
+      <p><a href="https://linkedin.com/company/yourcompany" style="color:#f9b60b;" target="_blank" rel="noopener">Follow us on LinkedIn</a></p>
+    </div>
+  </section>
+  <footer>
+    <div class="footer-links">
+      <a href="#home">Home</a> |
+      <a href="#about">About</a> |
+      <a href="#services">Services</a> |
+      <a href="#results">Results</a> |
+      <a href="#blog">Blog</a> |
+      <a href="#contact">Contact</a>
+    </div>
+    <div style="padding-top:1em;">
+      &copy; 2025 Project Success Consultancy 
+      <a href="#" style="color:#ffd166;">Privacy Policy</a> &middot;
+      <a href="#" style="color:#ffd166;">Terms & Conditions</a>
+    </div>
+  </footer>
+</body>
+</html>
