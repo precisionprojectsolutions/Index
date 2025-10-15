@@ -1,187 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Precision Project Solutions</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet"/>
-  <style>
-    body {font-family:'Montserrat',sans-serif;background:#f6fafd;color:#23233c;}
-    header {background:#253a5a;color:#fff;padding:2em 0;text-align:center;}
-    .logo-box {display:flex;align-items:center;justify-content:center;gap:1.2em;margin-bottom:1em;}
-    .logo-box img {height:56px;padding:4px;border-radius:9px;background:#fff;}
-    .logo-title {font-size:2.1em;font-weight:700;letter-spacing:1px;color:#ffd166;}
-    nav a {color:#fff;margin:0 1.2em;text-decoration:none;font-weight:700;}
-    nav a:hover {color:#f9b60b;}
-    .hero {
-      background:url('https://drive.google.com/file/d/1cjwo1PgFw610OPYNFDh2tYvOR3YySy1k/view?usp=drive_link') center/cover no-repeat;
-      color:#fff; text-align: center; padding:6em 1em 8em 1em; position:relative;}
-    .hero::after {content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(37,58,90,0.78);z-index:0;}
-    .hero > * {position:relative;z-index:1;}
-    .hero h1 {font-size:2.7em;font-weight:700;}
-    .hero p {font-size:1.2em;}
-    .hero button {background:#ffd166;color:#253a5a;font-weight:700;border:none;padding:1em 2.5em;border-radius:8px;cursor:pointer;font-size:1.1em;}
-    .hero button:hover {background:#fff;}
-    section {max-width:1100px;margin:3em auto;box-shadow:0 2px 22px rgba(37,58,90,0.07);background:#fff;border-radius:14px;padding:2.5em 2em;}
-    h2 {color:#253a5a;font-size:2em;}
-    .about {display:flex;flex-wrap:wrap;gap:3em;align-items:center;}
-    .about-img {flex:1 1 340px;}
-    .about-img img {width:100%;border-radius:12px;}
-    .about-content {flex:2 1 340px;}
-    .values {display:flex;gap:1.2em;flex-wrap:wrap;margin:2em 0;}
-    .values div {flex:1 1 185px;background:#f6fafd;border-radius:8px;padding:1em;font-weight:500;}
-    .services-wrap {display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2em;}
-    .service-box {background:#f6fafd;padding:2em;border-radius:12px;box-shadow:0 1px 6px rgba(37,58,90,0.08);}
-    .service-box h3 {margin-top:0;}
-    .package {background:#f9f9f9;border-left:6px solid #f9b60b;padding:1.5em;border-radius:11px;margin:2em 0;}
-    .results-grid {display:flex;flex-wrap:wrap;gap:2em;}
-    .result {flex:1 1 315px;background:#f6fafd;padding:1em;border-radius:7px;margin-bottom:1em;}
-    .testimonial {font-style:italic;color:#f9b60b;}
-    .blog-img {width:100%;max-width:620px;border-radius:7px;margin-bottom:1.4em;}
-    .blog-list li {margin-bottom:1em;}
-    .contact-form {max-width:430px;margin:0 auto;}
-    .contact-form input, .contact-form textarea {width:100%;padding:0.7em;margin-bottom:1em;border-radius:7px;border:1px solid #ccc;}
-    .contact-form button {background:#f9b60b;color:#253a5a;border:none;border-radius:7px;padding:1em 2em;cursor:pointer;font-weight:700;}
-    .contact-form button:hover {background:#ffd166;}
-    .contact-info {margin-top:2em;font-size:1.1em;}
-    footer {background:#253a5a;color:#fff;padding:2em 0;text-align:center;}
-    .footer-links a {color:#fff;margin:0 1em;font-weight:500;}
-    .footer-links a:hover {color:#ffd166;}
-    @media (max-width:900px){
-      .about {flex-direction:column;}
-      .services-wrap {grid-template-columns:1fr;}
-      .results-grid {flex-direction:column;}
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Precision Project Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  * {margin:0; padding:0; box-sizing:border-box;}
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: #f8f9fb;
+    color: #212534;
+    line-height: 1.6;
+  }
+  header {
+    background: #1f2c45;
+    color: #fff;
+    text-align: center;
+    padding: 1.8em 1em;
+    position: sticky;
+    top:0;
+    z-index:1000;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  }
+  .logo-box {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:1em;
+    margin-bottom:0.6em;
+  }
+  .logo-box img {
+    height:54px;
+    border-radius:10px;
+    background:#fff;
+    padding:5px;
+  }
+  .logo-title {
+    font-weight:700;
+    font-size:1.9em;
+    letter-spacing:0.5px;
+    color:#fcca3e;
+  }
+  nav {
+    margin-top: 0.5em;
+  }
+  nav a {
+    color:#eaeaea;
+    margin:0 1em;
+    text-decoration:none;
+    font-weight:500;
+    transition:color 0.3s;
+  }
+  nav a:hover {
+    color:#ffd86e;
+  }
+  .hero {
+    background: linear-gradient(rgba(31,44,69,0.65), rgba(31,44,69,0.65)),
+                url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    color:#fff;
+    text-align:center;
+    padding:7em 1em;
+  }
+  .hero h1 {
+    font-size:2.8em;
+    font-weight:700;
+    margin-bottom:0.5em;
+  }
+  .hero p {
+    font-size:1.25em;
+    margin-bottom:1.5em;
+    color:#f8f8f8;
+  }
+  .hero button {
+    background:#fcca3e;
+    color:#1f2c45;
+    border:none;
+    padding:1em 2.4em;
+    border-radius:10px;
+    font-weight:600;
+    font-size:1.05em;
+    cursor:pointer;
+    transition: all 0.3s;
+  }
+  .hero button:hover {
+    background:#fff;
+    color:#1f2c45;
+  }
+  section {
+    max-width:1100px;
+    margin:4em auto;
+    padding:2em;
+    background:#fff;
+    border-radius:16px;
+    box-shadow:0 2px 14px rgba(0,0,0,0.05);
+  }
+  h2 {
+    color:#1f2c45;
+    font-size:2em;
+    margin-bottom:1.2em;
+    text-align:center;
+  }
+  .about {
+    display:flex;
+    flex-wrap:wrap;
+    gap:2em;
+    align-items:center;
+  }
+  .about-img img {
+    width:100%;
+    border-radius:12px;
+  }
+  .about-content {
+    flex:1;
+  }
+  .values {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
+    gap:1em;
+    margin-top:1.5em;
+  }
+  .values div {
+    background:#f8f9fb;
+    border-left:4px solid #fcca3e;
+    border-radius:8px;
+    padding:1em;
+  }
+  .services-wrap {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:1.5em;
+  }
+  .service-box {
+    background:#f8f9fb;
+    padding:1.6em;
+    border-radius:12px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .service-box:hover {
+    transform:translateY(-4px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  }
+  .package {
+    background:#fdf5e6;
+    padding:1.5em;
+    border-left:5px solid #fcca3e;
+    border-radius:12px;
+    margin-top:2em;
+  }
+  .results-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:1.5em;
+  }
+  .result {
+    background:#f8f9fb;
+    padding:1em;
+    border-radius:10px;
+  }
+  .testimonial {
+    color:#fcca3e;
+    font-style:italic;
+  }
+  .blog-img {
+    width:100%;
+    border-radius:10px;
+    margin-bottom:1.5em;
+  }
+  .blog-list {
+    list-style:none;
+  }
+  .blog-list li {
+    padding:0.8em 0;
+    border-bottom:1px solid #eee;
+  }
+  .contact-info {
+    text-align:center;
+    margin-top:2em;
+  }
+  .contact-info p, .contact-info a {
+    margin: 0.4em 0;
+    color:#1f2c45;
+  }
+  footer {
+    background:#1f2c45;
+    color:#ccc;
+    text-align:center;
+    padding:2em 1em;
+  }
+  footer a {
+    color:#fcca3e;
+    text-decoration:none;
+    margin:0 0.5em;
+  }
+  footer a:hover {
+    text-decoration:underline;
+  }
+  @media(max-width:768px){
+    .hero h1 {font-size:2.1em;}
+    .hero p {font-size:1.1em;}
+    section {margin:2em 1em;}
+  }
+</style>
 </head>
 <body>
-  <header>
-    <div class="logo-box">
-      <img src="logo.jpg" alt="Precision Project Solutions Logo"/>
-      <span class="logo-title">
-        Precision Project Solutions
-      </span>
+<header>
+  <div class="logo-box">
+    <img src="logo.jpg" alt="PPS Logo" />
+    <span class="logo-title">Precision Project Solutions</span>
+  </div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#results">Results</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <h1>Delivering Precision, Achieving Project Success</h1>
+  <p>Your partner for strategic and effective project management consultancy</p>
+  <a href="#contact"><button>Book a Free Consultation</button></a>
+</section>
+
+<section id="about">
+  <h2>About Us</h2>
+  <div class="about">
+    <div class="about-img">
+      <img src="https://images.unsplash.com/photo-1520872022353-6c03c1c87ebb?auto=format&fit=crop&w=1000&q=80" alt="Team" />
     </div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About Us</a>
-      <a href="#services">Services</a>
-      <a href="#results">Results</a>
-      <a href="#blog">Blog</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-  <section class="hero" id="home">
-    <h1>Delivering Precision, Achieving Project Success</h1>
-    <p>Your partner for strategic and effective project management consultancy</p>
-    <a href="#contact"><button>Book a Free Consultation</button></a>
-  </section>
-  <section id="about">
-    <h2>About Us</h2>
-    <div class="about">
-      <div class="about-img">
-        <img src="https://drive.google.com/file/d/1cjwo1PgFw610OPYNFDh2tYvOR3YySy1k/view?usp=drive_link" alt="Consultancy Team Meeting"/>
-      </div>
-      <div class="about-content">
-        <p>Precision Project Solutions is founded by certified professionals dedicated to delivering measurable results for your projects. Guided by integrity, innovation and true collaboration, we empower businesses to succeed on time and within budget.</p>
-        <div class="values">
-          <div><strong>Integrity</strong><br/>Transparent, ethical, client-focused.</div>
-          <div><strong>Results</strong><br/>Impactful project outcomes.</div>
-          <div><strong>Growth</strong><br/>Empowering teams to scale.</div>
-          <div><strong>Collaboration</strong><br/>Success through partnership.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="services-wrap">
-      <div class="service-box">
-        <h3>Project Planning & Controls</h3>
-        <p>Advanced scheduling, progress reporting, and resource planning to keep your projects on track.</p>
-      </div>
-      <div class="service-box">
-        <h3>Risk & Change Management</h3>
-        <p>Proactive risk identification and change management support throughout the project lifecycle.</p>
-      </div>
-      <div class="service-box">
-        <h3>PMO Setup & Training</h3>
-        <p>PMO design, implementation, and dynamic team training for long-term project management maturity.</p>
-      </div>
-      <div class="service-box">
-        <h3>Contract & Vendor Management</h3>
-        <p>Expert contract drafting, review and vendor management for successful delivery.</p>
-      </div>
-      <div class="service-box">
-        <h3>Software Implementation</h3>
-        <p>Selection and onboarding of leading project management tools to optimize your workflow.</p>
-      </div>
-      <div class="service-box">
-        <h3>Interim Project Management</h3>
-        <p>Experienced managers embedded in your team to drive critical projects to success.</p>
+    <div class="about-content">
+      <p>Precision Project Solutions helps organizations execute projects with excellence. We blend strategy, structure, and innovation—empowering your teams to deliver measurable success on time and within budget.</p>
+      <div class="values">
+        <div><strong>Integrity</strong><br>Transparent, ethical, client-driven.</div>
+        <div><strong>Results</strong><br>Measurable impact through expertise.</div>
+        <div><strong>Growth</strong><br>Transforming teams to scale sustainably.</div>
+        <div><strong>Collaboration</strong><br>Partnerships built on trust.</div>
       </div>
     </div>
-    <div class="package">
-      <h3>Complete Project Success Suite</h3>
-      <p>Premium package: planning, risk management, PMO setup, vendor support, software onboarding and team training.<br/>
-        <strong>Terms:</strong> 6-month minimum | 30% upfront, 40% mid-project, 30% on delivery.<br/>
-        <strong>Pricing:</strong> INR 8-12 lakh for six months (retainer options from INR 1.5 lakh/month)
-      </p>
-    </div>
-  </section>
-  <section id="results">
-    <h2>Client Results</h2>
-    <div class="results-grid">
-      <div class="result"><strong>Case Study:</strong> Helped a tech startup launch early with Agile planning.</div>
-      <div class="result testimonial">“Their risk management insights saved us time and money!” – Senior Manager, InfraCo</div>
-      <div class="result"><strong>Case Study:</strong> Set up a PMO for a manufacturer, reducing budget overruns 20%.</div>
-    </div>
-  </section>
-  <section id="blog">
-    <h2>From Our Blog</h2>
-    <img class="blog-img" src="https://images.unsplash.com/photo-1522202195461-5f81b0b09015?auto=format&fit=crop&w=800&q=80" alt="Consultants working"/>
-    <ul class="blog-list">
-      <li>Top 5 Project Management Trends to Watch in 2025</li>
-      <li>How to Successfully Implement a PMO in Your Organization</li>
-      <li>Risk Management Best Practices Every Project Manager Must Know</li>
-      <li>Choosing the Right Project Management Software for Your Team</li>
-      <li>Effective Change Management Techniques to Improve Project Outcomes</li>
-      <li>Role of Project Controls in Keeping Projects on Track and Budget</li>
-      <li>Step-by-Step Guide to Creating a Winning Project Plan</li>
-      <li>Case Study: How We Helped a Startup Launch on Time with Agile PM</li>
-      <li>Why Training Your Team in Project Management Pays Off</li>
-      <li>The Future of Project Management: AI and Automation Insights</li>
-    </ul>
-  </section>
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSezVUhFuGXzA5ZdY5Jia9rz2XvJil9p7JjHTvzmcXE-ZFDQtw/viewform?embedded=true"
-          width="640"
-          height="947"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0">Loading…</iframe>
+  </div>
+</section>
+
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="services-wrap">
+    <div class="service-box"><h3>Project Planning & Controls</h3><p>Advanced scheduling, reporting, resource planning, and baseline management to keep your projects aligned.</p></div>
+    <div class="service-box"><h3>Risk & Change Management</h3><p>Strategic risk foresight and adaptive change support that maintain project stability.</p></div>
+    <div class="service-box"><h3>PMO Setup & Training</h3><p>Build organizational maturity through robust PMO structures and upskilled teams.</p></div>
+    <div class="service-box"><h3>Contract & Vendor Management</h3><p>Ensure deliverable consistency and accountability across your vendor ecosystem.</p></div>
+    <div class="service-box"><h3>Software Implementation</h3><p>Digital project tools integration crafted for seamless workflows.</p></div>
+    <div class="service-box"><h3>Interim Project Management</h3><p>Deploy expert managers for short-term or critical initiatives.</p></div>
+  </div>
+  <div class="package">
+    <h3>Complete Project Success Suite</h3>
+    <p>Comprehensive project success package including planning, risk control, PMO setup, vendor oversight, and digital integration.<br><strong>Terms:</strong> 6-month minimum<br><strong>Pricing:</strong> INR 8–12 lakh (retainer from INR 1.5 lakh/month)</p>
+  </div>
+</section>
+
+<section id="results">
+  <h2>Client Results</h2>
+  <div class="results-grid">
+    <div class="result"><strong>Startup Launch:</strong> Enabled early go-live via agile planning precision.</div>
+    <div class="result testimonial">“Our infrastructure projects achieved 25% higher efficiency through PPS leadership.” — InfraCo Senior Manager</div>
+    <div class="result"><strong>Manufacturing Sector:</strong> Reduced cost overruns by 20% through structured PMO frameworks.</div>
+  </div>
+</section>
+
+<section id="blog">
+  <h2>From Our Blog</h2>
+  <img class="blog-img" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=80" alt="Consulting blog" />
+  <ul class="blog-list">
+    <li>Top 5 Project Management Trends for 2025</li>
+    <li>Building a Scalable PMO: A Step-by-Step Framework</li>
+    <li>Essential Risk Management Strategies for Modern Enterprises</li>
+    <li>Choosing the Right Project Management Platform for Your Team</li>
+    <li>The Future of PM: AI, Automation, and Beyond</li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSezVUhFuGXzA5ZdY5Jia9rz2XvJil9p7JjHTvzmcXE-ZFDQtw/viewform?embedded=true"
+          width="100%"
+          height="850"
+          frameborder="0">Loading…</iframe>
   <div class="contact-info">
     <p><strong>Office:</strong> M503, Aarya Empire, Atladara, Vadodara</p>
-    <p><strong>Email:</strong> mailto:info.precision.project.solutions@gmail.com</p>
+    <p><strong>Email:</strong> <a href="mailto:info.precision.project.solutions@gmail.com">info.precision.project.solutions@gmail.com</a></p>
     <p><strong>Phone:</strong> +91 82334 98737</p>
-    <p><a href="https://linkedin.com/company/precisionprojectsolutions" style="color:#f9b60b;" target="_blank" rel="noopener">Follow us on LinkedIn</a></p>
+    <p><a href="https://linkedin.com/company/precisionprojectsolutions" target="_blank" rel="noopener">Follow us on LinkedIn</a></p>
   </div>
-  </section>
-  <footer>
-    <div class="footer-links">
-      <a href="#home">Home</a> |
-      <a href="#about">About</a> |
-      <a href="#services">Services</a> |
-      <a href="#results">Results</a> |
-      <a href="#blog">Blog</a> |
-      <a href="#contact">Contact</a>
-    </div>
-    <div style="padding-top:1em;">
-      &copy; 2025 Precision Project Solutions
-      <a href="#" style="color:#ffd166;">Privacy Policy</a> &middot;
-      <a href="#" style="color:#ffd166;">Terms & Conditions</a>
-    </div>
-  </footer>
+</section>
+
+<footer>
+  <p>&copy; 2025 Precision Project Solutions · <a href="#">Privacy Policy</a> · <a href="#">Terms & Conditions</a></p>
+</footer>
 </body>
 </html>
