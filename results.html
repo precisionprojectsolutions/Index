@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Client Results | Precision Project Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  body { font-family: 'Outfit', sans-serif; background: #f8f9fb; color: #212534; margin: 0; }
+  header {
+    background: #1f2c45; color: white; padding: 1.8em 1em; text-align: center; position: sticky; top: 0;
+    box-shadow: 0 2px 12px rgba(0,0,0,.12); z-index: 1000;
+  }
+  .logo-box { display: flex; gap: 1em; justify-content: center; align-items: center; margin-bottom: 0.6em; }
+  .logo-box img { height: 54px; background: white; border-radius: 10px; padding: 5px; }
+  .logo-title { font-weight: 700; font-size: 1.9em; color: #fcca3e; letter-spacing: 0.5px; }
+  nav { margin-top: 0.5em; }
+  nav a { color: #eaeaea; margin: 0 1em; text-decoration: none; font-weight: 500; transition: color 0.3s; }
+  nav a:hover { color: #ffd86e; }
+  section {
+    max-width: 900px; margin: 4em auto; background: white; padding: 2em; border-radius: 16px;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.05); text-align: center;
+  }
+  h2 { font-size: 2em; margin-bottom: 1.5em; color: #1f2c45; }
+  .results-grid {
+    display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 2em;
+  }
+  .result {
+    background: #f8f9fb; padding: 1.4em; border-radius: 12px; box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    color: #2d3a57; font-size: 1.1em;
+  }
+  .result strong {
+    font-weight: 700; color: #fca311; font-size: 1.2em; margin-bottom: 0.6em; display: block;
+  }
+  .testimonial {
+    color: #fcca3e; font-style: italic; font-weight: 600;
+  }
+  @media(max-width:768px) {
+    section { margin: 2em 1em; }
+  }
+  footer {
+    background: #1f2c45; color: #ccc; text-align: center; padding: 2em 1em; margin-top: 4em;
+  }
+  footer a { color: #fcca3e; text-decoration: none; margin: 0 0.5em; }
+  footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<header>
+  <div class="logo-box">
+    <img src="logo.jpg" alt="PPS Logo" />
+    <span class="logo-title">Precision Project Solutions</span>
+  </div>
+  <nav>
+    <a href="index.html">Home</a> 
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a> 
+    <a href="results.html">Results</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+<section>
+  <h2>Client Results</h2>
+  <div class="results-grid">
+    <div class="result">
+      <strong>Startup Launch</strong>
+      Enabled early go-live with agile planning precision, capturing time-sensitive market opportunities.
+    </div>
+    <div class="result testimonial">“Our infrastructure projects achieved 25% higher efficiency through PPS leadership.” – Senior Manager, InfraCo</div>
+    <div class="result">
+      <strong>Manufacturing Sector Improvement</strong>
+      Reduced cost overruns by 20% through a mature PMO framework and robust risk management.
+    </div>
+    <div class="result testimonial">“Thanks to their risk and change management, we avoided costly delays.” – Project Director, ManufacTech</div>
+    <div class="result">
+      <strong>Software Implementation Success</strong>
+      Seamless onboarding of project management software reduced manual reporting time by 40%.
+    </div>
+  </div>
+</section>
+<footer>
+  <p>&copy; 2025 Precision Project Solutions · <a href="#">Privacy Policy</a> · <a href="#">Terms & Conditions</a></p>
+</footer>
+</body>
+</html>
