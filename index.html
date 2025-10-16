@@ -1,236 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Precision Project Solutions</title>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<style>
-  * {margin:0; padding:0; box-sizing:border-box;}
-  body {
-    font-family: 'Outfit', sans-serif;
-    background: #f8f9fb;
-    color: #212534;
-    line-height: 1.6;
-  }
-  header {
-    background: #1f2c45;
-    color: #fff;
-    text-align: center;
-    padding: 1.8em 1em;
-    position: sticky;
-    top:0;
-    z-index:1000;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
-  }
-  .logo-box {
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:1em;
-    margin-bottom:0.6em;
-  }
-  .logo-box img {
-    height:54px;
-    border-radius:10px;
-    background:#fff;
-    padding:5px;
-  }
-  .logo-title {
-    font-weight:700;
-    font-size:1.9em;
-    letter-spacing:0.5px;
-    color:#fcca3e;
-  }
-  nav {
-    margin-top: 0.5em;
-  }
-  nav a {
-    color:#eaeaea;
-    margin:0 1em;
-    text-decoration:none;
-    font-weight:500;
-    transition:color 0.3s;
-  }
-  nav a:hover {
-    color:#ffd86e;
-  }
-  .hero {
-    background: linear-gradient(rgba(31,44,69,0.65), rgba(31,44,69,0.65)),
-                url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-    color:#fff;
-    text-align:center;
-    padding:7em 1em;
-  }
-  .hero h1 {
-    font-size:2.8em;
-    font-weight:700;
-    margin-bottom:0.5em;
-  }
-  .hero p {
-    font-size:1.25em;
-    margin-bottom:1.5em;
-    color:#f8f8f8;
-  }
-  .hero button {
-    background:#fcca3e;
-    color:#1f2c45;
-    border:none;
-    padding:1em 2.4em;
-    border-radius:10px;
-    font-weight:600;
-    font-size:1.05em;
-    cursor:pointer;
-    transition: all 0.3s;
-  }
-  .hero button:hover {
-    background:#fff;
-    color:#1f2c45;
-  }
-  section {
-    max-width:1100px;
-    margin:4em auto;
-    padding:2em;
-    background:#fff;
-    border-radius:16px;
-    box-shadow:0 2px 14px rgba(0,0,0,0.05);
-  }
-  h2 {
-    color:#1f2c45;
-    font-size:2em;
-    margin-bottom:1.2em;
-    text-align:center;
-  }
-  .about {
-    display:flex;
-    flex-wrap:wrap;
-    gap:2em;
-    align-items:center;
-  }
-  .about-img img {
-    width:100%;
-    border-radius:12px;
-  }
-  .about-content {
-    flex:1;
-  }
-  .values {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
-    gap:1em;
-    margin-top:1.5em;
-  }
-  .values div {
-    background:#f8f9fb;
-    border-left:4px solid #fcca3e;
-    border-radius:8px;
-    padding:1em;
-  }
-  .services-wrap {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:1.5em;
-  }
-  .service-box {
-    background:#f8f9fb;
-    padding:1.6em;
-    border-radius:12px;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  .service-box:hover {
-    transform:translateY(-4px);
-    box-shadow:0 8px 20px rgba(0,0,0,0.08);
-  }
-  .service-box a {
-    color: inherit;
-    text-decoration: none;
-    display: block;
-    height: 100%;
-  }
-  .service-box a:focus,
-  .service-box a:hover {
-    outline: none;
-  }
-  .service-box h3 {
-    margin-top:0;
-    color: #fca311;
-    transition: color 0.3s;
-  }
-  .service-box:hover h3 {
-    color: #1f2c45;
-  }
-  .package {
-    background:#fdf5e6;
-    padding:1.5em;
-    border-left:5px solid #fcca3e;
-    border-radius:12px;
-    margin-top:2em;
-  }
-  .results-grid {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:1.5em;
-  }
-  .result {
-    background:#f8f9fb;
-    padding:1em;
-    border-radius:10px;
-  }
-  .testimonial {
-    color:#fcca3e;
-    font-style:italic;
-  }
-  .blog-img {
-    width:100%;
-    border-radius:10px;
-    margin-bottom:1.5em;
-  }
-  .blog-list {
-    list-style:none;
-  }
-  .blog-list li {
-    padding:0.8em 0;
-    border-bottom:1px solid #eee;
-  }
-  .blog-list a {
-    color: #1f2c45;
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .blog-list a:hover {
-    color: #fca311;
-    text-decoration: underline;
-  }
-  .contact-info {
-    text-align:center;
-    margin-top:2em;
-  }
-  .contact-info p, .contact-info a {
-    margin: 0.4em 0;
-    color:#1f2c45;
-  }
-  footer {
-    background:#1f2c45;
-    color:#ccc;
-    text-align:center;
-    padding:2em 1em;
-  }
-  footer a {
-    color:#fcca3e;
-    text-decoration:none;
-    margin:0 0.5em;
-  }
-  footer a:hover {
-    text-decoration:underline;
-  }
-  @media(max-width:768px){
-    .hero h1 {font-size:2.1em;}
-    .hero p {font-size:1.1em;}
-    section {margin:2em 1em;}
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Precision Project Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: #f8f9fb;
+      color: #212534;
+      line-height: 1.6;
+    }
+    header {
+      background: #1f2c45;
+      color: #fff;
+      text-align: center;
+      padding: 1.8em 1em;
+      position: sticky;
+      top:0;
+      z-index:1000;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    }
+    .logo-box {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:1em;
+      margin-bottom:0.6em;
+    }
+    .logo-box img {
+      height:54px;
+      border-radius:10px;
+      background:#fff;
+      padding:5px;
+    }
+    .logo-title {
+      font-weight:700;
+      font-size:1.9em;
+      letter-spacing:0.5px;
+      color:#fcca3e;
+    }
+    nav {
+      margin-top: 0.5em;
+    }
+    nav a {
+      color:#eaeaea;
+      margin:0 1em;
+      text-decoration:none;
+      font-weight:500;
+      transition:color 0.3s;
+    }
+    nav a:hover {
+      color:#ffd86e;
+    }
+
+    /* Hero carousel styles */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      height: 85vh;
+      color:#fff;
+    }
+    .slide {
+      position: absolute;
+      top:0; left:0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      padding: 0 1.5em;
+    }
+    .slide.active {
+      opacity: 1;
+    }
+    .slide h1 {
+      font-size: 2.8em;
+      font-weight: 700;
+      margin-bottom: 0.5em;
+    }
+    .slide p {
+      font-size: 1.25em;
+      margin-bottom: 1.5em;
+      color: #f8f8f8;
+      max-width: 720px;
+    }
+    .hero button {
+      background: #fcca3e;
+      color: #1f2c45;
+      border: none;
+      padding: 1em 2.4em;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1.05em;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .hero button:hover {
+      background: #fff;
+      color: #1f2c45;
+    }
+    .carousel-dots {
+      position: absolute;
+      bottom: 32px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 9px;
+      z-index: 10;
+    }
+    .carousel-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.6);
+      border: 2px solid #fcca3e;
+      cursor: pointer;
+      transition: background 0.3s, border 0.3s;
+    }
+    .carousel-dot.active {
+      background: #fcca3e;
+      border-color: #fff;
+    }
+
+    /* Your existing styles for other sections */
+    section {
+      max-width:1100px;
+      margin:4em auto;
+      padding:2em;
+      background:#fff;
+      border-radius:16px;
+      box-shadow:0 2px 14px rgba(0,0,0,0.05);
+    }
+    h2 {
+      color:#1f2c45;
+      font-size:2em;
+      margin-bottom:1.2em;
+      text-align:center;
+    }
+    .about {
+      display:flex;
+      flex-wrap:wrap;
+      gap:2em;
+      align-items:center;
+    }
+    .about-img img {
+      width:100%;
+      border-radius:12px;
+    }
+    .about-content {
+      flex:1;
+    }
+    .values {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
+      gap:1em;
+      margin-top:1.5em;
+    }
+    .values div {
+      background:#f8f9fb;
+      border-left:4px solid #fcca3e;
+      border-radius:8px;
+      padding:1em;
+    }
+    .services-wrap {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:1.5em;
+    }
+    .service-box {
+      background:#f8f9fb;
+      padding:1.6em;
+      border-radius:12px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .service-box:hover {
+      transform:translateY(-4px);
+      box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    }
+    .service-box a {
+      color: inherit;
+      text-decoration: none;
+      display: block;
+      height: 100%;
+    }
+    .service-box a:focus,
+    .service-box a:hover {
+      outline: none;
+    }
+    .service-box h3 {
+      margin-top:0;
+      color: #fca311;
+      transition: color 0.3s;
+    }
+    .service-box:hover h3 {
+      color: #1f2c45;
+    }
+    .package {
+      background:#fdf5e6;
+      padding:1.5em;
+      border-left:5px solid #fcca3e;
+      border-radius:12px;
+      margin-top:2em;
+    }
+    .results-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:1.5em;
+    }
+    .result {
+      background:#f8f9fb;
+      padding:1em;
+      border-radius:10px;
+    }
+    .testimonial {
+      color:#fcca3e;
+      font-style:italic;
+    }
+    .blog-img {
+      width:100%;
+      border-radius:10px;
+      margin-bottom:1.5em;
+    }
+    .blog-list {
+      list-style:none;
+    }
+    .blog-list li {
+      padding:0.8em 0;
+      border-bottom:1px solid #eee;
+    }
+    .blog-list a {
+      color: #1f2c45;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .blog-list a:hover {
+      color: #fca311;
+      text-decoration: underline;
+    }
+    .contact-info {
+      text-align:center;
+      margin-top:2em;
+    }
+    .contact-info p, .contact-info a {
+      margin: 0.4em 0;
+      color:#1f2c45;
+    }
+    footer {
+      background:#1f2c45;
+      color:#ccc;
+      text-align:center;
+      padding:2em 1em;
+    }
+    footer a {
+      color:#fcca3e;
+      text-decoration:none;
+      margin:0 0.5em;
+    }
+    footer a:hover {
+      text-decoration:underline;
+    }
+    @media(max-width:768px){
+      .slide h1, .hero h1 {font-size:2.1em;}
+      .slide p, .hero p {font-size:1.1em;}
+      section {margin:2em 1em;}
+    }
+  </style>
 </head>
 <body>
+
 <header>
   <div class="logo-box">
     <img src="logo.jpg" alt="PPS Logo" />
@@ -246,12 +293,37 @@
   </nav>
 </header>
 
-<section class="hero" id="home">
-  <h1>Delivering Precision, Achieving Project Success</h1>
-  <p>Your partner for strategic and effective project management consultancy</p>
-  <a href="#contact"><button>Book a Free Consultation</button></a>
+<!-- Hero Slideshow Section -->
+<section class="hero">
+  <div class="slide active" style="background-image: linear-gradient(rgba(31,44,69,0.6), rgba(31,44,69,0.6)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1600&q=80');">
+    <h1>Delivering Precision, Achieving Project Success</h1>
+    <p>Your partner for strategic and effective project management consultancy</p>
+    <a href="#contact"><button>Book a Free Consultation</button></a>
+  </div>
+  <div class="slide" style="background-image: linear-gradient(rgba(31,44,69,0.65), rgba(31,44,69,0.65)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80');">
+    <h1>Strategize. Execute. Succeed.</h1>
+    <p>Transforming project management challenges into structured pathways to success.</p>
+    <a href="#services"><button>Explore Our Services</button></a>
+  </div>
+  <div class="slide" style="background-image: linear-gradient(rgba(31,44,69,0.6), rgba(31,44,69,0.6)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80');">
+    <h1>Empowering Teams with Precision Tools</h1>
+    <p>From PMO setup to digital implementation — we help you deliver with confidence.</p>
+    <a href="#services"><button>Learn More</button></a>
+  </div>
+  <div class="slide" style="background-image: linear-gradient(rgba(31,44,69,0.6), rgba(31,44,69,0.6)), url('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1600&q=80');">
+    <h1>Driving Measurable Results for Every Client</h1>
+    <p>Our strategies ensure efficiency, accountability, and delivery excellence at every stage.</p>
+    <a href="#results"><button>See Client Results</button></a>
+  </div>
+  <div class="slide" style="background-image: linear-gradient(rgba(31,44,69,0.65), rgba(31,44,69,0.65)), url('https://images.unsplash.com/photo-1531497865144-0464ef8fb9a1?auto=format&fit=crop&w=1600&q=80');">
+    <h1>Building Sustainable Project Success</h1>
+    <p>We align strategy and performance to help organizations scale confidently.</p>
+    <a href="#about"><button>Discover Our Approach</button></a>
+  </div>
+  <div class="carousel-dots"></div>
 </section>
 
+<!-- Original site content continues unchanged -->
 <section id="about">
   <h2>About Us</h2>
   <div class="about">
@@ -342,7 +414,7 @@
 <section id="contact">
   <h2>Contact Us</h2>
   <div class="contact-info">
-    <p><strong>Office:</strong> M503, Aarya Empire, Atladara, Vadodara</p>
+    <p><strong>Office:</strong> Precision Project Solutions, M503, Aarya Empire, Atladara, Vadodara</p>
     <p><strong>Email:</strong> <a href="mailto:info.precision.project.solutions@gmail.com">info.precision.project.solutions@gmail.com</a></p>
     <p><strong>Phone:</strong> +91 82334 98737</p>
     <p><a href="https://linkedin.com/company/precisionprojectsolutions" target="_blank" rel="noopener">Follow us on LinkedIn</a></p>
@@ -352,5 +424,51 @@
 <footer>
   <p>&copy; 2025 Precision Project Solutions · <a href="#">Privacy Policy</a> · <a href="#">Terms & Conditions</a></p>
 </footer>
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const dotsContainer = document.querySelector('.carousel-dots');
+  let current = 0;
+  let interval;
+
+  function createDots() {
+    for (let i = 0; i < slides.length; i++) {
+      const dot = document.createElement('span');
+      dot.classList.add('carousel-dot');
+      if (i === current) dot.classList.add('active');
+      dot.addEventListener('click', () => {
+        showSlide(i);
+        resetInterval();
+      });
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  function updateDots() {
+    const dots = dotsContainer.querySelectorAll('.carousel-dot');
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === current);
+    });
+  }
+
+  function showSlide(index) {
+    slides[current].classList.remove('active');
+    current = index;
+    slides[current].classList.add('active');
+    updateDots();
+  }
+
+  function showNextSlide() {
+    showSlide((current + 1) % slides.length);
+  }
+
+  function resetInterval() {
+    clearInterval(interval);
+    interval = setInterval(showNextSlide, 5000);
+  }
+
+  createDots();
+  interval = setInterval(showNextSlide, 5000);
+</script>
+
 </body>
 </html>
