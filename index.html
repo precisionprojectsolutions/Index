@@ -78,9 +78,11 @@
       opacity: 0;
       transition: opacity 1s ease-in-out;
       padding: 0 1.5em;
+      pointer-events: none; /* prevent clicks on hidden slides */
     }
     .slide.active {
       opacity: 1;
+      pointer-events: auto; /* enable clicks on the visible slide only */
     }
     .slide h1 {
       font-size: 2.8em;
@@ -132,7 +134,7 @@
       border-color: #fff;
     }
 
-    /* Your existing styles for other sections */
+    /* Other sections */
     .cta-bar {
       background: #ffd86e; color: #1f2c45; padding: 1.2em 1em; text-align: center; border-radius: 10px; font-size: 1.15em; margin-bottom: 2em;
     }
@@ -200,10 +202,6 @@
       text-decoration: none;
       display: block;
       height: 100%;
-    }
-    .service-box a:focus,
-    .service-box a:hover {
-      outline: none;
     }
     .service-box h3 {
       margin-top:0;
@@ -338,122 +336,37 @@
     <p>Our strategies ensure efficiency, accountability, and delivery excellence at every stage.</p>
     <a href="results.html"><button>See Client Results</button></a>
   </div>
-  <div class="slide" style="background-image: linear-gradient(rgba(31,44,69,0.65), rgba(31,44,69,0.65)), url('https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170?auto=format&fit=crop&w=1600&q=80');">
+  <div class="slide" style="background-image: linear-gradient(rgba(31,44,69,0.65), rgba(31,44,69,0.65)), url('https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=1170');">
     <h1>Building Sustainable Project Success</h1>
     <p>We align strategy and performance to help organizations scale confidently.</p>
-    <a href="contact.html"><button>Discover Our Approach</button></a>
+    <a href="about.html"><button>Discover Our Approach</button></a>
   </div>
   <div class="carousel-dots"></div>
 </section>
 
 <!-- Original site content continues unchanged -->
-
 <div class="cta-bar">
   <span>Ready for project success with a trusted partner?</span>
   <a href="contact.html">Request a Free Consultation</a>
 </div>
 
-<section id="about" style="padding: 20px;">
+<!-- About Section -->
+<section id="about">
   <h2>About Us</h2>
-  <div class="about" style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
+  <div class="about">
     <div class="about-img" style="flex: 1 1 300px; max-width: 300px;">
-      <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=60&w=800?auto=format&fit=crop&w=1000&q=80" alt="Team" style="width: 100%; height: auto; display: block;" />
+      <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=1000&q=80" alt="Team" />
     </div>
-    <div class="about-content" style="flex: 2 1 400px; min-width: 280px;">
+    <div class="about-content" style="flex: 2 1 400px;">
       <p>Precision Project Solutions helps organizations execute projects with excellence. We blend strategy, structure, and innovation—empowering your teams to deliver measurable success on time and within budget.</p>
-      <div class="values" style="display: flex; flex-wrap: wrap; gap: 15px;">
-        <div><strong>Integrity</strong><br>Transparent, ethical, client-driven.</div>
-        <div><strong>Results</strong><br>Measurable impact through expertise.</div>
-        <div><strong>Growth</strong><br>Transforming teams to scale sustainably.</div>
-        <div><strong>Collaboration</strong><br>Partnerships built on trust.</div>
-      </div>
     </div>
-  </div>
-</section>
-
-<section id="services">
-  <h2>Our Services</h2>
-  <div class="services-wrap">
-    <div class="service-box">
-      <a href="services.html#project-planning-controls">
-        <h3 id="project-planning-controls">Project Planning & Controls</h3>
-        <p>Advanced scheduling, reporting, resource planning, and baseline management to keep your projects aligned.</p>
-      </a>
-    </div>
-    <div class="service-box">
-      <a href="services.html#risk-change-management">
-        <h3 id="risk-change-management">Risk & Change Management</h3>
-        <p>Strategic risk foresight and adaptive change support that maintain project stability.</p>
-      </a>
-    </div>
-    <div class="service-box">
-      <a href="services.html#pmo-setup-training">
-        <h3 id="pmo-setup-training">PMO Setup & Training</h3>
-        <p>Build organizational maturity through robust PMO structures and upskilled teams.</p>
-      </a>
-    </div>
-    <div class="service-box">
-      <a href="services.html#contract-vendor-management">
-        <h3 id="contract-vendor-management">Contract & Vendor Management</h3>
-        <p>Ensure deliverable consistency and accountability across your vendor ecosystem.</p>
-      </a>
-    </div>
-    <div class="service-box">
-      <a href="services.html#software-implementation">
-        <h3 id="software-implementation">Software Implementation</h3>
-        <p>Digital project tools integration crafted for seamless workflows.</p>
-      </a>
-    </div>
-    <div class="service-box">
-      <a href="services.html#interim-project-management">
-        <h3 id="interim-project-management">Interim Project Management</h3>
-        <p>Deploy expert managers for short-term or critical initiatives.</p>
-      </a>
-    </div>
-  </div>
-  <div class="package">
-    <h3>Complete Project Success Suite</h3>
-    <p>Comprehensive project success package including planning, risk control, PMO setup, vendor oversight, and digital integration.<br>
-    <strong>Terms:</strong> flexible as per project nature<br>
-    <strong>Pricing:</strong> As per project complexity (retainer discount available)</p>
-<a href="contact.html"><button>Book a Free Consultation</button></a>
-  </div>
-</section>
-
-<section id="results">
-  <h2>Client Results</h2>
-  <div class="results-grid">
-    <div class="result"><strong>Startup Launch:</strong> Enabled early go-live via agile planning precision.</div>
-    <div class="result testimonial">“Our infrastructure projects achieved 25% higher efficiency through PPS leadership.” — InfraCo Senior Manager</div>
-    <div class="result"><strong>Manufacturing Sector:</strong> Reduced cost overruns by 20% through structured PMO frameworks.</div>
-  </div>
-</section>
-
-<section id="blog">
-  <h2>From Our Blog</h2>
-  <img class="blog-img" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=80" alt="Consulting blog" />
-  <ul class="blog-list">
-    <li><a href="blog.html" target="_self">Top 5 Project Management Trends for 2025</a></li>
-    <li><a href="blog.html" target="_self">Building a Scalable PMO: A Step-by-Step Framework</a></li>
-    <li><a href="blog.html" target="_self">Essential Risk Management Strategies for Modern Enterprises</a></li>
-    <li><a href="blog.html" target="_self">Choosing the Right Project Management Platform for Your Team</a></li>
-    <li><a href="blog.html" target="_self">The Future of PM: AI, Automation, and Beyond</a></li>
-  </ul>
-</section>
-
-<section id="contact">
-  <h2>Contact Us</h2>
-  <div class="contact-info">
-    <p><strong>Office:</strong> Precision Project Solutions, M503, Aarya Empire, Atladara, Vadodara</p>
-    <p><strong>Email:</strong> <a href="mailto:info.precision.project.solutions@gmail.com">info.precision.project.solutions@gmail.com</a></p>
-    <p><strong>Phone:</strong> <a href="https://wa.me/+918233498737">+91 82334 98737</p>
-    <p><a href="https://linkedin.com/company/precisionprojectsolutions" target="_blank" rel="noopener">Follow us on LinkedIn</a></p>
   </div>
 </section>
 
 <footer>
   <p>&copy; 2025 Precision Project Solutions · <a href="#">Privacy Policy</a> · <a href="#">Terms & Conditions</a></p>
 </footer>
+
 <script>
   const slides = document.querySelectorAll('.slide');
   const dotsContainer = document.querySelector('.carousel-dots');
