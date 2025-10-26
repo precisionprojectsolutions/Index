@@ -248,26 +248,38 @@
     .testimonial {
       color:#fcca3e;
       font-style:italic;
+    .blog-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  align-items: flex-start;
     }
+    
+    .blog-img-wrap {
+      flex: 1 1 400px;
+      max-width: 450px;
+    }
+    
     .blog-img {
-  width: 100%;
-  max-width: 600px; /* Adjust this value as desired */
-  height: auto;
-  border-radius: 10px;
-  margin: 0 auto 1.5em;
-  display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      display: block;
     }
-    .blog-list {
-      list-style:none;
+    
+    .blog-items {
+      flex: 2 1 400px;
+      min-width: 280px;
     }
-    .blog-list li {
-      padding:0.8em 0;
-      border-bottom:1px solid #eee;
-    }
-    .blog-list a {
-      color: #1f2c45;
-      text-decoration: none;
-      transition: color 0.2s;
+    
+    @media (max-width: 768px) {
+      .blog-content {
+        flex-direction: column;
+        align-items: center;
+      }
+      .blog-img-wrap, .blog-items {
+        max-width: 100%;
+      }
     }
     .blog-list a:hover {
       color: #fca311;
@@ -434,15 +446,20 @@
 
 <section id="blog">
   <h2>From Our Blog</h2>
-  <div class="blog-img" style="flex: 1 1 300px; max-width: 300px;">
-  <img class="blog-img" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=80" alt="Consulting blog" />
-  <ul class="blog-list">
-    <li><a href="blog.html" target="_self">Top 5 Project Management Trends for 2025</a></li>
-    <li><a href="blog.html" target="_self">Building a Scalable PMO: A Step-by-Step Framework</a></li>
-    <li><a href="blog.html" target="_self">Essential Risk Management Strategies for Modern Enterprises</a></li>
-    <li><a href="blog.html" target="_self">Choosing the Right Project Management Platform for Your Team</a></li>
-    <li><a href="blog.html" target="_self">The Future of PM: AI, Automation, and Beyond</a></li>
-  </ul>
+  <div class="blog-content">
+    <div class="blog-img-wrap">
+      <img class="blog-img" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=80" alt="Consulting blog" />
+    </div>
+    <div class="blog-items">
+      <ul class="blog-list">
+        <li><a href="blog.html" target="_self">Top 5 Project Management Trends for 2025</a></li>
+        <li><a href="blog.html" target="_self">Building a Scalable PMO: A Step-by-Step Framework</a></li>
+        <li><a href="blog.html" target="_self">Essential Risk Management Strategies for Modern Enterprises</a></li>
+        <li><a href="blog.html" target="_self">Choosing the Right Project Management Platform for Your Team</a></li>
+        <li><a href="blog.html" target="_self">The Future of PM: AI, Automation, and Beyond</a></li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 <section id="contact">
