@@ -1,143 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Our Services | Precision Project Solutions</title>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<style>
-body { font-family: 'Outfit', sans-serif; background: #f8f9fb; color: #212534;}
-header { background: #1f2c45; color: #fff; text-align: center; padding: 1.8em 1em; box-shadow: 0 2px 12px rgba(0,0,0,0.12);}
-.logo-box { display: flex; align-items: center; justify-content: center; gap: 1em; margin-bottom: 0.6em;}
-.logo-box img { height: 54px; border-radius: 10px; background: #fff; padding: 5px;}
-.logo-title { font-weight: 700; font-size: 1.9em; letter-spacing: 0.5px; color: #fcca3e;}
-nav {margin-top: 0.5em;}
-nav a {color:#eaeaea; margin:0 1em; text-decoration:none; font-weight:500;}
-nav a:hover {color:#ffd86e;}
-.main-section {max-width:1050px;margin:4em auto;padding:2em;background:#fff;border-radius:16px;box-shadow:0 2px 14px rgba(0,0,0,0.05);}
-h2 {color:#1f2c45;font-size:2em;margin-bottom:0.9em;text-align:center;}
-.services-detail-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-  gap:2em;
-  margin-top:2.8em;
-}
-.service-detail {
-  background:#f8f9fb;
-  border-radius:14px;
-  box-shadow:0 2px 6px rgba(0,0,0,0.03);
-  padding:1.7em 1.2em 1.2em 1.2em;
-  display:flex; 
-  flex-direction:column;
-  min-height:330px;
-}
-.service-detail h3 {
-  color:#fca311;
-  margin:0 0 0.4em 0;
-  font-size:1.28em;
-}
-.service-detail p {
-  flex:1;
-  margin-bottom:0.7em;
-}
-.service-detail ul {
-  padding:0 0 0 1.3em;
-  margin:0;
-  font-size:1.06em;
-}
-@media(max-width:768px){
-  .main-section{margin:2em 0.8em;}
-  .services-detail-grid{grid-template-columns:1fr;}
-}
-footer {background:#1f2c45; color:#ccc; text-align:center; padding:2em 1em; margin-top:2em;}
-footer a {color:#fcca3e; text-decoration:none; margin:0 0.5em;}
-footer a:hover {text-decoration:underline;}
-</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Our Services | Precision Project Solutions</title>
+    <meta name="description" content="Explore our expert project management services, including PMO setup, planning, risk management, contract management, and software implementation.">
+    
+    <meta property="og:title" content="Our Services | Precision Project Solutions">
+    <meta property="og:description" content="From PMO setup to risk and contract management, discover how our expert services can drive your project success.">
+    <meta property="og:url" content="https://www.precisionprojectsolutions.com/services.html">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="logo.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="logo.jpg">
+    <link rel="canonical" href="https://www.precisionprojectsolutions.com/services.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+        /* Global styles copied from index.html */
+        :root {
+          --color-primary: #1f2c45;
+          --color-secondary: #212534;
+          --color-accent: #fcca3e;
+          --color-accent-hover: #ffd86e;
+          --color-light: #ffffff;
+          --color-bg: #f8f9fb;
+          --font-main: 'Outfit', sans-serif;
+          --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+          --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        html { scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+          font-family: var(--font-main); background: var(--color-bg);
+          color: var(--color-secondary); line-height: 1.7;
+        }
+        .container {
+          max-width: 1100px; margin: 0 auto;
+          padding: 4em 2em; overflow: hidden;
+        }
+        h1, h2, h3 {
+          color: var(--color-primary); font-weight: 600;
+          margin-bottom: 0.6em; line-height: 1.3;
+        }
+        h2 {
+          font-size: 2.4rem; text-align: center;
+          margin-bottom: 1.5em;
+        }
+        
+        /* Header & Nav */
+        .main-header {
+          background: var(--color-light); color: var(--color-primary);
+          display: flex; justify-content: space-between; align-items: center;
+          padding: 1.2em 2em; position: sticky; top: 0;
+          z-index: 1000; box-shadow: var(--shadow); height: 80px;
+        }
+        .logo-box { display: flex; align-items: center; gap: 0.8em; }
+        .logo-link { display: flex; align-items: center; gap: 0.8em; text-decoration: none; }
+        .logo-box img { height: 50px; border-radius: 8px; }
+        .logo-title {
+          font-weight: 700; font-size: 1.5rem;
+          color: var(--color-primary);
+        }
+        .main-nav { display: flex; gap: 2em; }
+        .main-nav a {
+          color: var(--color-secondary); text-decoration: none;
+          font-weight: 600; font-size: 1rem;
+          transition: color 0.3s ease; position: relative; padding-bottom: 5px;
+        }
+        .main-nav a::after {
+          content: ''; position: absolute; bottom: 0; left: 0;
+          width: 0; height: 3px; background: var(--color-accent);
+          transition: width 0.3s ease;
+        }
+        .main-nav a:hover, .main-nav a.active { color: var(--color-primary); }
+        .main-nav a:hover::after, .main-nav a.active::after { width: 100%; }
+        .menu-toggle { display: none; background: none; border: none; font-size: 2rem; color: var(--color-primary); cursor: pointer; z-index: 1002; }
+
+        /* Footer */
+        .main-footer {
+          background: var(--color-primary); color: #ccc;
+          padding: 3em 2em; margin-top: 4em;
+        }
+        .footer-content {
+          max-width: 1100px; margin: 0 auto; display: flex;
+          justify-content: space-between; align-items: center;
+          flex-wrap: wrap; gap: 1em;
+        }
+        .footer-links { display: flex; gap: 1.5em; }
+        .footer-links a { color: var(--color-accent-hover); text-decoration: none; }
+        .footer-links a:hover { text-decoration: underline; }
+
+        /* Page-Specific Styles for Services */
+        .services-detail-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: 2em;
+          margin-top: 2.8em;
+        }
+        .service-detail {
+          background: var(--color-light);
+          border-radius: 14px;
+          border: 1px solid #eee;
+          box-shadow: var(--shadow);
+          padding: 2em;
+          display: flex;
+          flex-direction: column;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-detail:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+        .service-detail h3 {
+          color: var(--color-primary);
+          margin: 0 0 0.5em 0;
+          font-size: 1.4rem;
+        }
+        .service-detail p {
+          flex: 1;
+          margin-bottom: 1em;
+          font-size: 1.05em;
+        }
+        .service-detail ul {
+          padding: 0 0 0 1.3em;
+          margin: 0;
+          font-size: 1em;
+          line-height: 1.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+          .menu-toggle { display: block; }
+          .main-nav {
+            flex-direction: column; position: fixed;
+            top: 80px; left: 0; width: 100%;
+            height: calc(100vh - 80px);
+            background: var(--color-light);
+            padding: 2em; gap: 1.5em;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+            z-index: 1001;
+          }
+          .main-nav.active { transform: translateX(0); }
+          .main-nav a { font-size: 1.5rem; }
+          .container { padding: 3em 1em; }
+          .services-detail-grid { grid-template-columns: 1fr; }
+          .footer-content { flex-direction: column; text-align: center; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Precision Project Solutions",
+      "image": "https://www.precisionprojectsolutions.com/logo.jpg",
+      "@id": "https://www.precisionprojectsolutions.com",
+      "url": "https://www.precisionprojectsolutions.com",
+      "telephone": "+91-82334-98737",
+      "email": "info.precision.project.solutions@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "M503, Aarya Empire, Atladara",
+        "addressLocality": "Vadodara",
+        "addressRegion": "Gujarat",
+        "postalCode": "390012",
+        "addressCountry": "IN"
+      },
+      "description": "Expert project management consultancy specializing in PMO setup, risk management, and training.",
+      "sameAs": [
+        "https://linkedin.com/company/precisionprojectsolutions"
+      ],
+      "offers": [
+        { "@type": "Service", "name": "Project Planning & Controls" },
+        { "@type": "Service", "name": "Risk & Change Management" },
+        { "@type": "Service", "name": "PMO Setup & Training" },
+        { "@type": "Service", "name": "Contract & Vendor Management" },
+        { "@type": "Service", "name": "Software Implementation" },
+        { "@type": "Service", "name": "Interim Project Management" }
+      ]
+    }
+    </script>
 </head>
 <body>
-<header>
-  <div class="logo-box">
-    <img src="logo.jpg" alt="PPS Logo" />
-    <span class="logo-title">Precision Project Solutions</span>
-  </div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="results.html">Results</a>
-    <a href="blog.html">Blog</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+
+<header class="main-header">
+    <div class="logo-box">
+        <a href="index.html" class="logo-link">
+            <img src="logo.jpg" alt="Precision Project Solutions Logo" />
+            <span class="logo-title">Precision Project Solutions</span>
+        </a>
+    </div>
+    <nav class="main-nav" id="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="results.html">Results</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu">
+        &#9776; </button>
 </header>
 
-<section class="main-section">
-  <h2>Our Services – In Detail</h2>
-  <div class="services-detail-grid">
-    <div class="service-detail">
-      <h3>Project Planning & Controls</h3>
-      <p>We ensure your project schedules, budgets, and resources remain optimized from start to finish.</p>
-      <ul>
-        <li>Comprehensive baseline management</li>
-        <li>Dynamic progress reporting</li>
-        <li>Resource and cost forecasting</li>
-        <li>Earned value management</li>
-      </ul>
-    </div>
-    <div class="service-detail">
-      <h3>Risk & Change Management</h3>
-      <p>Proactive support for managing project uncertainty and adapting to evolving circumstances.</p>
-      <ul>
-        <li>Risk identification workshops</li>
-        <li>Quantitative risk analysis</li>
-        <li>Change control boards</li>
-        <li>Stakeholder communication plans</li>
-      </ul>
-    </div>
-    <div class="service-detail">
-      <h3>PMO Setup & Training</h3>
-      <p>Strategic PMO setups with tailored process mapping, policy drafting, and skill-building sessions.</p>
-      <ul>
-        <li>PMO process design and documentation</li>
-        <li>Custom training modules</li>
-        <li>Performance monitoring systems</li>
-        <li>PM maturity assessments</li>
-      </ul>
-    </div>
-    <div class="service-detail">
-      <h3>Contract & Vendor Management</h3>
-      <p>Contract drafting, review, and vendor oversight for timely, high-quality project deliverables.</p>
-      <ul>
-        <li>Contract strategy and bidding support</li>
-        <li>Vendor risk assessments</li>
-        <li>Performance auditing</li>
-        <li>Dispute and claims support</li>
-      </ul>
-    </div>
-    <div class="service-detail">
-      <h3>Software Implementation</h3>
-      <p>Selection and seamless onboarding of essential project management software for workflow optimization.</p>
-      <ul>
-        <li>Process-flow analysis</li>
-        <li>Tool selection workshops</li>
-        <li>Implementation & adoption planning</li>
-        <li>Integration with reporting dashboards</li>
-      </ul>
-    </div>
-    <div class="service-detail">
-      <h3>Interim Project Management</h3>
-      <p>Deploying project leaders on-demand to manage critical transitions or capacity challenges.</p>
-      <ul>
-        <li>Short-term executive PM leadership</li>
-        <li>Turnaround and recovery support</li>
-        <li>Risk and compliance management</li>
-        <li>Stakeholder alignment and reporting</li>
-      </ul>
-    </div>
-  </div>
-</section>
+<main>
+    <section class="container">
+        <h2 data-aos="fade-up">Our Services – In Detail</h2>
+        <div class="services-detail-grid">
+            
+            <div class="service-detail" data-aos="fade-up" data-aos-delay="100">
+                <h3>Project Planning & Controls</h3>
+                <p>We ensure your project schedules, budgets, and resources remain optimized from start to finish.</p>
+                <ul>
+                    <li>Comprehensive baseline management</li>
+                    <li>Dynamic progress reporting</li>
+                    <li>Resource and cost forecasting</li>
+                    <li>Earned value management</li>
+                </ul>
+            </div>
+            
+            <div class="service-detail" data-aos="fade-up" data-aos-delay="200">
+                <h3>Risk & Change Management</h3>
+                <p>Proactive support for managing project uncertainty and adapting to evolving circumstances.</p>
+                <ul>
+                    <li>Risk identification workshops</li>
+                    <li>Quantitative risk analysis</li>
+                    <li>Change control boards</li>
+                    <li>Stakeholder communication plans</li>
+                </ul>
+            </div>
+            
+            <div class="service-detail" data-aos="fade-up" data-aos-delay="300">
+                <h3>PMO Setup & Training</h3>
+                <p>Strategic PMO setups with tailored process mapping, policy drafting, and skill-building sessions.</p>
+                <ul>
+                    <li>PMO process design and documentation</li>
+                    <li>Custom training modules</li>
+                    <li>Performance monitoring systems</li>
+                    <li>PM maturity assessments</li>
+                </ul>
+            </div>
+            
+            <div class="service-detail" data-aos="fade-up" data-aos-delay="100">
+                <h3>Contract & Vendor Management</h3>
+                <p>Contract drafting, review, and vendor oversight for timely, high-quality project deliverables.</p>
+                <ul>
+                    <li>Contract strategy and bidding support</li>
+                    <li>Vendor risk assessments</li>
+                    <li>Performance auditing</li>
+                    <li>Dispute and claims support</li>
+                </ul>
+            </div>
+            
+            <div class="service-detail" data-aos="fade-up" data-aos-delay="200">
+                <h3>Software Implementation</h3>
+                <p>Selection and seamless onboarding of essential project management software for workflow optimization.</p>
+                <ul>
+                    <li>Process-flow analysis</li>
+                    <li>Tool selection workshops</li>
+                    <li>Implementation & adoption planning</li>
+                    <li>Integration with reporting dashboards</li>
+                </ul>
+            </div>
+            
+            <div class="service-detail" data-aos="fade-up" data-aos-delay="300">
+                <h3>Interim Project Management</h3>
+                <p>Deploying project leaders on-demand to manage critical transitions or capacity challenges.</p>
+                <ul>
+                    <li>Short-term executive PM leadership</li>
+                    <li>Turnaround and recovery support</li>
+                    <li>Risk and compliance management</li>
+                    <li>Stakeholder alignment and reporting</li>
+                </ul>
+            </div>
+            
+        </div>
+    </section>
+</main>
 
-<footer>
-  <p>&copy; 2025 Precision Project Solutions · <a href="#">Privacy Policy</a> · <a href="#">Terms & Conditions</a></p>
+<footer class="main-footer">
+    <div class="footer-content">
+        <p>&copy; 2025 Precision Project Solutions. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="https://linkedin.com/company/precisionprojectsolutions" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms.html">Terms & Conditions</a>
+        </div>
+    </div>
 </footer>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mainNav = document.getElementById('main-nav');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+                menuToggle.innerHTML = mainNav.classList.contains('active') ? '&#10005;' : '&#9776;';
+            });
+        }
+
+        // AOS Initialization
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            delay: 100,
+            offset: 120
+        });
+    });
+</script>
+
 </body>
 </html>
