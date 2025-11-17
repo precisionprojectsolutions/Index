@@ -98,15 +98,22 @@
         .footer-links a { color: var(--color-accent-hover); text-decoration: none; }
         .footer-links a:hover { text-decoration: underline; }
 
-        /* Page-Specific Styles for About Us */
-        .team-photo {
+        /* ===================================
+           == 1. CSS FIX: 2-COLUMN GRID
+           =================================== */
+        .about-grid {
+          display: grid;
+          grid-template-columns: 1fr 1.5fr; /* 40% image, 60% text */
+          gap: 3em;
+          align-items: center;
+        }
+        .about-img img {
           width: 100%;
-          max-height: 450px;
-          object-fit: cover;
           border-radius: 14px;
           box-shadow: var(--shadow-hover);
-          margin-bottom: 2.5em;
         }
+        /* (The old .team-photo class is no longer needed) */
+        
         .values {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -151,6 +158,13 @@
           .main-nav a { font-size: 1.5rem; }
           .container { padding: 3em 1em; }
           .footer-content { flex-direction: column; text-align: center; }
+
+          /* ===================================
+             == 2. CSS FIX: RESPONSIVE STACKING
+             =================================== */
+          .about-grid {
+            grid-template-columns: 1fr; /* Stack to 1 column on mobile */
+          }
         }
     </style>
 
@@ -203,18 +217,26 @@
 <main>
     <section class="container" data-aos="fade-up">
         <h2>About Us</h2>
-        <img src="about.jpg" alt="Precision Project Solutions About" class="team-photo" />
         
-        <p>Precision Project Solutions was founded by certified professionals dedicated to delivering measurable results for your projects. Guided by integrity, innovation, and genuine collaboration, we empower businesses to succeed on time and within budget.</p>
-        <p>With comprehensive industry experience, we strategically align projects with business goals, optimizing outcomes and driving sustainable growth.</p>
-        
-        <div class="values">
-            <div data-aos="fade-up" data-aos-delay="100"><strong>Integrity</strong> Transparent, ethical, client-focused.</div>
-            <div data-aos="fade-up" data-aos-delay="200"><strong>Results</strong> Impactful project outcomes that matter.</div>
-            <div data-aos="fade-up" data-aos-delay="300"><strong>Growth</strong> Empowering teams to scale sustainably.</div>
-            <div data-aos="fade-up" data-aos-delay="400"><strong>Collaboration</strong> Success through genuine partnership.</div>
-        </div>
-    </section>
+        <div class="about-grid">
+            
+            <div class="about-img" data-aos="fade-right" data-aos-delay="100">
+                <img src="about.jpg" alt="Precision Project Solutions About" />
+            </div>
+            
+            <div class="about-content" data-aos="fade-left" data-aos-delay="200">
+                <p>Precision Project Solutions was founded by certified professionals dedicated to delivering measurable results for your projects. Guided by integrity, innovation, and genuine collaboration, we empower businesses to succeed on time and within budget.</p>
+                <p>With comprehensive industry experience, we strategically align projects with business goals, optimizing outcomes and driving sustainable growth.</p>
+                
+                <div class="values">
+                    <div data-aos="fade-up" data-aos-delay="300"><strong>Integrity</strong> Transparent, ethical, client-focused.</div>
+                    <div data-aos="fade-up" data-aos-delay="400"><strong>Results</strong> Impactful project outcomes that matter.</div>
+                    <div data-aos="fade-up" data-aos-delay="500"><strong>Growth</strong> Empowering teams to scale sustainably.</div>
+                    <div data-aos="fade-up" data-aos-delay="600"><strong>Collaboration</strong> Success through genuine partnership.</div>
+                </div>
+            </div>
+            
+        </div> </section>
 </main>
 
 <footer class="main-footer">
