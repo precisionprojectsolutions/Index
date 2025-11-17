@@ -1,58 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Blog | Precision Project Solutions</title>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<style>
-/* Main styles copied from the index for consistency */
-body { font-family: 'Outfit', sans-serif; background: #f8f9fb; color: #212534; }
-header { background: #1f2c45; color: #fff; text-align: center; padding: 1.8em 1em;
-         box-shadow: 0 2px 12px rgba(0,0,0,0.12);}
-.logo-box { display: flex; align-items: center; justify-content: center; gap: 1em; margin-bottom: 0.6em; }
-.logo-box img { height: 54px; border-radius: 10px; background: #fff; padding: 5px; }
-.logo-title { font-weight: 700; font-size: 1.9em; letter-spacing: 0.5px; color: #fcca3e; }
-nav {margin-top: 0.5em;}
-nav a {color:#eaeaea; margin:0 1em; text-decoration:none; font-weight:500;}
-nav a:hover {color:#ffd86e;}
-section {max-width:900px;margin:3em auto;padding:2em;background:#fff;border-radius:16px;box-shadow:0 2px 14px rgba(0,0,0,0.05);}
-h2 {color:#1f2c45;font-size:2em;margin-bottom:1.2em;text-align:center;}
-.blog-embed {width: 100%; height: 1200px; border: none; border-radius: 12px; box-shadow: 0 1px 8px rgba(0,0,0,0.04);}
-@media(max-width: 768px){
-    section{margin:1.5em 1em;}
-    .blog-embed{height:1800px;}
-}
-footer {background:#1f2c45; color:#ccc; text-align:center; padding:2em 1em; margin-top:2em;}
-footer a {color:#fcca3e; text-decoration:none; margin:0 0.5em;}
-footer a:hover {text-decoration:underline;}
-</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Blog | Precision Project Solutions</title>
+    <meta name="description" content="Read the latest insights, trends, and expert analysis on project management, PMO setup, and risk control from Precision Project Solutions.">
+    
+    <meta property="og:title" content="Blog | Precision Project Solutions">
+    <meta property="og:description" content="Our expert insights on project management trends, PMO maturity, and more.">
+    <meta property="og:url" content="https://www.precisionprojectsolutions.com/blog.html">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="logo.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="logo.jpg">
+    <link rel="canonical" href="https://www.precisionprojectsolutions.com/blog.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+        /* Global styles copied from index.html */
+        :root {
+          --color-primary: #1f2c45;
+          --color-secondary: #212534;
+          --color-accent: #fcca3e;
+          --color-accent-hover: #ffd86e;
+          --color-light: #ffffff;
+          --color-bg: #f8f9fb;
+          --font-main: 'Outfit', sans-serif;
+          --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+          --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        html { scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+          font-family: var(--font-main); background: var(--color-bg);
+          color: var(--color-secondary); line-height: 1.7;
+        }
+        .container {
+          max-width: 1100px; margin: 0 auto;
+          padding: 4em 2em; overflow: hidden;
+        }
+        h1, h2, h3 {
+          color: var(--color-primary); font-weight: 600;
+          margin-bottom: 0.6em; line-height: 1.3;
+        }
+        h2 {
+          font-size: 2.4rem; text-align: center;
+          margin-bottom: 1.5em;
+        }
+        
+        /* Header & Nav */
+        .main-header {
+          background: var(--color-light); color: var(--color-primary);
+          display: flex; justify-content: space-between; align-items: center;
+          padding: 1.2em 2em; position: sticky; top: 0;
+          z-index: 1000; box-shadow: var(--shadow); height: 80px;
+        }
+        .logo-box { display: flex; align-items: center; gap: 0.8em; }
+        .logo-link { display: flex; align-items: center; gap: 0.8em; text-decoration: none; }
+        .logo-box img { height: 50px; border-radius: 8px; }
+        .logo-title {
+          font-weight: 700; font-size: 1.5rem;
+          color: var(--color-primary);
+        }
+        .main-nav { display: flex; gap: 2em; }
+        .main-nav a {
+          color: var(--color-secondary); text-decoration: none;
+          font-weight: 600; font-size: 1rem;
+          transition: color 0.3s ease; position: relative; padding-bottom: 5px;
+        }
+        .main-nav a::after {
+          content: ''; position: absolute; bottom: 0; left: 0;
+          width: 0; height: 3px; background: var(--color-accent);
+          transition: width 0.3s ease;
+        }
+        .main-nav a:hover, .main-nav a.active { color: var(--color-primary); }
+        .main-nav a:hover::after, .main-nav a.active::after { width: 100%; }
+        .menu-toggle { display: none; background: none; border: none; font-size: 2rem; color: var(--color-primary); cursor: pointer; z-index: 1002; }
+
+        /* Footer */
+        .main-footer {
+          background: var(--color-primary); color: #ccc;
+          padding: 3em 2em; margin-top: 4em;
+        }
+        .footer-content {
+          max-width: 1100px; margin: 0 auto; display: flex;
+          justify-content: space-between; align-items: center;
+          flex-wrap: wrap; gap: 1em;
+        }
+        .footer-links { display: flex; gap: 1.5em; }
+        .footer-links a { color: var(--color-accent-hover); text-decoration: none; }
+        .footer-links a:hover { text-decoration: underline; }
+
+        /* Page-Specific Styles for Blog */
+        .blog-embed {
+          width: 100%;
+          height: 1200px;
+          border: none;
+          border-radius: 14px;
+          box-shadow: var(--shadow-hover);
+        }
+        .blog-visit-link {
+          text-align:center;
+          padding-top:1.5em;
+          font-size: 1.1em;
+        }
+        .blog-visit-link a {
+          color: var(--color-primary);
+          font-weight: 600;
+          text-decoration: none;
+        }
+        .blog-visit-link a:hover {
+          color: var(--color-accent);
+          text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+          .menu-toggle { display: block; }
+          .main-nav {
+            flex-direction: column; position: fixed;
+            top: 80px; left: 0; width: 100%;
+            height: calc(100vh - 80px);
+            background: var(--color-light);
+            padding: 2em; gap: 1.5em;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+            z-index: 1001;
+          }
+          .main-nav.active { transform: translateX(0); }
+          .main-nav a { font-size: 1.5rem; }
+          .container { padding: 3em 1em; }
+          .blog-embed { height: 1800px; }
+          .footer-content { flex-direction: column; text-align: center; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Precision Project Solutions",
+      "image": "https://www.precisionprojectsolutions.com/logo.jpg",
+      "@id": "https://www.precisionprojectsolutions.com",
+      "url": "https://www.precisionprojectsolutions.com",
+      "telephone": "+91-82334-98737",
+      "email": "info.precision.project.solutions@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "M503, Aarya Empire, Atladara",
+        "addressLocality": "Vadodara",
+        "addressRegion": "Gujarat",
+        "postalCode": "390012",
+        "addressCountry": "IN"
+      },
+      "description": "Expert project management consultancy specializing in PMO setup, risk management, and training.",
+      "sameAs": [
+        "https://linkedin.com/company/precisionprojectsolutions"
+      ]
+    }
+    </script>
 </head>
 <body>
-<header>
-  <div class="logo-box">
-    <img src="logo.jpg" alt="PPS Logo" />
-    <span class="logo-title">Precision Project Solutions</span>
-  </div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="results.html">Results</a>
-    <a href="blog.html">Blog</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+
+<header class="main-header">
+    <div class="logo-box">
+        <a href="index.html" class="logo-link">
+            <img src="logo.jpg" alt="Precision Project Solutions Logo" />
+            <span class="logo-title">Precision Project Solutions</span>
+        </a>
+    </div>
+    <nav class="main-nav" id="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="results.html">Results</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu">
+        &#9776; </button>
 </header>
 
-<section>
-  <h2>Our Blog</h2>
-  <!-- Replace the src below with your actual BLOGSPOT url -->
-  <iframe class="blog-embed" src="https://precisionprojectsolutions.blogspot.com/" title="Precision Project Solutions Blog"></iframe>
-  <p style="text-align:center;padding-top:1em;">To read more or explore older posts, <a href="https://your-blogspot-blog-url.blogspot.com/" target="_blank" rel="noopener">visit our Blogspot site directly</a>.</p>
-</section>
+<main>
+    <section class="container" data-aos="fade-up">
+        <h2>Our Blog</h2>
+        <iframe class="blog-embed" src="https://precisionprojectsolutions.blogspot.com/" title="Precision Project Solutions Blog"></iframe>
+        <p class="blog-visit-link">To read more or explore older posts, <a href="https://precisionprojectsolutions.blogspot.com/" target="_blank" rel="noopener">visit our Blogspot site directly</a>.</p>
+    </section>
+</main>
 
-<footer>
-  <p>&copy; 2025 Precision Project Solutions · <a href="#">Privacy Policy</a> · <a href="#">Terms & Conditions</a></p>
+<footer class="main-footer">
+    <div class="footer-content">
+        <p>&copy; 2025 Precision Project Solutions. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="https://linkedin.com/company/precisionprojectsolutions" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms.html">Terms & Conditions</a>
+        </div>
+    </div>
 </footer>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mainNav = document.getElementById('main-nav');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+                menuToggle.innerHTML = mainNav.classList.contains('active') ? '&#10005;' : '&#9776;';
+            });
+        }
+
+        // AOS Initialization
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            delay: 100,
+            offset: 120
+        });
+    });
+</script>
+
 </body>
 </html>
