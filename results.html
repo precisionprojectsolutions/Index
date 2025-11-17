@@ -1,86 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Client Results | Precision Project Solutions</title>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<style>
-  body { font-family: 'Outfit', sans-serif; background: #f8f9fb; color: #212534; margin: 0; }
-  header {
-    background: #1f2c45; color: white; padding: 1.8em 1em; text-align: center; position: sticky; top: 0;
-    box-shadow: 0 2px 12px rgba(0,0,0,.12); z-index: 1000;
-  }
-  .logo-box { display: flex; gap: 1em; justify-content: center; align-items: center; margin-bottom: 0.6em; }
-  .logo-box img { height: 54px; background: white; border-radius: 10px; padding: 5px; }
-  .logo-title { font-weight: 700; font-size: 1.9em; color: #fcca3e; letter-spacing: 0.5px; }
-  nav { margin-top: 0.5em; }
-  nav a { color: #eaeaea; margin: 0 1em; text-decoration: none; font-weight: 500; transition: color 0.3s; }
-  nav a:hover { color: #ffd86e; }
-  section {
-    max-width: 900px; margin: 4em auto; background: white; padding: 2em; border-radius: 16px;
-    box-shadow: 0 2px 14px rgba(0,0,0,0.05); text-align: center;
-  }
-  h2 { font-size: 2em; margin-bottom: 1.5em; color: #1f2c45; }
-  .results-grid {
-    display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 2em;
-  }
-  .result {
-    background: #f8f9fb; padding: 1.4em; border-radius: 12px; box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-    color: #2d3a57; font-size: 1.1em;
-  }
-  .result strong {
-    font-weight: 700; color: #fca311; font-size: 1.2em; margin-bottom: 0.6em; display: block;
-  }
-  .testimonial {
-    color: #fcca3e; font-style: italic; font-weight: 600;
-  }
-  @media(max-width:768px) {
-    section { margin: 2em 1em; }
-  }
-  footer {
-    background: #1f2c45; color: #ccc; text-align: center; padding: 2em 1em; margin-top: 4em;
-  }
-  footer a { color: #fcca3e; text-decoration: none; margin: 0 0.5em; }
-  footer a:hover { text-decoration: underline; }
-</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Client Results | Precision Project Solutions</title>
+    <meta name="description" content="See proven client results and testimonials from our work in cost reduction, efficiency gains, and successful project launches.">
+    
+    <meta property="og:title" content="Client Results | Precision Project Solutions">
+    <meta property="og:description" content="We deliver measurable results, from 20% cost overrun reductions to 25% efficiency gains.">
+    <meta property="og:url" content="https://www.precisionprojectsolutions.com/results.html">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="logo.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="logo.jpg">
+    <link rel="canonical" href="https://www.precisionprojectsolutions.com/results.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+        /* Global styles copied from index.html */
+        :root {
+          --color-primary: #1f2c45;
+          --color-secondary: #212534;
+          --color-accent: #fcca3e;
+          --color-accent-hover: #ffd86e;
+          --color-light: #ffffff;
+          --color-bg: #f8f9fb;
+          --font-main: 'Outfit', sans-serif;
+          --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+          --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        html { scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+          font-family: var(--font-main); background: var(--color-bg);
+          color: var(--color-secondary); line-height: 1.7;
+        }
+        .container {
+          max-width: 1100px; margin: 0 auto;
+          padding: 4em 2em; overflow: hidden;
+        }
+        h1, h2, h3 {
+          color: var(--color-primary); font-weight: 600;
+          margin-bottom: 0.6em; line-height: 1.3;
+        }
+        h2 {
+          font-size: 2.4rem; text-align: center;
+          margin-bottom: 1.5em;
+        }
+        
+        /* Header & Nav */
+        .main-header {
+          background: var(--color-light); color: var(--color-primary);
+          display: flex; justify-content: space-between; align-items: center;
+          padding: 1.2em 2em; position: sticky; top: 0;
+          z-index: 1000; box-shadow: var(--shadow); height: 80px;
+        }
+        .logo-box { display: flex; align-items: center; gap: 0.8em; }
+        .logo-link { display: flex; align-items: center; gap: 0.8em; text-decoration: none; }
+        .logo-box img { height: 50px; border-radius: 8px; }
+        .logo-title {
+          font-weight: 700; font-size: 1.5rem;
+          color: var(--color-primary);
+        }
+        .main-nav { display: flex; gap: 2em; }
+        .main-nav a {
+          color: var(--color-secondary); text-decoration: none;
+          font-weight: 600; font-size: 1rem;
+          transition: color 0.3s ease; position: relative; padding-bottom: 5px;
+        }
+        .main-nav a::after {
+          content: ''; position: absolute; bottom: 0; left: 0;
+          width: 0; height: 3px; background: var(--color-accent);
+          transition: width 0.3s ease;
+        }
+        .main-nav a:hover, .main-nav a.active { color: var(--color-primary); }
+        .main-nav a:hover::after, .main-nav a.active::after { width: 100%; }
+        .menu-toggle { display: none; background: none; border: none; font-size: 2rem; color: var(--color-primary); cursor: pointer; z-index: 1002; }
+
+        /* Footer */
+        .main-footer {
+          background: var(--color-primary); color: #ccc;
+          padding: 3em 2em; margin-top: 4em;
+        }
+        .footer-content {
+          max-width: 1100px; margin: 0 auto; display: flex;
+          justify-content: space-between; align-items: center;
+          flex-wrap: wrap; gap: 1em;
+        }
+        .footer-links { display: flex; gap: 1.5em; }
+        .footer-links a { color: var(--color-accent-hover); text-decoration: none; }
+        .footer-links a:hover { text-decoration: underline; }
+
+        /* Page-Specific Styles for Results */
+        .results-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 2em;
+          text-align: left;
+        }
+        .result {
+          background: var(--color-light);
+          padding: 2em;
+          border-radius: 12px;
+          box-shadow: var(--shadow);
+          font-size: 1.1em;
+          border-top: 5px solid var(--color-accent);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .result:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+        .result strong {
+          font-weight: 700;
+          color: var(--color-primary);
+          font-size: 1.25em;
+          margin-bottom: 0.6em;
+          display: block;
+        }
+        .result.testimonial {
+          background: var(--color-primary);
+          color: var(--color-light);
+          border-top-color: var(--color-accent-hover);
+          font-style: italic;
+          font-size: 1.15em;
+          line-height: 1.6;
+        }
+        .result.testimonial cite {
+            display: block;
+            margin-top: 1em;
+            font-style: normal;
+            font-weight: 600;
+            color: var(--color-accent);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+          .menu-toggle { display: block; }
+          .main-nav {
+            flex-direction: column; position: fixed;
+            top: 80px; left: 0; width: 100%;
+            height: calc(100vh - 80px);
+            background: var(--color-light);
+            padding: 2em; gap: 1.5em;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+            z-index: 1001;
+          }
+          .main-nav.active { transform: translateX(0); }
+          .main-nav a { font-size: 1.5rem; }
+          .container { padding: 3em 1em; }
+          .footer-content { flex-direction: column; text-align: center; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Precision Project Solutions",
+      "image": "https://www.precisionprojectsolutions.com/logo.jpg",
+      "@id": "https://www.precisionprojectsolutions.com",
+      "url": "https://www.precisionprojectsolutions.com",
+      "telephone": "+91-82334-98737",
+      "email": "info.precision.project.solutions@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "M503, Aarya Empire, Atladara",
+        "addressLocality": "Vadodara",
+        "addressRegion": "Gujarat",
+        "postalCode": "390012",
+        "addressCountry": "IN"
+      },
+      "description": "Expert project management consultancy specializing in PMO setup, risk management, and training.",
+      "sameAs": [
+        "https://linkedin.com/company/precisionprojectsolutions"
+      ]
+    }
+    </script>
 </head>
 <body>
-<header>
-  <div class="logo-box">
-    <img src="logo.jpg" alt="PPS Logo" />
-    <span class="logo-title">Precision Project Solutions</span>
-  </div>
-  <nav>
-    <a href="index.html">Home</a> 
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a> 
-    <a href="results.html">Results</a>
-    <a href="blog.html">Blog</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+
+<header class="main-header">
+    <div class="logo-box">
+        <a href="index.html" class="logo-link">
+            <img src="logo.jpg" alt="Precision Project Solutions Logo" />
+            <span class="logo-title">Precision Project Solutions</span>
+        </a>
+    </div>
+    <nav class="main-nav" id="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="results.html" class="active">Results</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu">
+        &#9776; </button>
 </header>
-<section>
-  <h2>Client Results</h2>
-  <div class="results-grid">
-    <div class="result">
-      <strong>Startup Launch</strong>
-      Enabled early go-live with agile planning precision, capturing time-sensitive market opportunities.
+
+<main>
+    <section class="container" data-aos="fade-up">
+        <h2>Client Results</h2>
+        <div class="results-grid">
+            
+            <div class="result" data-aos="fade-up" data-aos-delay="100">
+                <strong>Startup Launch</strong>
+                Enabled early go-live with agile planning precision, capturing time-sensitive market opportunities.
+            </div>
+            
+            <div class="result testimonial" data-aos="fade-up" data-aos-delay="200">
+                “Our infrastructure projects achieved 25% higher efficiency through PPS leadership.”
+                <cite>– Senior Manager, InfraCo</cite>
+            </div>
+            
+            <div class="result" data-aos="fade-up" data-aos-delay="300">
+                <strong>Manufacturing Sector Improvement</strong>
+                Reduced cost overruns by 20% through a mature PMO framework and robust risk management.
+            </div>
+            
+            <div class="result testimonial" data-aos="fade-up" data-aos-delay="100">
+                “Thanks to their risk and change management, we avoided costly delays.”
+                <cite>– Project Director, ManufacTech</cite>
+            </div>
+            
+            <div class="result" data-aos="fade-up" data-aos-delay="200">
+                <strong>Software Implementation Success</strong>
+                Seamless onboarding of project management software reduced manual reporting time by 40%.
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<footer class="main-footer">
+    <div class="footer-content">
+        <p>&copy; 2025 Precision Project Solutions. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="https://linkedin.com/company/precisionprojectsolutions" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms.html">Terms & Conditions</a>
+        </div>
     </div>
-    <div class="result testimonial">“Our infrastructure projects achieved 25% higher efficiency through PPS leadership.” – Senior Manager, InfraCo</div>
-    <div class="result">
-      <strong>Manufacturing Sector Improvement</strong>
-      Reduced cost overruns by 20% through a mature PMO framework and robust risk management.
-    </div>
-    <div class="result testimonial">“Thanks to their risk and change management, we avoided costly delays.” – Project Director, ManufacTech</div>
-    <div class="result">
-      <strong>Software Implementation Success</strong>
-      Seamless onboarding of project management software reduced manual reporting time by 40%.
-    </div>
-  </div>
-</section>
-<footer>
-  <p>&copy; 2025 Precision Project Solutions · <a href="#">Privacy Policy</a> · <a href="#">Terms & Conditions</a></p>
 </footer>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mainNav = document.getElementById('main-nav');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+                menuToggle.innerHTML = mainNav.classList.contains('active') ? '&#10005;' : '&#9776;';
+            });
+        }
+
+        // AOS Initialization
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            delay: 100,
+            offset: 120
+        });
+    });
+</script>
+
 </body>
 </html>
