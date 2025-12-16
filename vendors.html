@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Vendor Portal | Precision Project Solutions</title>
+    <meta name="description" content="Vendor registration and verified vendor database for Precision Project Solutions.">
+    <meta name="robots" content="noindex, nofollow"> <link rel="icon" type="image/png" sizes="32x32" href="logo.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="logo.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+        /* ==================================================
+        == 1. GLOBAL STYLES (Inherited from Index)
+        =================================================== */
+        :root {
+          --color-primary: #1f2c45; 
+          --color-secondary: #212534; 
+          --color-accent: #fcca3e; 
+          --color-accent-hover: #ffd86e; 
+          --color-light: #ffffff;
+          --color-bg: #f8f9fb;
+          --font-main: 'Outfit', sans-serif;
+          --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+          --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        html { scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+          font-family: var(--font-main);
+          background: var(--color-bg);
+          color: var(--color-secondary);
+          line-height: 1.7;
+        }
+
+        /* Layout & Typography */
+        .container {
+          max-width: 1100px;
+          margin: 0 auto;
+          padding: 4em 2em;
+        }
+        h1, h2, h3 { color: var(--color-primary); font-weight: 600; line-height: 1.3; }
+        h2 { font-size: 2.4rem; text-align: center; margin-bottom: 1.5em; position: relative;}
+        h2::after {
+            content: ''; display: block; width: 60px; height: 4px; 
+            background: var(--color-accent); margin: 0.5em auto 0; border-radius: 2px;
+        }
+
+        /* Navigation (Same as Index) */
+        .main-header {
+          background: var(--color-light);
+          display: flex; justify-content: space-between; align-items: center;
+          padding: 1.2em 2em; position: sticky; top: 0; z-index: 1000;
+          box-shadow: var(--shadow); height: 80px;
+        }
+        .logo-box { display: flex; align-items: center; gap: 0.8em; }
+        .logo-link { display: flex; align-items: center; gap: 0.8em; text-decoration: none; }
+        .logo-box img { height: 50px; border-radius: 8px; }
+        .logo-title { font-weight: 700; font-size: 1.5rem; color: var(--color-primary); }
+        .main-nav { display: flex; gap: 2em; }
+        .main-nav a {
+          color: var(--color-secondary); text-decoration: none; font-weight: 600;
+          transition: color 0.3s ease; position: relative; padding-bottom: 5px;
+        }
+        .main-nav a:hover, .main-nav a.active { color: var(--color-primary); }
+        .main-nav a:hover::after, .main-nav a.active::after {
+          content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: var(--color-accent);
+        }
+        .menu-toggle { display: none; background: none; border: none; font-size: 2rem; cursor: pointer; color: var(--color-primary); }
+
+        /* Footer */
+        .main-footer { background: var(--color-primary); color: #ccc; padding: 3em 2em; margin-top: 4em; text-align: center;}
+
+        /* ==================================================
+        == 2. PAGE SPECIFIC STYLES (Vendor Page)
+        =================================================== */
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(31,44,69,0.9), rgba(31,44,69,0.8)), url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--color-light);
+            padding: 6em 2em 4em;
+            text-align: center;
+            margin-bottom: 2em;
+        }
+        .page-header h1 { color: var(--color-light); font-size: 3rem; margin-bottom: 0.2em; }
+        .page-header p { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+
+        /* Tab Switcher (Optional if you want to toggle views, but we will stack them for now) */
+        .section-divider { margin: 4em 0; border-top: 1px solid #ddd; }
+
+        /* --- Google Form Wrapper --- */
+        .form-wrapper {
+            background: var(--color-light);
+            padding: 2em;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        .responsive-iframe-container {
+            position: relative;
+            padding-bottom: 100%; /* Adjust based on form length */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+        }
+        .responsive-iframe-container iframe {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%; border: 0;
+        }
+
+        /* --- Database Controls (Search & Filter) --- */
+        .db-controls {
+            display: flex;
+            gap: 1em;
+            margin-bottom: 2em;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background: var(--color-light);
+            padding: 1.5em;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+        .search-box { flex: 2; min-width: 250px; position: relative; }
+        .filter-box { flex: 1; min-width: 200px; }
+
+        .db-input {
+            width: 100%;
+            padding: 0.8em 1em;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            font-family: var(--font-main);
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            outline: none;
+        }
+        .db-input:focus { border-color: var(--color-primary); }
+        
+        /* --- Stunning Table Design --- */
+        .table-container {
+            overflow-x: auto;
+            border-radius: 12px;
+            box-shadow: var(--shadow-hover);
+            background: var(--color-light);
+        }
+        
+        .vendor-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 800px; /* Ensures table doesn't squish on mobile */
+        }
+
+        .vendor-table thead {
+            background: var(--color-primary);
+            color: var(--color-light);
+        }
+
+        .vendor-table th, .vendor-table td {
+            padding: 1.2em 1.5em;
+            text-align: left;
+        }
+
+        .vendor-table th {
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .vendor-table tbody tr {
+            border-bottom: 1px solid #eee;
+            transition: transform 0.2s ease, background 0.2s;
+        }
+
+        .vendor-table tbody tr:last-child { border-bottom: none; }
+        
+        .vendor-table tbody tr:hover {
+            background: #fdfdfd;
+            transform: scale(1.005); /* Stunning lift effect */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            z-index: 10;
+            position: relative;
+        }
+
+        /* Table Data Styling */
+        .v-name { font-weight: 700; color: var(--color-primary); }
+        .v-category { color: #666; font-size: 0.95rem; }
+        .v-location { font-size: 0.95rem; color: #555; display: flex; align-items: center; gap: 5px; }
+
+        /* Status Badges */
+        .badge {
+            padding: 0.4em 1em;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .badge-verified { background: #e3f9e5; color: #1b5e20; } /* Green */
+        .badge-pending { background: #fff8e1; color: #f57f17; } /* Orange */
+        .badge-new { background: #e3f2fd; color: #0d47a1; } /* Blue */
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-nav { display: none; } /* Simplified for this snippet */
+            .menu-toggle { display: block; }
+            .db-controls { flex-direction: column; }
+            .page-header h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="main-header">
+    <div class="logo-box">
+        <a href="index.html" class="logo-link">
+            <img src="logo.jpg" alt="Precision Project Solutions Logo" />
+            <span class="logo-title">Precision Project Solutions</span>
+        </a>
+    </div>
+    <nav class="main-nav" id="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="vendors.html" class="active">Vendors</a> 
+        <a href="contact.html">Contact</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Open menu">&#9776;</button>
+</header>
+
+<main>
+    <section class="page-header" data-aos="fade-in">
+        <h1>Vendor Portal</h1>
+        <p>Join our network of elite partners or browse our verified database.</p>
+    </section>
+
+    <div class="container">
+        
+        <section id="database" data-aos="fade-up">
+            <h2>Verified Vendor Database</h2>
+            <p style="text-align: center; margin-bottom: 2em;">Browse our list of pre-vetted consultants, suppliers, and contractors.</p>
+
+            <div class="db-controls">
+                <div class="search-box">
+                    <input type="text" id="searchInput" class="db-input" placeholder="Search by name, location or keyword...">
+                </div>
+                <div class="filter-box">
+                    <select id="categoryFilter" class="db-input">
+                        <option value="all">All Categories</option>
+                        <option value="construction">Civil Construction</option>
+                        <option value="electrical">Electrical Supplies</option>
+                        <option value="consultancy">PM Consultancy</option>
+                        <option value="software">Software / IT</option>
+                        <option value="logistics">Logistics</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table class="vendor-table" id="vendorTable">
+                    <thead>
+                        <tr>
+                            <th>Company / Vendor Name</th>
+                            <th>Category</th>
+                            <th>Location</th>
+                            <th>Rating</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-category="construction">
+                            <td>
+                                <div class="v-name">BuildRight Infra Ltd.</div>
+                                <small>ID: VEN-001</small>
+                            </td>
+                            <td class="v-category">Civil Construction</td>
+                            <td class="v-location">📍 Vadodara, GJ</td>
+                            <td>⭐⭐⭐⭐⭐</td>
+                            <td><span class="badge badge-verified">Verified</span></td>
+                        </tr>
+                        <tr data-category="electrical">
+                            <td>
+                                <div class="v-name">VoltMaster Solutions</div>
+                                <small>ID: VEN-002</small>
+                            </td>
+                            <td class="v-category">Electrical Supplies</td>
+                            <td class="v-location">📍 Ahmedabad, GJ</td>
+                            <td>⭐⭐⭐⭐</td>
+                            <td><span class="badge badge-verified">Verified</span></td>
+                        </tr>
+                        <tr data-category="software">
+                            <td>
+                                <div class="v-name">TechFlow Systems</div>
+                                <small>ID: VEN-003</small>
+                            </td>
+                            <td class="v-category">Software / IT</td>
+                            <td class="v-location">📍 Mumbai, MH</td>
+                            <td>⭐⭐⭐⭐⭐</td>
+                            <td><span class="badge badge-new">New</span></td>
+                        </tr>
+                        <tr data-category="consultancy">
+                            <td>
+                                <div class="v-name">Apex Risk Management</div>
+                                <small>ID: VEN-004</small>
+                            </td>
+                            <td class="v-category">PM Consultancy</td>
+                            <td class="v-location">📍 Delhi, NCR</td>
+                            <td>⭐⭐⭐⭐</td>
+                            <td><span class="badge badge-pending">Pending</span></td>
+                        </tr>
+                        <tr data-category="logistics">
+                            <td>
+                                <div class="v-name">SwiftMove Logistics</div>
+                                <small>ID: VEN-005</small>
+                            </td>
+                            <td class="v-category">Logistics</td>
+                            <td class="v-location">📍 Surat, GJ</td>
+                            <td>⭐⭐⭐</td>
+                            <td><span class="badge badge-verified">Verified</span></td>
+                        </tr>
+                        <tr data-category="construction">
+                            <td>
+                                <div class="v-name">SolidBase Contractors</div>
+                                <small>ID: VEN-006</small>
+                            </td>
+                            <td class="v-category">Civil Construction</td>
+                            <td class="v-location">📍 Rajkot, GJ</td>
+                            <td>⭐⭐⭐⭐</td>
+                            <td><span class="badge badge-verified">Verified</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div id="noResults" style="display:none; text-align:center; padding: 2em; color: #777;">
+                    No vendors found matching your criteria.
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section id="register" data-aos="fade-up">
+            <h2>New Vendor Registration</h2>
+            <p style="text-align: center; margin-bottom: 2em;">Interested in working with Precision Project Solutions? Fill out the form below.</p>
+            
+            <div class="form-wrapper">
+                <div class="responsive-iframe-container">
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfD_PLACEHOLDER_FORM_ID/viewform?embedded=true" 
+                            width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">
+                        Loading…
+                    </iframe>
+                </div>
+                </div>
+        </section>
+
+    </div>
+</main>
+
+<footer class="main-footer">
+    <div class="footer-content">
+        <p>&copy; 2025 Precision Project Solutions. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    // Initialize Animations
+    AOS.init({
+        offset: 100,
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true
+    });
+
+    // --- Search & Filter Logic ---
+    const searchInput = document.getElementById('searchInput');
+    const categoryFilter = document.getElementById('categoryFilter');
+    const tableBody = document.querySelector('#vendorTable tbody');
+    const rows = tableBody.getElementsByTagName('tr');
+    const noResultsMsg = document.getElementById('noResults');
+
+    function filterTable() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const categoryValue = categoryFilter.value;
+        let visibleCount = 0;
+
+        for (let i = 0; i < rows.length; i++) {
+            const row = rows[i];
+            
+            // Get text content from Name (0) and Location (2) columns
+            const nameText = row.cells[0].textContent.toLowerCase();
+            const locationText = row.cells[2].textContent.toLowerCase();
+            const rowCategory = row.getAttribute('data-category');
+
+            // Logic: Match Search AND Match Category
+            const matchesSearch = nameText.includes(searchTerm) || locationText.includes(searchTerm);
+            const matchesCategory = categoryValue === 'all' || rowCategory === categoryValue;
+
+            if (matchesSearch && matchesCategory) {
+                row.style.display = ""; // Show
+                visibleCount++;
+            } else {
+                row.style.display = "none"; // Hide
+            }
+        }
+
+        // Show/Hide "No Results" message
+        if(visibleCount === 0) {
+            noResultsMsg.style.display = 'block';
+        } else {
+            noResultsMsg.style.display = 'none';
+        }
+    }
+
+    // Event Listeners
+    searchInput.addEventListener('keyup', filterTable);
+    categoryFilter.addEventListener('change', filterTable);
+
+    // Mobile Menu Toggle (Reused from index)
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+    menuToggle.addEventListener('click', () => {
+        mainNav.classList.toggle('active');
+    });
+</script>
+
+</body>
+</html>
