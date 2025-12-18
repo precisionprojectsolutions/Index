@@ -13,6 +13,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
     <style>
         /* ==================================================
            GLOBAL & LAYOUT STYLES
@@ -21,7 +23,6 @@
           --color-primary: #1f2c45; 
           --color-secondary: #212534; 
           --color-accent: #fcca3e; 
-          --color-accent-hover: #ffd86e; 
           --color-light: #ffffff;
           --color-bg: #f8f9fb;
           --font-main: 'Outfit', sans-serif;
@@ -51,13 +52,13 @@
 
         /* Page Header */
         .page-header { background: linear-gradient(rgba(31,44,69,0.9), rgba(31,44,69,0.8)), url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; color: var(--color-light); padding: 6em 2em 4em; text-align: center; margin-bottom: 2em; }
-        .page-header h1 { font-size: 3rem; margin-bottom: 0.2em; }
+        .page-header h1 { font-size: 3rem; margin-bottom: 0.2em; color: #fff; }
+        .page-header p { color: #eee; }
 
         /* ==================================================
            DATABASE & PAGINATION STYLES
         =================================================== */
         
-        /* Controls Container */
         .db-controls {
             display: flex; gap: 1em; margin-bottom: 1.5em; flex-wrap: wrap; justify-content: space-between;
             background: var(--color-light); padding: 1.5em; border-radius: 12px; box-shadow: var(--shadow);
@@ -73,7 +74,6 @@
         .db-input:focus { border-color: var(--color-primary); }
         .db-label { font-weight: 600; font-size: 0.9rem; margin-bottom: 0.3em; display: block; color: #666; }
 
-        /* Table */
         .table-container { overflow-x: auto; border-radius: 12px; box-shadow: var(--shadow); background: var(--color-light); min-height: 400px; }
         .vendor-table { width: 100%; border-collapse: collapse; min-width: 800px; }
         .vendor-table thead { background: var(--color-primary); color: var(--color-light); }
@@ -87,40 +87,21 @@
         .badge-pending { background: #fff8e1; color: #f57f17; }
         .badge-new { background: #e3f2fd; color: #0d47a1; }
 
-        /* --- PAGINATION STYLES --- */
+        /* Pagination */
         .pagination-wrapper {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5em 0;
-            margin-top: 1em;
-            flex-wrap: wrap;
-            gap: 1em;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.5em 0; margin-top: 1em; flex-wrap: wrap; gap: 1em;
         }
         .page-info { color: #666; font-size: 0.95rem; }
         .pagination-controls { display: flex; gap: 0.5em; }
         
         .page-btn {
-            background: var(--color-light);
-            border: 1px solid #ddd;
-            color: var(--color-primary);
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
+            background: var(--color-light); border: 1px solid #ddd; color: var(--color-primary);
+            width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center;
+            cursor: pointer; font-weight: 600; transition: all 0.3s;
         }
         .page-btn:hover { background: #eee; }
-        .page-btn.active {
-            background: var(--color-accent);
-            border-color: var(--color-accent);
-            color: var(--color-primary);
-            transform: scale(1.1);
-        }
+        .page-btn.active { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-primary); transform: scale(1.1); }
         .page-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
         /* Form Wrapper */
@@ -128,7 +109,9 @@
         .responsive-iframe-container { position: relative; padding-bottom: 100%; height: 0; overflow: hidden; max-width: 100%; }
         .responsive-iframe-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-        /* Mobile */
+        /* Footer */
+        .main-footer { background: var(--color-primary); color: #ccc; padding: 3em 2em; margin-top: 4em; text-align: center; }
+
         @media (max-width: 768px) {
             .db-controls { flex-direction: column; align-items: stretch; }
             .pagination-wrapper { flex-direction: column; justify-content: center; }
@@ -176,14 +159,12 @@
                         <option value="100">100</option>
                     </select>
                 </div>
-
                 <div class="control-group search-group">
                     <div style="width: 100%">
                         <label class="db-label">Search</label>
                         <input type="text" id="searchInput" class="db-input" placeholder="Search name or location...">
                     </div>
                 </div>
-
                 <div class="control-group">
                     <div style="width: 100%">
                         <label class="db-label">Category</label>
@@ -210,16 +191,8 @@
                         </tr>
                     </thead>
                     <tbody id="tableBody">
-                        <tr data-category="construction">
-                            <td>
-                                <div class="v-name">BuildRight Infra Ltd.</div>
-                                <small>ID: VEN-001</small>
-                            </td>
-                            <td>Civil Construction</td>
-                            <td>📍 Vadodara, GJ</td>
-                            <td><span class="badge badge-verified">Verified</span></td>
-                        </tr>
-                        </tbody>
+                        <tr><td colspan="4" style="text-align:center;">Loading data...</td></tr>
+                    </tbody>
                 </table>
                 <div id="noResults" style="display:none; text-align:center; padding: 2em; color: #777;">
                     No results found.
@@ -227,9 +200,8 @@
             </div>
 
             <div class="pagination-wrapper">
-                <div class="page-info" id="pageInfo">Showing 1 to 25 of 60 entries</div>
-                <div class="pagination-controls" id="paginationBtnContainer">
-                    </div>
+                <div class="page-info" id="pageInfo">Showing 0 entries</div>
+                <div class="pagination-controls" id="paginationBtnContainer"></div>
             </div>
         </section>
 
@@ -239,8 +211,10 @@
             <h2>Vendor Registration</h2>
             <div class="form-wrapper">
                 <div class="responsive-iframe-container">
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfD_PLACEHOLDER/viewform?embedded=true" 
+                    
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfD_YOUR_FORM_ID_HERE/viewform?embedded=true" 
                             width="640" height="800" frameborder="0">Loading…</iframe>
+                    
                 </div>
             </div>
         </section>
@@ -256,37 +230,13 @@
 <script>
     AOS.init({ offset: 100, duration: 800, once: true });
 
-    // ============================================
-    // 1. DUMMY DATA GENERATOR (FOR DEMO ONLY)
-    // ============================================
-    // Only here so you can see pagination working with 25+ items. 
-    // Delete this function when you input real data.
-    function generateDummyData() {
-        const tbody = document.getElementById('tableBody');
-        const categories = ['construction', 'electrical', 'consultancy', 'software', 'logistics'];
-        const cities = ['Vadodara', 'Mumbai', 'Delhi', 'Bangalore', 'Surat', 'Rajkot'];
-        
-        for(let i=2; i <= 65; i++) {
-            const cat = categories[Math.floor(Math.random() * categories.length)];
-            const city = cities[Math.floor(Math.random() * cities.length)];
-            const row = document.createElement('tr');
-            row.setAttribute('data-category', cat);
-            row.innerHTML = `
-                <td><div class="v-name">Demo Vendor ${i}</div><small>ID: VEN-00${i}</small></td>
-                <td style="text-transform:capitalize">${cat}</td>
-                <td>📍 ${city}</td>
-                <td><span class="badge badge-verified">Verified</span></td>
-            `;
-            tbody.appendChild(row);
-        }
-    }
-    generateDummyData(); // <--- REMOVE THIS LINE LATER
+    // =========================================================
+    // !!! CHANGE THIS LINK TO YOUR GOOGLE SHEET CSV LINK !!!
+    // =========================================================
+    const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_EXAMPLE_LINK_HERE/pub?output=csv";
 
-    // ============================================
-    // 2. MAIN PAGINATION & FILTER LOGIC
-    // ============================================
+    // --- SYSTEM LOGIC (DO NOT TOUCH BELOW) ---
     const tableBody = document.getElementById('tableBody');
-    const allRows = Array.from(tableBody.querySelectorAll('tr')); // Capture all rows on load
     const searchInput = document.getElementById('searchInput');
     const categoryFilter = document.getElementById('categoryFilter');
     const rowsPerPageSelect = document.getElementById('rowsPerPage');
@@ -294,123 +244,127 @@
     const pageInfo = document.getElementById('pageInfo');
     const noResults = document.getElementById('noResults');
 
+    let allRows = [];
+    let currentFilteredRows = [];
     let currentPage = 1;
     let rowsPerPage = parseInt(rowsPerPageSelect.value);
-    let currentFilteredRows = [...allRows]; // Start with all rows
 
-    function init() {
-        updateTableLogic();
+    // 1. Load Data
+    function loadSheetData() {
+        Papa.parse(SHEET_URL, {
+            download: true,
+            header: true, 
+            complete: function(results) {
+                const data = results.data;
+                tableBody.innerHTML = '';
+                allRows = [];
+
+                data.forEach(item => {
+                    if(!item.Name) return; // Skip empty rows
+
+                    const tr = document.createElement('tr');
+                    const catFilterVal = item.Category ? item.Category.toLowerCase().trim() : 'others';
+                    tr.setAttribute('data-category', catFilterVal);
+
+                    let badgeClass = 'badge-pending';
+                    if(item.Status && item.Status.toLowerCase() === 'verified') badgeClass = 'badge-verified';
+                    if(item.Status && item.Status.toLowerCase() === 'new') badgeClass = 'badge-new';
+
+                    tr.innerHTML = `
+                        <td>
+                            <div class="v-name">${item.Name}</div>
+                            <small>ID: ${item.ID || ''}</small>
+                        </td>
+                        <td style="text-transform:capitalize">${item.Category || ''}</td>
+                        <td>📍 ${item.Location || ''}</td>
+                        <td><span class="badge ${badgeClass}">${item.Status || 'Pending'}</span></td>
+                    `;
+                    allRows.push(tr);
+                });
+                updateTableLogic();
+            },
+            error: function(err) {
+                console.error("Error:", err);
+                tableBody.innerHTML = '<tr><td colspan="4" style="text-align:center; color:red;">Could not load data. Check CSV link.</td></tr>';
+            }
+        });
     }
 
-    // Master Function: Handles Filtering -> Then Pagination -> Then Rendering
+    // 2. Filter & Paginate
     function updateTableLogic() {
-        // 1. FILTERING
         const searchTerm = searchInput.value.toLowerCase();
         const categoryValue = categoryFilter.value;
 
         currentFilteredRows = allRows.filter(row => {
             const textContent = row.innerText.toLowerCase();
             const rowCategory = row.getAttribute('data-category');
-            
+            const matchesCategory = categoryValue === 'all' || rowCategory.includes(categoryValue);
             const matchesSearch = textContent.includes(searchTerm);
-            const matchesCategory = categoryValue === 'all' || rowCategory === categoryValue;
-            
             return matchesSearch && matchesCategory;
         });
 
-        // Reset to page 1 if filter changes
-        // (But we need to check if this call came from a page click. 
-        // For simplicity, we reset page on filter change in the event listeners).
-        
-        // 2. PAGINATION CALCULATIONS
         const totalItems = currentFilteredRows.length;
         const totalPages = Math.ceil(totalItems / rowsPerPage);
-        
-        // Handle "No Results"
+
         if(totalItems === 0) {
             noResults.style.display = 'block';
             tableBody.innerHTML = ''; 
-            pageInfo.innerText = 'Showing 0 entries';
             paginationContainer.innerHTML = '';
+            pageInfo.innerText = '0 entries';
             return;
         } else {
             noResults.style.display = 'none';
         }
 
-        // Ensure currentPage isn't out of bounds (e.g., if we filtered down to 1 page)
         if (currentPage > totalPages) currentPage = 1;
-
         const startIndex = (currentPage - 1) * rowsPerPage;
         const endIndex = startIndex + rowsPerPage;
         const rowsToShow = currentFilteredRows.slice(startIndex, endIndex);
 
-        // 3. RENDER TABLE ROWS
-        // We detach all rows first, then append only the visible ones. 
-        // This is more performant than toggling display:none on 1000 items.
         tableBody.innerHTML = ''; 
         rowsToShow.forEach(row => tableBody.appendChild(row));
-
-        // 4. RENDER PAGINATION BUTTONS
         renderPaginationControls(totalPages, totalItems, startIndex + 1, Math.min(endIndex, totalItems));
     }
 
+    // 3. Render Buttons
     function renderPaginationControls(totalPages, totalItems, startItem, endItem) {
-        // Update Info Text
         pageInfo.innerText = `Showing ${startItem} to ${endItem} of ${totalItems} entries`;
-        
         paginationContainer.innerHTML = '';
 
-        // Previous Button
-        const prevBtn = document.createElement('button');
-        prevBtn.className = 'page-btn';
-        prevBtn.innerHTML = '&laquo;';
-        prevBtn.disabled = currentPage === 1;
-        prevBtn.onclick = () => { if(currentPage > 1) { currentPage--; updateTableLogic(); }};
-        paginationContainer.appendChild(prevBtn);
-
-        // Page Numbers
-        // To prevent too many buttons, we logic could be added here to show ... 
-        // For now, we show all pages as per request (1, 2... n)
-        for(let i = 1; i <= totalPages; i++) {
+        const createBtn = (text, onClick, disabled, active) => {
             const btn = document.createElement('button');
-            btn.className = `page-btn ${i === currentPage ? 'active' : ''}`;
-            btn.innerText = i;
-            btn.onclick = () => { currentPage = i; updateTableLogic(); };
+            btn.className = `page-btn ${active ? 'active' : ''}`;
+            btn.innerHTML = text;
+            btn.disabled = disabled;
+            btn.onclick = onClick;
             paginationContainer.appendChild(btn);
+        };
+
+        createBtn('&laquo;', () => { currentPage--; updateTableLogic(); }, currentPage === 1, false);
+        
+        let startPage = Math.max(1, currentPage - 1);
+        let endPage = Math.min(totalPages, currentPage + 1);
+        if(totalPages > 3) {
+            if(currentPage === 1) endPage = 3;
+            if(currentPage === totalPages) startPage = totalPages - 2;
         }
 
-        // Next Button
-        const nextBtn = document.createElement('button');
-        nextBtn.className = 'page-btn';
-        nextBtn.innerHTML = '&raquo;';
-        nextBtn.disabled = currentPage === totalPages;
-        nextBtn.onclick = () => { if(currentPage < totalPages) { currentPage++; updateTableLogic(); }};
-        paginationContainer.appendChild(nextBtn);
+        for(let i = startPage; i <= endPage; i++) {
+            createBtn(i, () => { currentPage = i; updateTableLogic(); }, false, i === currentPage);
+        }
+
+        createBtn('&raquo;', () => { currentPage++; updateTableLogic(); }, currentPage === totalPages, false);
     }
 
-    // ============================================
-    // 3. EVENT LISTENERS
-    // ============================================
-    
-    // When Search or Filter changes, reset to Page 1
+    // Listeners
     searchInput.addEventListener('input', () => { currentPage = 1; updateTableLogic(); });
     categoryFilter.addEventListener('change', () => { currentPage = 1; updateTableLogic(); });
-    
-    // When Rows Per Page changes, reset to Page 1
-    rowsPerPageSelect.addEventListener('change', (e) => { 
-        rowsPerPage = parseInt(e.target.value); 
-        currentPage = 1; 
-        updateTableLogic(); 
-    });
+    rowsPerPageSelect.addEventListener('change', (e) => { rowsPerPage = parseInt(e.target.value); currentPage = 1; updateTableLogic(); });
+    document.querySelector('.menu-toggle').addEventListener('click', () => { document.querySelector('.main-nav').classList.toggle('active'); });
 
-    // Mobile Menu
-    document.querySelector('.menu-toggle').addEventListener('click', () => {
-        document.querySelector('.main-nav').classList.toggle('active');
-    });
-
-    // Start
-    init();
-
+    // Init
+    loadSheetData();
 </script>
+
 </body>
 </html>
