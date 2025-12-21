@@ -49,7 +49,9 @@
         .main-nav a { color: var(--color-secondary); text-decoration: none; font-weight: 600; transition: color 0.3s; position: relative; padding-bottom: 5px; }
         .main-nav a:hover, .main-nav a.active { color: var(--color-primary); }
         .main-nav a:hover::after, .main-nav a.active::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: var(--color-accent); }
-        .menu-toggle { display: none; background: none; border: none; font-size: 2rem; cursor: pointer; color: var(--color-primary); }
+        
+        /* Mobile Toggle Icon */
+        .menu-toggle { display: none; background: none; border: none; font-size: 2rem; cursor: pointer; color: var(--color-primary); z-index: 1002;}
 
         /* Page Header */
         .page-header { background: linear-gradient(rgba(31,44,69,0.9), rgba(31,44,69,0.8)), url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; color: var(--color-light); padding: 6em 2em 4em; text-align: center; margin-bottom: 2em; }
@@ -65,8 +67,6 @@
             align-items: center;
         }
         .control-group { display: flex; gap: 1em; flex: 1; min-width: 200px; }
-        
-        /* Adjusted Search Group to take full width available */
         .search-group { flex: 10; } 
         
         .db-input {
@@ -89,54 +89,31 @@
         .badge-pending { background: #fff8e1; color: #f57f17; }
         .badge-new { background: #e3f2fd; color: #0d47a1; }
 
-        /* --- BUTTON STYLES --- */
         .btn-view {
-            background: transparent;
-            border: 2px solid var(--color-primary);
-            color: var(--color-primary);
-            padding: 0.5em 1.2em;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            white-space: nowrap;
+            background: transparent; border: 2px solid var(--color-primary); color: var(--color-primary);
+            padding: 0.5em 1.2em; border-radius: 6px; font-weight: 600; font-size: 0.9rem;
+            cursor: pointer; transition: all 0.3s ease; white-space: nowrap;
         }
         .btn-view:hover {
-            background: var(--color-primary);
-            color: var(--color-light);
-            box-shadow: 0 4px 10px rgba(31, 44, 69, 0.2);
+            background: var(--color-primary); color: var(--color-light); box-shadow: 0 4px 10px rgba(31, 44, 69, 0.2);
         }
 
         /* --- MODAL (POPUP) STYLES --- */
         .modal-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.6); z-index: 2000;
-            display: none; /* Hidden by default */
-            justify-content: center; align-items: center;
-            backdrop-filter: blur(3px);
+            display: none; justify-content: center; align-items: center; backdrop-filter: blur(3px);
         }
         .modal-box {
-            background: white; width: 90%; max-width: 500px;
-            padding: 2.5em; border-radius: 12px;
-            text-align: center; position: relative;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-            animation: popIn 0.3s ease-out;
+            background: white; width: 90%; max-width: 500px; padding: 2.5em; border-radius: 12px;
+            text-align: center; position: relative; box-shadow: 0 15px 40px rgba(0,0,0,0.2); animation: popIn 0.3s ease-out;
         }
-        @keyframes popIn {
-            from { transform: scale(0.8); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-        .close-modal {
-            position: absolute; top: 15px; right: 20px;
-            font-size: 1.5rem; cursor: pointer; color: #888;
-        }
+        @keyframes popIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        .close-modal { position: absolute; top: 15px; right: 20px; font-size: 1.5rem; cursor: pointer; color: #888; }
         .modal-title { font-size: 1.6rem; margin-bottom: 0.5em; color: var(--color-primary); }
         .modal-text { color: #555; margin-bottom: 2em; }
         .btn-modal {
-            background: var(--color-accent); color: var(--color-primary);
-            padding: 1em 2em; text-decoration: none; border-radius: 8px;
-            font-weight: 700; display: inline-block; transition: 0.3s;
+            background: var(--color-accent); color: var(--color-primary); padding: 1em 2em; text-decoration: none; border-radius: 8px; font-weight: 700; display: inline-block; transition: 0.3s;
         }
         .btn-modal:hover { background: var(--color-accent-hover); transform: translateY(-2px); }
 
@@ -155,11 +132,39 @@
         .responsive-iframe-container { position: relative; padding-bottom: 100%; height: 0; overflow: hidden; max-width: 100%; }
         .responsive-iframe-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
+        /* ==================================================
+           MOBILE STYLES (FIXED)
+        =================================================== */
         @media (max-width: 768px) {
             .db-controls { flex-direction: column; align-items: stretch; }
             .pagination-wrapper { flex-direction: column; justify-content: center; }
-            .main-nav { display: none; } 
+            
+            /* Toggle Button Visible on Mobile */
             .menu-toggle { display: block; }
+
+            /* Navigation Drawer Style */
+            .main-nav { 
+                display: flex; 
+                flex-direction: column; 
+                position: fixed; 
+                top: 80px; 
+                left: 0; 
+                width: 100%; 
+                height: calc(100vh - 80px); 
+                background: var(--color-light); 
+                padding: 2em; 
+                gap: 1.5em; 
+                transform: translateX(-100%); /* Hidden by default */
+                transition: transform 0.3s ease-in-out; 
+                z-index: 1001; 
+            }
+            
+            /* The 'Active' class brings it into view */
+            .main-nav.active { 
+                transform: translateX(0); 
+            }
+            
+            .main-nav a { font-size: 1.5rem; }
         }
     </style>
 </head>
@@ -179,7 +184,7 @@
         <a href="vendors.html" class="active">Vendors</a>
         <a href="contact.html">Contact</a>
     </nav>
-    <button class="menu-toggle" aria-label="Open menu">&#9776;</button>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Open menu">&#9776;</button>
 </header>
 
 <main>
@@ -417,7 +422,21 @@
 
     searchInput.addEventListener('input', () => { currentPage = 1; updateTableLogic(); });
     rowsPerPageSelect.addEventListener('change', (e) => { rowsPerPage = parseInt(e.target.value); currentPage = 1; updateTableLogic(); });
-    document.querySelector('.menu-toggle').addEventListener('click', () => { document.querySelector('.main-nav').classList.toggle('active'); });
+    
+    // --- FIXED MENU TOGGLE LOGIC ---
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+        const mainNav = document.getElementById('main-nav');
+        const menuToggle = document.getElementById('menu-toggle');
+        
+        mainNav.classList.toggle('active');
+        
+        // Change Icon from Hamburger (☰) to Close (X)
+        if(mainNav.classList.contains('active')) {
+            menuToggle.innerHTML = '&#10005;'; // X icon
+        } else {
+            menuToggle.innerHTML = '&#9776;'; // Hamburger icon
+        }
+    });
 
     loadSheetData();
 </script>
