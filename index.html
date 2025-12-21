@@ -217,6 +217,17 @@
           color: var(--color-light);
         }
 
+        /* NEW BUTTON STYLE FOR VENDOR DARK SECTION */
+        .btn-light-outline {
+            background: transparent;
+            color: var(--color-light);
+            border: 2px solid var(--color-accent);
+        }
+        .btn-light-outline:hover {
+            background: var(--color-accent);
+            color: var(--color-primary);
+        }
+
         .cta-bar {
           background: var(--color-accent-hover);
           color: var(--color-primary);
@@ -380,6 +391,45 @@
         .service-box:hover h3 {
           color: var(--color-accent);
         }
+
+        /* --- NEW VENDORS SECTION STYLES --- */
+        #vendors {
+            background-color: var(--color-primary);
+            color: var(--color-light);
+            text-align: center;
+            position: relative;
+        }
+        #vendors h2 { color: var(--color-light); }
+        #vendors h2::after { 
+            content: ''; display: block; width: 60px; height: 4px; 
+            background: var(--color-accent); margin: 0.5em auto; border-radius: 2px;
+        }
+        
+        .vendor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3em;
+            margin-top: 3em;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .vendor-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 2.5em;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        .vendor-card:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-5px);
+            border-color: var(--color-accent);
+        }
+        .vendor-card h3 { color: var(--color-accent); font-size: 1.5rem; margin-bottom: 0.5em; }
+        .vendor-card p { color: #ddd; font-size: 1rem; margin-bottom: 1.5em; }
+        .v-icon { font-size: 3rem; margin-bottom: 0.5em; display: block; }
+
 
         /* --- Results Section --- */
         .results-grid {
@@ -593,6 +643,11 @@
             flex-direction: column;
             text-align: center;
           }
+          
+          /* New Vendor Grid Mobile */
+          .vendor-grid {
+            grid-template-columns: 1fr;
+          }
         }
     </style>
 
@@ -644,6 +699,7 @@
         <a href="index.html" class="active">Home</a>
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
+        <a href="vendors.html">Vendors</a>
         <a href="results.html">Results</a>
         <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
@@ -738,6 +794,28 @@
         </div>
     </section>
 
+    <section id="vendors" class="container-fluid" data-aos="fade-up">
+        <h2>Strategic Vendor Ecosystem</h2>
+        <p style="max-width: 700px; margin: 0 auto; opacity: 0.9;">
+            Reduce procurement costs and lead times by up to 20%. We bridge the gap between project managers and verified local suppliers to ensure your project materials and services arrive on time, every time.
+        </p>
+
+        <div class="vendor-grid">
+            <div class="vendor-card" data-aos="fade-right">
+                <span class="v-icon">🔍</span>
+                <h3>Find Vendors</h3>
+                <p>Access our curated database of verified vendors, contractors, and material suppliers in Vadodara and nearby regions. Reduce search time and ensure quality.</p>
+                <a href="vendors.html" class="btn btn-primary">Browse Database</a>
+            </div>
+
+            <div class="vendor-card" data-aos="fade-left">
+                <span class="v-icon">🤝</span>
+                <h3>Join the Network</h3>
+                <p>Are you a supplier or contractor? Register with us to increase your visibility to top-tier project managers and get direct leads for upcoming projects.</p>
+                <a href="vendors.html#register" class="btn btn-light-outline">Register as Vendor</a>
+            </div>
+        </div>
+    </section>
     <section id="results" class="container" data-aos="fade-up">
         <h2>Proven Client Results</h2>
         <div class="results-grid">
@@ -764,7 +842,7 @@
             <div class="blog-image-wrapper" data-aos="fade-right">
                 <img class="blog-img" src="https://plus.unsplash.com/premium_photo-1682434403587-1313db01ed02?auto=format&fit=crop&q=80&w=870" alt="A person writing project management notes in a journal." />
             </div>
-            <div class="blog-list-wrapper" data-aos"fade-left" data-aos-delay="100">
+            <div class="blog-list-wrapper" data-aos="fade-left" data-aos-delay="100">
                 <ul class="blog-list">
                     <li><a href="blog/top-5-pm-trends-2025.html">Top 5 Project Management Trends for 2025</a></li>
                     <li><a href="blog/scalable-pmo-framework.html">Building a Scalable PMO: A Step-by-Step Framework</a></li>
