@@ -23,6 +23,7 @@
           --color-primary: #1f2c45; 
           --color-secondary: #212534; 
           --color-accent: #fcca3e; 
+          --color-accent-hover: #ffd86e; 
           --color-light: #ffffff;
           --color-bg: #f8f9fb;
           --font-main: 'Outfit', sans-serif;
@@ -58,14 +59,15 @@
         /* ==================================================
            DATABASE & PAGINATION STYLES
         =================================================== */
-        
         .db-controls {
             display: flex; gap: 1em; margin-bottom: 1.5em; flex-wrap: wrap; justify-content: space-between;
             background: var(--color-light); padding: 1.5em; border-radius: 12px; box-shadow: var(--shadow);
             align-items: center;
         }
         .control-group { display: flex; gap: 1em; flex: 1; min-width: 200px; }
-        .search-group { flex: 2; }
+        
+        /* Adjusted Search Group to take full width available */
+        .search-group { flex: 10; } 
         
         .db-input {
             width: 100%; padding: 0.8em 1em; border: 2px solid #eee; border-radius: 8px;
@@ -87,30 +89,71 @@
         .badge-pending { background: #fff8e1; color: #f57f17; }
         .badge-new { background: #e3f2fd; color: #0d47a1; }
 
-        /* Pagination */
-        .pagination-wrapper {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 1.5em 0; margin-top: 1em; flex-wrap: wrap; gap: 1em;
+        /* --- BUTTON STYLES --- */
+        .btn-view {
+            background: transparent;
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+            padding: 0.5em 1.2em;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
         }
+        .btn-view:hover {
+            background: var(--color-primary);
+            color: var(--color-light);
+            box-shadow: 0 4px 10px rgba(31, 44, 69, 0.2);
+        }
+
+        /* --- MODAL (POPUP) STYLES --- */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6); z-index: 2000;
+            display: none; /* Hidden by default */
+            justify-content: center; align-items: center;
+            backdrop-filter: blur(3px);
+        }
+        .modal-box {
+            background: white; width: 90%; max-width: 500px;
+            padding: 2.5em; border-radius: 12px;
+            text-align: center; position: relative;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            animation: popIn 0.3s ease-out;
+        }
+        @keyframes popIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .close-modal {
+            position: absolute; top: 15px; right: 20px;
+            font-size: 1.5rem; cursor: pointer; color: #888;
+        }
+        .modal-title { font-size: 1.6rem; margin-bottom: 0.5em; color: var(--color-primary); }
+        .modal-text { color: #555; margin-bottom: 2em; }
+        .btn-modal {
+            background: var(--color-accent); color: var(--color-primary);
+            padding: 1em 2em; text-decoration: none; border-radius: 8px;
+            font-weight: 700; display: inline-block; transition: 0.3s;
+        }
+        .btn-modal:hover { background: var(--color-accent-hover); transform: translateY(-2px); }
+
+        /* Pagination */
+        .pagination-wrapper { display: flex; justify-content: space-between; align-items: center; padding: 1.5em 0; margin-top: 1em; flex-wrap: wrap; gap: 1em; }
         .page-info { color: #666; font-size: 0.95rem; }
         .pagination-controls { display: flex; gap: 0.5em; }
-        
-        .page-btn {
-            background: var(--color-light); border: 1px solid #ddd; color: var(--color-primary);
-            width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center;
-            cursor: pointer; font-weight: 600; transition: all 0.3s;
-        }
+        .page-btn { background: var(--color-light); border: 1px solid #ddd; color: var(--color-primary); width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-weight: 600; transition: all 0.3s; }
         .page-btn:hover { background: #eee; }
         .page-btn.active { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-primary); transform: scale(1.1); }
         .page-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
-        /* Form Wrapper */
+        /* Footer */
+        .main-footer { background: var(--color-primary); color: #ccc; padding: 3em 2em; margin-top: 4em; text-align: center; }
         .form-wrapper { background: var(--color-light); padding: 2em; border-radius: 12px; box-shadow: var(--shadow); text-align: center; margin-top: 4em; }
         .responsive-iframe-container { position: relative; padding-bottom: 100%; height: 0; overflow: hidden; max-width: 100%; }
         .responsive-iframe-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-
-        /* Footer */
-        .main-footer { background: var(--color-primary); color: #ccc; padding: 3em 2em; margin-top: 4em; text-align: center; }
 
         @media (max-width: 768px) {
             .db-controls { flex-direction: column; align-items: stretch; }
@@ -159,23 +202,11 @@
                         <option value="100">100</option>
                     </select>
                 </div>
+                
                 <div class="control-group search-group">
                     <div style="width: 100%">
                         <label class="db-label">Search</label>
                         <input type="text" id="searchInput" class="db-input" placeholder="Search name or location...">
-                    </div>
-                </div>
-                <div class="control-group">
-                    <div style="width: 100%">
-                        <label class="db-label">Category</label>
-                        <select id="categoryFilter" class="db-input">
-                            <option value="all">All Categories</option>
-                            <option value="construction">Manufacturer</option>
-                            <option value="electrical">Food Processing Company</option>
-                            <option value="consultancy">PM Consultancy</option>
-                            <option value="software">Software / IT</option>
-                            <option value="logistics">Logistics</option>
-                        </select>
                     </div>
                 </div>
             </div>
@@ -188,10 +219,11 @@
                             <th>Category</th>
                             <th>Location</th>
                             <th>Status</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody id="tableBody">
-                        <tr><td colspan="4" style="text-align:center;">Loading data...</td></tr>
+                        <tr><td colspan="5" style="text-align:center;">Loading data...</td></tr>
                     </tbody>
                 </table>
                 <div id="noResults" style="display:none; text-align:center; padding: 2em; color: #777;">
@@ -212,7 +244,8 @@
             <div class="form-wrapper">
                 <div class="responsive-iframe-container">
                     
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd2i9-sffF8EdTbklh0gby9zoxxUgY1OczaimuCpvp-rQioTA/viewform?embedded=true" width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd2i9-sffF8EdTbklh0gby9zoxxUgY1OczaimuCpvp-rQioTA/viewform?embedded=true" 
+                        width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
                     
                 </div>
             </div>
@@ -225,30 +258,59 @@
     <p>&copy; 2025 Precision Project Solutions.</p>
 </footer>
 
+<div class="modal-overlay" id="leadModal">
+    <div class="modal-box">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <h3 class="modal-title">Unlock Vendor Details</h3>
+        <p class="modal-text">
+            Access to contact numbers and email addresses is available for <b>FREE</b> to registered users.
+            <br><br>
+            Please register your inquiry to view full details instantly.
+        </p>
+        
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_YOUR_CLIENT_FORM_ID/viewform" target="_blank" class="btn-modal">
+            Register for Free Access
+        </a>
+    </div>
+</div>
+
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
     AOS.init({ offset: 100, duration: 800, once: true });
 
     // =========================================================
-    // !!! CHANGE THIS LINK TO YOUR GOOGLE SHEET CSV LINK !!!
+    // !!! CHANGE THIS TO YOUR CSV LINK !!!
     // =========================================================
-    const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT7D7v6hix-Defu4Y0SJz1cWBFq-2BiiyGgSteygTdrfN3kz5VRvfdvAS28_ZJZywX4VJtaSlZPyu7w/pub?gid=0&single=true&output=csv";
+    const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT7D7v6hix-Defu4Y0SJz1cWBFq-2BiiyGgSteygTdrfN3kz5VRvfdvAS28_ZJZywX4VJtaSlZPyu7w/pub?output=csv";
 
-    // --- SYSTEM LOGIC (DO NOT TOUCH BELOW) ---
+    // --- LOGIC ---
     const tableBody = document.getElementById('tableBody');
     const searchInput = document.getElementById('searchInput');
-    const categoryFilter = document.getElementById('categoryFilter');
     const rowsPerPageSelect = document.getElementById('rowsPerPage');
     const paginationContainer = document.getElementById('paginationBtnContainer');
     const pageInfo = document.getElementById('pageInfo');
     const noResults = document.getElementById('noResults');
+    const modal = document.getElementById('leadModal');
 
     let allRows = [];
     let currentFilteredRows = [];
     let currentPage = 1;
     let rowsPerPage = parseInt(rowsPerPageSelect.value);
 
-    // 1. Load Data
+    // Modal Logic
+    function openModal() {
+        modal.style.display = 'flex';
+    }
+    function closeModal() {
+        modal.style.display = 'none';
+    }
+    // Close modal if clicking outside the box
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+
     function loadSheetData() {
         Papa.parse(SHEET_URL, {
             download: true,
@@ -259,12 +321,10 @@
                 allRows = [];
 
                 data.forEach(item => {
-                    if(!item.Name) return; // Skip empty rows
+                    if(!item.Name) return; 
 
                     const tr = document.createElement('tr');
-                    const catFilterVal = item.Category ? item.Category.toLowerCase().trim() : 'others';
-                    tr.setAttribute('data-category', catFilterVal);
-
+                    
                     let badgeClass = 'badge-pending';
                     if(item.Status && item.Status.toLowerCase() === 'verified') badgeClass = 'badge-verified';
                     if(item.Status && item.Status.toLowerCase() === 'new') badgeClass = 'badge-new';
@@ -277,6 +337,11 @@
                         <td style="text-transform:capitalize">${item.Category || ''}</td>
                         <td>📍 ${item.Location || ''}</td>
                         <td><span class="badge ${badgeClass}">${item.Status || 'Pending'}</span></td>
+                        <td>
+                            <button class="btn-view" onclick="openModal()">
+                                Get Details <span style="font-size:0.8em; color: green;">(Free)</span>
+                            </button>
+                        </td>
                     `;
                     allRows.push(tr);
                 });
@@ -284,22 +349,18 @@
             },
             error: function(err) {
                 console.error("Error:", err);
-                tableBody.innerHTML = '<tr><td colspan="4" style="text-align:center; color:red;">Could not load data. Check CSV link.</td></tr>';
+                tableBody.innerHTML = '<tr><td colspan="5" style="text-align:center; color:red;">Could not load data. Check CSV link.</td></tr>';
             }
         });
     }
 
-    // 2. Filter & Paginate
     function updateTableLogic() {
         const searchTerm = searchInput.value.toLowerCase();
-        const categoryValue = categoryFilter.value;
-
+        
         currentFilteredRows = allRows.filter(row => {
             const textContent = row.innerText.toLowerCase();
-            const rowCategory = row.getAttribute('data-category');
-            const matchesCategory = categoryValue === 'all' || rowCategory.includes(categoryValue);
             const matchesSearch = textContent.includes(searchTerm);
-            return matchesSearch && matchesCategory;
+            return matchesSearch;
         });
 
         const totalItems = currentFilteredRows.length;
@@ -325,7 +386,6 @@
         renderPaginationControls(totalPages, totalItems, startIndex + 1, Math.min(endIndex, totalItems));
     }
 
-    // 3. Render Buttons
     function renderPaginationControls(totalPages, totalItems, startItem, endItem) {
         pageInfo.innerText = `Showing ${startItem} to ${endItem} of ${totalItems} entries`;
         paginationContainer.innerHTML = '';
@@ -355,13 +415,10 @@
         createBtn('&raquo;', () => { currentPage++; updateTableLogic(); }, currentPage === totalPages, false);
     }
 
-    // Listeners
     searchInput.addEventListener('input', () => { currentPage = 1; updateTableLogic(); });
-    categoryFilter.addEventListener('change', () => { currentPage = 1; updateTableLogic(); });
     rowsPerPageSelect.addEventListener('change', (e) => { rowsPerPage = parseInt(e.target.value); currentPage = 1; updateTableLogic(); });
     document.querySelector('.menu-toggle').addEventListener('click', () => { document.querySelector('.main-nav').classList.toggle('active'); });
 
-    // Init
     loadSheetData();
 </script>
 
