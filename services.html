@@ -4,17 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <title>Our Services | Precision Project Solutions</title>
-    <meta name="description" content="Explore our expert project management services, including PMO setup, planning, risk management, contract management, and software implementation.">
+    <title>Our Services | Industrial Project Management Expertise | Precision Project Solutions</title>
+    <meta name="description" content="Detailed project management services for EPC and manufacturing sectors in Gujarat. Expertise in planning, software training, vendor management, and digital PMO.">
     
-    <meta property="og:title" content="Our Services | Precision Project Solutions">
-    <meta property="og:description" content="From PMO setup to risk and contract management, discover how our expert services can drive your project success.">
-    <meta property="og:url" content="https://www.precisionprojectsolutions.com/services.html">
+    <meta property="og:title" content="Expert Industrial Services | Precision Project Solutions">
+    <meta property="og:description" content="From EPC planning to Digital PMO implementation, explore our specialized services driving project success across India.">
+    <meta property="og:url" content="https://precisionprojectsolutions.github.io/Index/services.html">
     <meta property="og:type" content="website">
 
     <link rel="icon" type="image/png" sizes="32x32" href="logo.jpg">
     <link rel="icon" type="image/png" sizes="16x16" href="logo.jpg">
-    <link rel="canonical" href="https://www.precisionprojectsolutions.com/services.html">
+    <link rel="canonical" href="https://precisionprojectsolutions.github.io/Index/services.html">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <style>
-        /* Global styles copied from index.html */
         :root {
           --color-primary: #1f2c45;
           --color-secondary: #212534;
@@ -60,8 +59,7 @@
           padding: 1.2em 2em; position: sticky; top: 0;
           z-index: 1000; box-shadow: var(--shadow); height: 80px;
         }
-        .logo-box { display: flex; align-items: center; gap: 0.8em; }
-        .logo-link { display: flex; align-items: center; gap: 0.8em; text-decoration: none; }
+        .logo-box, .logo-link { display: flex; align-items: center; gap: 0.8em; text-decoration: none; }
         .logo-box img { height: 50px; border-radius: 8px; }
         .logo-title {
           font-weight: 700; font-size: 1.5rem;
@@ -108,7 +106,7 @@
           border-radius: 14px;
           border: 1px solid #eee;
           box-shadow: var(--shadow);
-          padding: 2em;
+          padding: 2.5em;
           display: flex;
           flex-direction: column;
           transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -119,19 +117,28 @@
         }
         .service-detail h3 {
           color: var(--color-primary);
-          margin: 0 0 0.5em 0;
-          font-size: 1.4rem;
+          margin: 0 0 0.8em 0;
+          font-size: 1.5rem;
+          border-bottom: 3px solid var(--color-accent);
+          display: inline-block;
+          padding-bottom: 5px;
+          width: fit-content;
         }
         .service-detail p {
-          flex: 1;
-          margin-bottom: 1em;
+          flex: 0 0 auto;
+          margin-bottom: 1.2em;
           font-size: 1.05em;
+          font-weight: 400;
         }
         .service-detail ul {
           padding: 0 0 0 1.3em;
           margin: 0;
-          font-size: 1em;
+          font-size: 0.95em;
           line-height: 1.8;
+          color: var(--color-secondary);
+        }
+        .service-detail li {
+            margin-bottom: 8px;
         }
 
         /* Responsive */
@@ -158,33 +165,19 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Precision Project Solutions",
-      "image": "https://www.precisionprojectsolutions.com/logo.jpg",
-      "@id": "https://www.precisionprojectsolutions.com",
-      "url": "https://www.precisionprojectsolutions.com",
-      "telephone": "+91-82334-98737",
-      "email": "info.precision.project.solutions@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "M503, Aarya Empire, Atladara",
-        "addressLocality": "Vadodara",
-        "addressRegion": "Gujarat",
-        "postalCode": "390012",
-        "addressCountry": "IN"
+      "@type": "Service",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Precision Project Solutions",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Vadodara",
+          "addressRegion": "Gujarat",
+          "addressCountry": "IN"
+        }
       },
-      "description": "Expert project management consultancy specializing in PMO setup, risk management, and training.",
-      "sameAs": [
-        "https://linkedin.com/company/precisionprojectsolutions"
-      ],
-      "offers": [
-        { "@type": "Service", "name": "Project Planning & Controls" },
-        { "@type": "Service", "name": "Risk & Change Management" },
-        { "@type": "Service", "name": "PMO Setup & Training" },
-        { "@type": "Service", "name": "Contract & Vendor Management" },
-        { "@type": "Service", "name": "Software Implementation" },
-        { "@type": "Service", "name": "Interim Project Management" }
-      ]
+      "serviceType": "Project Management Consultancy",
+      "areaServed": "India"
     }
     </script>
 </head>
@@ -199,8 +192,8 @@
     </div>
     <nav class="main-nav" id="main-nav">
         <a href="index.html">Home</a>
-        <a href="about.html"">About</a>
-        <a href="services.html" class="active>Services</a>
+        <a href="about.html">About</a>
+        <a href="services.html" class="active">Services</a>
         <a href="vendors.html">Vendors</a>
         <a href="results.html">Results</a>
         <a href="blog.html">Blog</a>
@@ -213,72 +206,80 @@
 
 <main>
     <section class="container">
-        <h2 data-aos="fade-up">Our Services – In Detail</h2>
+        <h2 data-aos="fade-up">Our Expertise – Driving Project Excellence</h2>
+        <p style="text-align: center; max-width: 800px; margin: -1em auto 3em auto; font-size: 1.1rem;">We provide end-to-end consultancy for the Engineering, Procurement, and Construction (EPC) sectors, specializing in structured delivery and technical upskilling.</p>
+        
         <div class="services-detail-grid">
             
-            <div class="service-detail" data-aos="fade-up" data-aos-delay="100">
-                <h3>Project Planning & Controls</h3>
-                <p>We ensure your project schedules, budgets, and resources remain optimized from start to finish.</p>
+            <div class="service-detail" data-aos="fade-up" data-aos-delay="100" id="project-planning-controls">
+                <h3>EPC Planning & Controls</h3>
+                <p>Full-lifecycle scheduling, S-Curve analysis, and manpower leveling for heavy industry and power projects.</p>
                 <ul>
-                    <li>Comprehensive baseline management</li>
-                    <li>Dynamic progress reporting</li>
-                    <li>Resource and cost forecasting</li>
-                    <li>Earned value management</li>
+                    <li>Integrated Master Schedule (IMS) Development</li>
+                    <li>Critical Path Method (CPM) Analysis</li>
+                    <li>Progress Measurement & S-Curve Reporting</li>
+                    <li>Resource Histogram & Budget Optimization</li>
+                    <li>Delay Analysis & Recovery Planning</li>
                 </ul>
             </div>
             
-            <div class="service-detail" data-aos="fade-up" data-aos-delay="200">
-                <h3>Risk & Change Management</h3>
-                <p>Proactive support for managing project uncertainty and adapting to evolving circumstances.</p>
+            <div class="service-detail" data-aos="fade-up" data-aos-delay="200" id="pm-software-training">
+                <h3>Project Management & Software Training</h3>
+                <p>Empower your technical teams with industry-specific mastery through hands-on training designed for EPC and manufacturing projects.</p>
                 <ul>
-                    <li>Risk identification workshops</li>
-                    <li>Quantitative risk analysis</li>
-                    <li>Change control boards</li>
-                    <li>Stakeholder communication plans</li>
+                    <li>Primavera P6 Professional Training</li>
+                    <li>Microsoft Project (MSP) for Industrial Workflows</li>
+                    <li>Advanced Excel & Power BI for Project Controls</li>
+                    <li>PMP® & CAPM® Certification Orientation</li>
+                    <li>Workshops on Earned Value Management (EVM)</li>
                 </ul>
             </div>
             
-            <div class="service-detail" data-aos="fade-up" data-aos-delay="300">
-                <h3>PMO Setup & Training</h3>
-                <p>Strategic PMO setups with tailored process mapping, policy drafting, and skill-building sessions.</p>
+            <div class="service-detail" data-aos="fade-up" data-aos-delay="300" id="vendor-supply-chain">
+                <h3>Vendor & Supply Chain Mgmt</h3>
+                <p>End-to-end management of vendor registrations, audits, and deliverable tracking across India.</p>
                 <ul>
-                    <li>PMO process design and documentation</li>
-                    <li>Custom training modules</li>
-                    <li>Performance monitoring systems</li>
-                    <li>PM maturity assessments</li>
+                    <li>Vendor Registration & Pre-qualification Portals</li>
+                    <li>Supplier Audit & Quality Compliance</li>
+                    <li>Expediting & Procurement Tracking (LOI to Delivery)</li>
+                    <li>IncoTerms & Logistics Coordination</li>
+                    <li>Vendor Performance KPI Dashboards</li>
                 </ul>
             </div>
             
-            <div class="service-detail" data-aos="fade-up" data-aos-delay="100">
-                <h3>Contract & Vendor Management</h3>
-                <p>Contract drafting, review, and vendor oversight for timely, high-quality project deliverables.</p>
+            <div class="service-detail" data-aos="fade-up" data-aos-delay="100" id="digital-pmo">
+                <h3>Digital PMO Implementation</h3>
+                <p>Transitioning from manual logs to automated dashboards using Power BI and advanced PPM tools.</p>
                 <ul>
-                    <li>Contract strategy and bidding support</li>
-                    <li>Vendor risk assessments</li>
-                    <li>Performance auditing</li>
-                    <li>Dispute and claims support</li>
+                    <li>Custom PMO Dashboard Design (Power BI)</li>
+                    <li>Automation of Weekly/Monthly Progress Reports</li>
+                    <li>Cloud-based Document Management Systems</li>
+                    <li>Real-time Site Monitoring Integration</li>
+                    <li>PPM Tool Selection & Setup</li>
                 </ul>
             </div>
             
-            <div class="service-detail" data-aos="fade-up" data-aos-delay="200">
-                <h3>Software Implementation</h3>
-                <p>Selection and seamless onboarding of essential project management software for workflow optimization.</p>
+            <div class="service-detail" data-aos="fade-up" data-aos-delay="200" id="contractual-claims">
+                <h3>Contractual Claim Support</h3>
+                <p>Expert documentation and delay analysis to support your contractual standing and variations.</p>
                 <ul>
-                    <li>Process-flow analysis</li>
-                    <li>Tool selection workshops</li>
-                    <li>Implementation & adoption planning</li>
-                    <li>Integration with reporting dashboards</li>
+                    <li>Forensic Delay Analysis (Extension of Time)</li>
+                    <li>Claim Quantification & Substantiation</li>
+                    <li>Dispute Avoidance Strategies</li>
+                    <li>Variation Order (VO) Management</li>
+                    <li>Contract Interpretation & Risk Review</li>
                 </ul>
             </div>
             
-            <div class="service-detail" data-aos="fade-up" data-aos-delay="300">
-                <h3>Interim Project Management</h3>
-                <p>Deploying project leaders on-demand to manage critical transitions or capacity challenges.</p>
+            <div class="service-detail" data-aos="fade-up" data-aos-delay="300" id="onsite-leadership">
+                <h3>On-Site Project Leadership</h3>
+                <p>Interim management for high-stakes project phases: commissioning, shutdowns, or turnarounds.</p>
                 <ul>
-                    <li>Short-term executive PM leadership</li>
-                    <li>Turnaround and recovery support</li>
-                    <li>Risk and compliance management</li>
-                    <li>Stakeholder alignment and reporting</li>
+                    <li>Shutdown & Turnaround Management</li>
+                    <li>Mechanical Run Test (MRT) Coordination</li>
+                    <li>Pre-commissioning & Handover Management</li>
+                    <li>Interim Project/Planning Manager Deployment</li>
+                    <li>HSE & Quality Audit Oversight</li>
                 </ul>
             </div>
             
@@ -288,7 +289,7 @@
 
 <footer class="main-footer">
     <div class="footer-content">
-        <p>&copy; 2025 Precision Project Solutions. All Rights Reserved.</p>
+        <p>&copy; 2026 Precision Project Solutions. All Rights Reserved.</p>
         <div class="footer-links">
             <a href="https://linkedin.com/company/precisionprojectsolutions" target="_blank" rel="noopener">LinkedIn</a>
             <a href="privacy-policy.html">Privacy Policy</a>
