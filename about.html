@@ -4,17 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <title>About Us | Precision Project Solutions</title>
-    <meta name="description" content="Learn about the mission, values, and experienced team at Precision Project Solutions, dedicated to delivering project excellence.">
+    <title>About Us | Industrial Project Specialists | Precision Project Solutions</title>
+    <meta name="description" content="Based in Vadodara, Precision Project Solutions specializes in the strategic success of EPC and industrial projects across Gujarat and India.">
     
-    <meta property="og:title" content="About Us | Precision Project Solutions">
-    <meta property="og:description" content="We are certified professionals dedicated to delivering measurable results for your projects, guided by integrity and collaboration.">
-    <meta property="og:url" content="https://www.precisionprojectsolutions.com/about.html">
+    <meta property="og:title" content="About Precision Project Solutions | EPC Consultancy">
+    <meta property="og:description" content="Industrial project specialists dedicated to structural success and technical mastery in Engineering, Procurement, and Construction.">
+    <meta property="og:url" content="https://precisionprojectsolutions.github.io/Index/about.html">
     <meta property="og:type" content="website">
 
     <link rel="icon" type="image/png" sizes="32x32" href="logo.jpg">
     <link rel="icon" type="image/png" sizes="16x16" href="logo.jpg">
-    <link rel="canonical" href="https://www.precisionprojectsolutions.com/about.html">
+    <link rel="canonical" href="https://precisionprojectsolutions.github.io/Index/about.html">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <style>
-        /* Global styles copied from index.html */
         :root {
           --color-primary: #1f2c45;
           --color-secondary: #212534;
@@ -55,15 +54,13 @@
         h3 { font-size: 1.5rem; }
         p { margin-bottom: 1.2em; font-size: 1.1em; }
         
-        /* Header & Nav */
         .main-header {
           background: var(--color-light); color: var(--color-primary);
           display: flex; justify-content: space-between; align-items: center;
           padding: 1.2em 2em; position: sticky; top: 0;
           z-index: 1000; box-shadow: var(--shadow); height: 80px;
         }
-        .logo-box { display: flex; align-items: center; gap: 0.8em; }
-        .logo-link { display: flex; align-items: center; gap: 0.8em; text-decoration: none; }
+        .logo-box, .logo-link { display: flex; align-items: center; gap: 0.8em; text-decoration: none; }
         .logo-box img { height: 50px; border-radius: 8px; }
         .logo-title {
           font-weight: 700; font-size: 1.5rem;
@@ -84,7 +81,69 @@
         .main-nav a:hover::after, .main-nav a.active::after { width: 100%; }
         .menu-toggle { display: none; background: none; border: none; font-size: 2rem; color: var(--color-primary); cursor: pointer; z-index: 1002; }
 
-        /* Footer */
+        .about-grid {
+          display: grid;
+          grid-template-columns: 1fr 1.5fr; 
+          gap: 3em;
+          align-items: center;
+          margin-bottom: 3em;
+        }
+        .about-img img {
+          width: 100%;
+          border-radius: 14px;
+          box-shadow: var(--shadow-hover);
+        }
+        
+        .values {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+          gap: 1.5em;
+          margin-top: 2.5em;
+        }
+        .values div {
+          background: var(--color-light);
+          border-left: 6px solid var(--color-accent);
+          padding: 1.5em;
+          border-radius: 10px;
+          box-shadow: var(--shadow);
+          transition: transform 0.3s ease;
+        }
+        .values div:hover {
+          transform: translateY(-5px);
+          box-shadow: var(--shadow-hover);
+        }
+        .values strong {
+          color: var(--color-primary);
+          font-weight: 700;
+          font-size: 1.15em;
+          display: block;
+          margin-bottom: 0.4em;
+        }
+
+        .cta-section {
+            text-align: center;
+            background: var(--color-primary);
+            color: var(--color-light);
+            padding: 4em 2em;
+            border-radius: 14px;
+            margin-top: 2em;
+        }
+        .btn-accent {
+            background: var(--color-accent);
+            color: var(--color-primary);
+            padding: 1em 2.5em;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            margin-top: 1.5em;
+            transition: 0.3s;
+        }
+        .btn-accent:hover {
+            background: var(--color-accent-hover);
+            transform: scale(1.05);
+        }
+
         .main-footer {
           background: var(--color-primary); color: #ccc;
           padding: 3em 2em; margin-top: 4em;
@@ -96,52 +155,7 @@
         }
         .footer-links { display: flex; gap: 1.5em; }
         .footer-links a { color: var(--color-accent-hover); text-decoration: none; }
-        .footer-links a:hover { text-decoration: underline; }
 
-        /* ===================================
-           == 1. CSS FIX: 2-COLUMN GRID
-           =================================== */
-        .about-grid {
-          display: grid;
-          grid-template-columns: 1fr 1.5fr; /* 40% image, 60% text */
-          gap: 3em;
-          align-items: center;
-        }
-        .about-img img {
-          width: 100%;
-          border-radius: 14px;
-          box-shadow: var(--shadow-hover);
-        }
-        /* (The old .team-photo class is no longer needed) */
-        
-        .values {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-          gap: 1.5em;
-          margin-top: 2.5em;
-        }
-        .values div {
-          background: var(--color-light);
-          border-left: 6px solid var(--color-accent);
-          padding: 1.5em;
-          border-radius: 10px;
-          font-weight: 500;
-          box-shadow: var(--shadow);
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .values div:hover {
-          transform: translateY(-5px);
-          box-shadow: var(--shadow-hover);
-        }
-        .values strong {
-          color: var(--color-primary);
-          font-weight: 700;
-          font-size: 1.1em;
-          display: block;
-          margin-bottom: 0.4em;
-        }
-
-        /* Responsive */
         @media (max-width: 768px) {
           .menu-toggle { display: block; }
           .main-nav {
@@ -155,43 +169,9 @@
             z-index: 1001;
           }
           .main-nav.active { transform: translateX(0); }
-          .main-nav a { font-size: 1.5rem; }
-          .container { padding: 3em 1em; }
-          .footer-content { flex-direction: column; text-align: center; }
-
-          /* ===================================
-             == 2. CSS FIX: RESPONSIVE STACKING
-             =================================== */
-          .about-grid {
-            grid-template-columns: 1fr; /* Stack to 1 column on mobile */
-          }
+          .about-grid { grid-template-columns: 1fr; }
         }
     </style>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Precision Project Solutions",
-      "image": "https://www.precisionprojectsolutions.com/logo.jpg",
-      "@id": "https://www.precisionprojectsolutions.com",
-      "url": "https://www.precisionprojectsolutions.com",
-      "telephone": "+91-82334-98737",
-      "email": "info.precision.project.solutions@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "M503, Aarya Empire, Atladara",
-        "addressLocality": "Vadodara",
-        "addressRegion": "Gujarat",
-        "postalCode": "390012",
-        "addressCountry": "IN"
-      },
-      "description": "Expert project management consultancy specializing in PMO setup, risk management, and training.",
-      "sameAs": [
-        "https://linkedin.com/company/precisionprojectsolutions"
-      ]
-    }
-    </script>
 </head>
 <body>
 
@@ -211,39 +191,54 @@
         <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
     </nav>
-    <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu">
-        &#9776; 
-    </button>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu">&#9776;</button>
 </header>
 
 <main>
     <section class="container" data-aos="fade-up">
-        <h2>About Us</h2>
+        <h2>Industrial Project Specialists</h2>
         
         <div class="about-grid">
-            
-            <div class="about-img" data-aos="fade-right" data-aos-delay="100">
-                <img src="about.jpg" alt="Precision Project Solutions About" />
+            <div class="about-img" data-aos="fade-right">
+                <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=800" alt="Precision Engineering Solutions Team" />
             </div>
             
-            <div class="about-content" data-aos="fade-left" data-aos-delay="200">
-                <p>Precision Project Solutions was founded by certified professionals dedicated to delivering measurable results for your projects. Guided by integrity, innovation, and genuine collaboration, we empower businesses to succeed on time and within budget.</p>
-                <p>With comprehensive industry experience, we strategically align projects with business goals, optimizing outcomes and driving sustainable growth.</p>
+            <div class="about-content" data-aos="fade-left">
+                <p>Based in Vadodara, <strong>Precision Project Solutions</strong> is an elite consultancy dedicated to the structural and strategic success of Engineering, Procurement, and Construction (EPC) projects. We understand the unique challenges of the Indian industrial landscape—from regulatory hurdles to supply chain complexities.</p>
+                <p>We don't just advise; we integrate with your team to implement robust planning frameworks that ensure every milestone is met with precision. Our approach combines global standards with local execution expertise.</p>
                 
                 <div class="values">
-                    <div data-aos="fade-up" data-aos-delay="300"><strong>Integrity</strong> Transparent, ethical, client-focused.</div>
-                    <div data-aos="fade-up" data-aos-delay="400"><strong>Results</strong> Impactful project outcomes that matter.</div>
-                    <div data-aos="fade-up" data-aos-delay="500"><strong>Growth</strong> Empowering teams to scale sustainably.</div>
-                    <div data-aos="fade-up" data-aos-delay="600"><strong>Collaboration</strong> Success through genuine partnership.</div>
+                    <div data-aos="fade-up" data-aos-delay="100">
+                        <strong>Local Insight</strong>
+                        Deep understanding of Gujarat's industrial hubs and regulatory environment.
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="200">
+                        <strong>Technical Mastery</strong>
+                        Experts in Primavera P6, MS Project, and advanced Power BI dashboards.
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="300">
+                        <strong>Operational Rigor</strong>
+                        Focused on reducing 'Dead Time' on-site through predictive scheduling.
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="400">
+                        <strong>Proven ROI</strong>
+                        Strategies designed to save costs, optimize resources, and protect margins.
+                    </div>
                 </div>
             </div>
-            
-        </div> </section>
+        </div>
+
+        <div class="cta-section" data-aos="zoom-in">
+            <h3>Ready to secure your project's timeline?</h3>
+            <p>Our consultants are ready to conduct a baseline audit for your current site operations.</p>
+            <a href="contact.html" class="btn-accent">Work With Us</a>
+        </div>
+    </section>
 </main>
 
 <footer class="main-footer">
     <div class="footer-content">
-        <p>&copy; 2025 Precision Project Solutions. All Rights Reserved.</p>
+        <p>&copy; 2026 Precision Project Solutions. Empowering India's Infrastructure.</p>
         <div class="footer-links">
             <a href="https://linkedin.com/company/precisionprojectsolutions" target="_blank" rel="noopener">LinkedIn</a>
             <a href="privacy-policy.html">Privacy Policy</a>
@@ -255,7 +250,6 @@
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // Mobile Menu Toggle
         const menuToggle = document.getElementById('menu-toggle');
         const mainNav = document.getElementById('main-nav');
         if (menuToggle) {
@@ -264,15 +258,7 @@
                 menuToggle.innerHTML = mainNav.classList.contains('active') ? '&#10005;' : '&#9776;';
             });
         }
-
-        // AOS Initialization
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true,
-            delay: 100,
-            offset: 120
-        });
+        AOS.init({ duration: 800, once: true });
     });
 </script>
 
