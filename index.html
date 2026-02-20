@@ -1,2 +1,905 @@
-<!-- Reverted to previous commit -->
-<!-- Original content of index.html should be retrieved based on the previous commit 'da50d7df001f562ec204af5a236c01e0f8e1d87f' -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Expert Project Management Consultancy | Precision Project Solutions</title>
+    <meta name="description" content="Precision Project Solutions offers expert project management consultancy, PMO setup, risk management, and digital implementation to drive project success.">
+    <meta name="keywords" content="project management consultancy, pmo setup, risk management, project planning, vadodara">
+    <link rel="canonical" href="https://www.precisionprojectsolutions.com/index.html">
+
+    <meta property="og:title" content="Precision Project Solutions | Project Management Consultancy">
+    <meta property="og:description" content="We blend strategy, structure, and innovation to empower your teams and deliver measurable success.">
+    <meta property="og:image" content="https://www.precisionprojectsolutions.com/logo-social.jpg"> <meta property="og:url" content="https://www.precisionprojectsolutions.com">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="logo.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="logo.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+        /* ==================================================
+        == 1. SETUP & GLOBAL STYLES
+        =================================================== */
+
+        /* :root defines your color palette. Easy to change later! */
+        :root {
+          --color-primary: #1f2c45; /* Dark Blue */
+          --color-secondary: #212534; /* Dark Text */
+          --color-accent: #fcca3e; /* Bright Yellow */
+          --color-accent-hover: #ffd86e; /* Lighter Yellow */
+          --color-light: #ffffff;
+          --color-bg: #f8f9fb;
+          --font-main: 'Outfit', sans-serif;
+          --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+          --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Smooth scrolling for anchor links */
+        html {
+          scroll-behavior: smooth;
+        }
+
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+          font-family: var(--font-main);
+          background: var(--color-bg);
+          color: var(--color-secondary);
+          line-height: 1.7;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ==================================================
+        == 2. LAYOUT & CONTAINERS
+        =================================================== */
+        .container {
+          max-width: 1100px;
+          margin: 0 auto;
+          padding: 4em 2em;
+          overflow: hidden; /* Contains AOS animations */
+        }
+        .container-fluid {
+          padding: 4em 2em;
+          background: var(--color-light);
+          box-shadow: var(--shadow);
+          overflow: hidden; /* Contains AOS animations */
+        }
+
+        /* Global Section Titles */
+        h1, h2, h3 {
+          color: var(--color-primary);
+          font-weight: 600;
+          margin-bottom: 0.6em;
+          line-height: 1.3;
+        }
+        h2 {
+          font-size: 2.4rem;
+          text-align: center;
+          margin-bottom: 1.5em;
+        }
+        h3 {
+          font-size: 1.5rem;
+        }
+        p {
+          margin-bottom: 1.2em;
+        }
+
+        /* ==================================================
+        == 3. HEADER & NAVIGATION
+        =================================================== */
+        .main-header {
+          background: var(--color-light);
+          color: var(--color-primary);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 1.2em 2em;
+          position: sticky;
+          top: 0;
+          z-index: 1000;
+          box-shadow: var(--shadow);
+          height: 80px;
+        }
+        .logo-box {
+          display: flex;
+          align-items: center;
+          gap: 0.8em;
+        }
+        .logo-link {
+          display: flex;
+          align-items: center;
+          gap: 0.8em;
+          text-decoration: none;
+        }
+        .logo-box img {
+          height: 50px;
+          border-radius: 8px;
+        }
+        .logo-title {
+          font-weight: 700;
+          font-size: 1.5rem;
+          color: var(--color-primary);
+        }
+        .main-nav {
+          display: flex;
+          gap: 2em;
+        }
+        .main-nav a {
+          color: var(--color-secondary);
+          text-decoration: none;
+          font-weight: 600;
+          font-size: 1rem;
+          transition: color 0.3s ease;
+          position: relative;
+          padding-bottom: 5px;
+        }
+        .main-nav a::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 3px;
+          background: var(--color-accent);
+          transition: width 0.3s ease;
+        }
+        .main-nav a:hover,
+        .main-nav a.active {
+          color: var(--color-primary);
+        }
+        .main-nav a:hover::after,
+        .main-nav a.active::after {
+          width: 100%;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+          display: none;
+          background: none;
+          border: none;
+          font-size: 2rem;
+          color: var(--color-primary);
+          cursor: pointer;
+          z-index: 1002;
+        }
+
+        /* ==================================================
+        == 4. REUSABLE COMPONENTS (Buttons, CTA)
+        =================================================== */
+        .btn {
+          display: inline-block;
+          border: none;
+          padding: 0.8em 2em;
+          border-radius: 8px;
+          font-weight: 600;
+          font-size: 1rem;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          text-decoration: none;
+        }
+        .btn-primary {
+          background: var(--color-accent);
+          color: var(--color-primary);
+        }
+        .btn-primary:hover {
+          background: var(--color-light);
+          color: var(--color-primary);
+          transform: translateY(-3px);
+          box-shadow: var(--shadow-hover);
+        }
+        .btn-secondary {
+          background: var(--color-primary);
+          color: var(--color-light);
+        }
+        .btn-secondary:hover {
+          background: var(--color-accent);
+          color: var(--color-primary);
+        }
+        .btn-secondary-outline {
+          background: transparent;
+          color: var(--color-primary);
+          border: 2px solid var(--color-primary);
+        }
+        .btn-secondary-outline:hover {
+          background: var(--color-primary);
+          color: var(--color-light);
+        }
+
+        /* NEW BUTTON STYLE FOR VENDOR DARK SECTION */
+        .btn-light-outline {
+            background: transparent;
+            color: var(--color-light);
+            border: 2px solid var(--color-accent);
+        }
+        .btn-light-outline:hover {
+            background: var(--color-accent);
+            color: var(--color-primary);
+        }
+
+        .cta-bar {
+          background: var(--color-accent-hover);
+          color: var(--color-primary);
+          padding: 2em;
+          text-align: center;
+          border-radius: 12px;
+          font-size: 1.2rem;
+          font-weight: 600;
+          margin: -2em auto 4em auto;
+          max-width: 1100px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 2em;
+          flex-wrap: wrap;
+        }
+
+        /* ==================================================
+        == 5. HERO CAROUSEL
+        =================================================== */
+        .hero {
+          position: relative;
+          overflow: hidden;
+          height: 85vh;
+          min-height: 500px;
+          color: var(--color-light);
+        }
+        .slide {
+          position: absolute;
+          top: 0; left: 0;
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-position: center;
+          opacity: 0;
+          transition: opacity 1.2s ease-in-out;
+          pointer-events: none;
+        }
+        .slide.active {
+          opacity: 1;
+          pointer-events: auto;
+        }
+        .slide-content {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+          width: 90%;
+          max-width: 800px;
+          /* Animation for text */
+          opacity: 0;
+          animation: fadeInDown 1.5s ease-out forwards;
+          animation-delay: 0.5s;
+        }
+        .slide.active .slide-content {
+          opacity: 1;
+        }
+        @keyframes fadeInDown {
+          from {
+            opacity: 0;
+            transform: translate(-50%, -40%);
+          }
+          to {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+          }
+        }
+        .slide h1 {
+          font-size: 3.2rem;
+          font-weight: 700;
+          margin-bottom: 0.5em;
+          color: var(--color-light);
+        }
+        .slide p {
+          font-size: 1.3rem;
+          margin-bottom: 1.5em;
+          color: #f0f0f0;
+          font-weight: 300;
+        }
+        .carousel-dots {
+          position: absolute;
+          bottom: 30px;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          gap: 12px;
+          z-index: 10;
+        }
+        .carousel-dot {
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.5);
+          border: 2px solid transparent;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+        .carousel-dot.active {
+          background: var(--color-accent);
+          border-color: var(--color-light);
+          transform: scale(1.1);
+        }
+
+        /* ==================================================
+        == 6. PAGE SECTIONS
+        =================================================== */
+
+        /* --- About Section --- */
+        .about-grid {
+          display: grid;
+          grid-template-columns: 1fr 1.5fr;
+          gap: 3em;
+          align-items: center;
+        }
+        .about-img img {
+          width: 100%;
+          border-radius: 12px;
+          box-shadow: var(--shadow-hover);
+        }
+        .values-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1em;
+          margin-top: 2em;
+        }
+        .values-grid div {
+          background: var(--color-bg);
+          border-left: 4px solid var(--color-accent);
+          border-radius: 8px;
+          padding: 1em;
+        }
+
+        /* --- Services Section --- */
+        .services-wrap {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 2em;
+          max-width: 1100px;
+          margin: 0 auto;
+        }
+        .service-box {
+          background: var(--color-light);
+          padding: 2em;
+          border-radius: 12px;
+          transition: transform 0.3s, box-shadow 0.3s;
+          text-decoration: none;
+          color: inherit;
+          display: block;
+          height: 100%;
+          border: 1px solid #eee;
+        }
+        .service-box:hover {
+          transform: translateY(-8px);
+          box-shadow: var(--shadow-hover);
+        }
+        .service-box h3 {
+          color: var(--color-primary);
+          transition: color 0.3s;
+        }
+        .service-box:hover h3 {
+          color: var(--color-accent);
+        }
+
+        /* --- NEW VENDORS SECTION STYLES --- */
+        #vendors {
+            background-color: var(--color-primary);
+            color: var(--color-light);
+            text-align: center;
+            position: relative;
+        }
+        #vendors h2 { color: var(--color-light); }
+        #vendors h2::after { 
+            content: ''; display: block; width: 60px; height: 4px; 
+            background: var(--color-accent); margin: 0.5em auto; border-radius: 2px;
+        }
+        
+        .vendor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3em;
+            margin-top: 3em;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .vendor-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 2.5em;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        .vendor-card:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-5px);
+            border-color: var(--color-accent);
+        }
+        .vendor-card h3 { color: var(--color-accent); font-size: 1.5rem; margin-bottom: 0.5em; }
+        .vendor-card p { color: #ddd; font-size: 1rem; margin-bottom: 1.5em; }
+        .v-icon { font-size: 3rem; margin-bottom: 0.5em; display: block; }
+
+
+        /* --- Results Section --- */
+        .results-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 2em;
+        }
+        .result-card {
+          background: var(--color-bg);
+          padding: 2em;
+          border-radius: 12px;
+        }
+        .kpi-card {
+          text-align: center;
+          border-top: 5px solid var(--color-accent);
+        }
+        .kpi-card h3 {
+          font-size: 3.5rem;
+          color: var(--color-accent);
+          margin-bottom: 0.2em;
+        }
+        .kpi-card p {
+          font-size: 1.1rem;
+          font-weight: 600;
+          color: var(--color-primary);
+          margin: 0;
+        }
+        .testimonial-card {
+          background: var(--color-primary);
+          color: var(--color-light);
+          grid-column: 1 / -1; /* Spans full width on small, adapts */
+        }
+        .testimonial-card blockquote {
+          font-size: 1.3rem;
+          font-style: italic;
+          font-weight: 300;
+          border-left: 4px solid var(--color-accent);
+          padding-left: 1.5em;
+          margin-bottom: 1em;
+        }
+        .testimonial-card cite {
+          font-weight: 600;
+          color: var(--color-accent-hover);
+        }
+
+        /* --- Blog Section --- */
+        .blog-layout {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 3em;
+          align-items: center;
+        }
+        .blog-img {
+          width: 100%;
+          height: auto;
+          border-radius: 12px;
+          box-shadow: var(--shadow-hover);
+        }
+        .blog-list {
+          list-style: none;
+        }
+        .blog-list li {
+          padding: 1em 0;
+          border-bottom: 1px solid #eee;
+        }
+        .blog-list a {
+          color: var(--color-secondary);
+          text-decoration: none;
+          font-size: 1.1rem;
+          font-weight: 600;
+          transition: color 0.2s, padding-left 0.2s;
+        }
+        .blog-list a:hover {
+          color: var(--color-accent);
+          padding-left: 10px;
+        }
+        .blog-list-wrapper .btn {
+          margin-top: 2em;
+        }
+
+        /* --- Contact Section --- */
+        #contact {
+          background: var(--color-light);
+          border-radius: 12px;
+          box-shadow: var(--shadow);
+        }
+        .contact-info {
+          text-align: center;
+          max-width: 650px;
+          margin: 0 auto;
+        }
+        .contact-info p {
+          font-size: 1.15rem;
+          margin-bottom: 1em;
+        }
+        .contact-info a {
+          color: var(--color-primary);
+          font-weight: 600;
+          text-decoration: none;
+          transition: color 0.3s;
+        }
+        .contact-info a:hover {
+          color: var(--color-accent);
+          text-decoration: underline;
+        }
+
+        /* ==================================================
+        == 7. FOOTER
+        =================================================== */
+        .main-footer {
+          background: var(--color-primary);
+          color: #ccc;
+          padding: 3em 2em;
+          margin-top: 4em;
+        }
+        .footer-content {
+          max-width: 1100px;
+          margin: 0 auto;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 1em;
+        }
+        .footer-links {
+          display: flex;
+          gap: 1.5em;
+        }
+        .footer-links a {
+          color: var(--color-accent-hover);
+          text-decoration: none;
+        }
+        .footer-links a:hover {
+          text-decoration: underline;
+        }
+
+        /* ==================================================
+        == 8. RESPONSIVE DESIGN (Mobile First)
+        =================================================== */
+
+        @media (max-width: 1024px) {
+          .results-grid {
+            grid-template-columns: 1fr 1fr;
+          }
+          .testimonial-card {
+            grid-column: 1 / -1; /* Spans full width */
+          }
+        }
+
+        @media (max-width: 768px) {
+          h2 {
+            font-size: 2rem;
+          }
+          .slide h1 {
+            font-size: 2.5rem;
+          }
+          .slide p {
+            font-size: 1.1rem;
+          }
+          
+          /* Mobile Navigation */
+          .menu-toggle {
+            display: block;
+          }
+          .main-nav {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 80px; /* Header height */
+            left: 0;
+            width: 100%;
+            height: calc(100vh - 80px);
+            background: var(--color-light);
+            padding: 2em;
+            gap: 1.5em;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+            z-index: 1001;
+          }
+          .main-nav.active {
+            transform: translateX(0);
+          }
+          .main-nav a {
+            font-size: 1.5rem;
+          }
+          
+          .container, .container-fluid {
+            padding: 3em 1em;
+          }
+          .cta-bar {
+            flex-direction: column;
+            gap: 1em;
+            padding: 1.5em;
+          }
+          
+          .about-grid {
+            grid-template-columns: 1fr;
+          }
+          .values-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .results-grid, .blog-layout {
+            grid-template-columns: 1fr;
+          }
+          .testimonial-card {
+            grid-column: 1; /* Reset span */
+          }
+          
+          .footer-content {
+            flex-direction: column;
+            text-align: center;
+          }
+          
+          /* New Vendor Grid Mobile */
+          .vendor-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Precision Project Solutions",
+      "image": "https://www.precisionprojectsolutions.com/logo.jpg",
+      "@id": "https://www.precisionprojectsolutions.com",
+      "url": "https://www.precisionprojectsolutions.com",
+      "telephone": "+91-82334-98737",
+      "email": "info.precision.project.solutions@gmail.com",
+      "address": {
+                "streetAddress": "M503, Aarya Empire, Atladara",
+        "addressLocality": "Vadodara",
+        "addressRegion": "Gujarat",
+        "postalCode": "390012",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "22.2887",
+        "longitude": "73.1672"
+      }
+    }
+    </script>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo-box">
+            <a href="#" class="logo-link">
+                <div class="logo-title">Precision Project Solutions</div>
+            </a>
+        </div>
+        
+        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+        
+        <nav class="main-nav">
+            <a href="#about">About</a>
+            <a href="#services">Capabilities</a>
+            <a href="#vendors">Ecosystem</a>
+            <a href="#results">Impact</a>
+            <a href="#insights">Insights</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="slide active" style="background-color: var(--color-primary);"> <div class="slide-content">
+                <h1>Empowering Your Vision Across Every Industry</h1>
+                <p>From complex EPC infrastructure to agile digital product management, we deliver precision, structure, and measurable success for any initiative.</p>
+                <a href="#services" class="btn btn-primary">Explore Our Capabilities</a>
+                <a href="#contact" class="btn btn-light-outline" style="margin-left: 10px;">Partner With Us</a>
+            </div>
+        </div>
+        
+        <div class="carousel-dots">
+            <div class="carousel-dot active"></div>
+            <div class="carousel-dot"></div>
+            <div class="carousel-dot"></div>
+        </div>
+    </section>
+
+    <section id="about" class="container">
+        <h2>Who We Are</h2>
+        <div class="about-grid">
+            <div class="about-text" data-aos="fade-right">
+                <h3>Built on Precision. Scaled for Everything.</h3>
+                <p>At Precision Project Solutions, our roots are deeply embedded in the rigorous, high-stakes world of EPC (Engineering, Procurement, and Construction) project management. We mastered the art of managing complex timelines, massive budgets, and intricate supply chains.</p>
+                <p>Today, we apply those same battle-tested methodologies to a broader spectrum of industries. Whether you are launching a SaaS software product, establishing a corporate PMO, or executing a heavy engineering project, we have the frameworks to guide you from ideation to successful delivery.</p>
+                
+                <div class="values-grid">
+                    <div>
+                        <strong>Industry Agnostic</strong><br>
+                        Adapting proven methodologies to fit tech, construction, manufacturing, and beyond.
+                    </div>
+                    <div>
+                        <strong>Agile & Waterfall</strong><br>
+                        Fluidly navigating between traditional project management and agile product development.
+                    </div>
+                </div>
+            </div>
+            <div class="about-img" data-aos="fade-left">
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="container-fluid">
+        <h2>Our Core Capabilities</h2>
+        <div class="services-wrap">
+            <a href="#epc" class="service-box" data-aos="fade-up" data-aos-delay="100">
+                <h3>EPC Project Management</h3>
+                <p>End-to-end consulting for Engineering, Procurement, and Construction. We handle vendor coordination, site execution strategies, and strict regulatory compliance.</p>
+            </a>
+
+            <a href="#product" class="service-box" data-aos="fade-up" data-aos-delay="200">
+                <h3>Digital Product Management</h3>
+                <p>From user research and roadmap creation to agile sprint execution. We help digital teams build products that achieve market fit and scale efficiently.</p>
+            </a>
+
+            <a href="#pmo" class="service-box" data-aos="fade-up" data-aos-delay="300">
+                <h3>PMO Setup & Strategy</h3>
+                <p>Design and implement a Project Management Office tailored to your business. We standardize processes, deploy software tools, and train your teams.</p>
+            </a>
+
+            <a href="#risk" class="service-box" data-aos="fade-up" data-aos-delay="400">
+                <h3>Risk & Quality Assurance</h3>
+                <p>Proactive risk identification, mitigation strategies, and quality control frameworks to ensure your projects and products never derail.</p>
+            </a>
+        </div>
+    </section>
+
+    <div class="cta-bar" data-aos="zoom-in">
+        <span>Ready to bring structure to your next big launch or infrastructure project?</span>
+        <a href="#contact" class="btn btn-secondary">Schedule a Free Consultation</a>
+    </div>
+
+    <section id="vendors" class="container-fluid">
+        <div class="container" style="padding: 0;">
+            <h2 data-aos="fade-up">Ecosystem & Vendor Management</h2>
+            <p data-aos="fade-up" style="max-width: 700px; margin: 0 auto;">We seamlessly integrate and manage third-party partners across both physical and digital landscapes, ensuring flawless delivery no matter the medium.</p>
+            
+            <div class="vendor-grid">
+                <div class="vendor-card" data-aos="fade-up" data-aos-delay="100">
+                    <span class="v-icon">🏗️</span>
+                    <h3>EPC Supply Chain</h3>
+                    <p>Rigorous management of contractors, material suppliers, and heavy machinery logistics. We enforce strict SLAs, safety standards, and delivery timelines.</p>
+                </div>
+
+                <div class="vendor-card" data-aos="fade-up" data-aos-delay="200">
+                    <span class="v-icon">💻</span>
+                    <h3>Tech & Software Partners</h3>
+                    <p>Coordination with cloud hosting providers, SaaS platforms, and external dev agencies. We manage API integrations, licensing, and agile pipelines.</p>
+                </div>
+
+                <div class="vendor-card" data-aos="fade-up" data-aos-delay="300">
+                    <span class="v-icon">🛡️</span>
+                    <h3>Compliance & QA</h3>
+                    <p>Liaising with regulatory bodies, third-party auditors, and QA testers to ensure both your infrastructure and software products meet global standards.</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 3em;" data-aos="fade-up">
+                <a href="#contact" class="btn btn-light-outline">Join Our Partner Network</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="results" class="container">
+        <h2>Proven Impact & Metrics</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 3em auto;">Numbers speak louder than words. Whether optimizing a massive construction budget or accelerating a software launch, our focus is always on measurable ROI.</p>
+        
+        <div class="results-grid">
+            <div class="result-card kpi-card" data-aos="zoom-in" data-aos-delay="100">
+                <h3>98%</h3>
+                <p>On-Time Delivery Rate</p>
+            </div>
+
+            <div class="result-card kpi-card" data-aos="zoom-in" data-aos-delay="200">
+                <h3>15%</h3>
+                <p>Average Budget Saved</p>
+            </div>
+
+            <div class="result-card kpi-card" data-aos="zoom-in" data-aos-delay="300">
+                <h3>2x</h3>
+                <p>Faster Time-to-Market</p>
+            </div>
+
+            <div class="result-card testimonial-card" data-aos="fade-up" data-aos-delay="400">
+                <blockquote>
+                    "Precision Project Solutions completely transformed our operational approach. They brought the rigorous discipline of EPC project management and seamlessly adapted it to our software development lifecycle. The result was a flawless product launch, delivered under budget."
+                </blockquote>
+                <cite>— Director of Operations, Global Tech & Infrastructure Corp</cite>
+            </div>
+        </div>
+    </section>
+
+    <section id="insights" class="container-fluid">
+        <h2>Latest Industry Insights</h2>
+        <div class="container blog-layout" style="padding: 0; margin-top: 3em;">
+            <div data-aos="fade-right">
+                <img src="blog-placeholder.jpg" alt="Team reviewing project metrics on a screen" class="blog-img">
+            </div>
+            <div class="blog-list-wrapper" data-aos="fade-left">
+                <ul class="blog-list">
+                    <li><a href="#">Bridging the Gap: Applying EPC Rigor to Agile Software Launches</a></li>
+                    <li><a href="#">5 Steps to Building a Future-Proof PMO in 2026</a></li>
+                    <li><a href="#">Supply Chain vs. Tech Stack: Managing Universal Project Risks</a></li>
+                    <li><a href="#">Why Product Managers Need Traditional Project Management Skills</a></li>
+                </ul>
+                <a href="#" class="btn btn-primary">Read All Articles</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" style="padding-bottom: 0;">
+        <div id="contact" data-aos="fade-up" style="padding: 4em 2em;">
+            <h2>Get In Touch</h2>
+            <div class="contact-info">
+                <p>Ready to streamline your next major initiative? Reach out to us for a comprehensive consultation tailored to your specific project or product needs.</p>
+                <p><strong>Phone:</strong> <a href="tel:+918233498737">+91-82334-98737</a></p>
+                <p><strong>Email:</strong> <a href="mailto:info.precision.project.solutions@gmail.com">info.precision.project.solutions@gmail.com</a></p>
+                <p><strong>Address:</strong> M503, Aarya Empire, Atladara, Vadodara, Gujarat 390012</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div>
+                <span class="logo-title" style="color: var(--color-light); font-size: 1.2rem;">Precision Project Solutions</span>
+                <p style="margin-top: 0.5em; font-size: 0.9rem;">Bridging EPC infrastructure and digital product delivery.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#services">Capabilities</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 2em; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2em;">
+            &copy; 2026 Precision Project Solutions. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Initialize Animate On Scroll
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Mobile Menu Toggle Script
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mainNav = document.querySelector('.main-nav');
+
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+
+        // Close mobile menu when a link is clicked
+        const navLinks = document.querySelectorAll('.main-nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
