@@ -1737,41 +1737,42 @@ body::after {
         <p>We'll respond within 24 hours on business days.</p>
 
         <form onsubmit="handleSubmit(event)">
-          <div class="form-row">
-            <div class="form-field">
-              <label>First Name</label>
-              <input type="text" placeholder="Rahul" required />
-            </div>
-            <div class="form-field">
-              <label>Last Name</label>
-              <input type="text" placeholder="Sharma" required />
-            </div>
-          </div>
-          <div class="form-field">
-            <label>Email Address</label>
-            <input type="email" placeholder="rahul@company.com" required />
-          </div>
-          <div class="form-field">
-            <label>Service Interested In</label>
-            <select>
-              <option value="">Select a service...</option>
-              <option>Project Planning & Controls</option>
-              <option>PM Software Training</option>
-              <option>Vendor & Supply Chain Mgmt</option>
-              <option>Digital PMO Implementation</option>
-              <option>Contractual Claim Support</option>
-              <option>Project Leadership / Interim PM</option>
-              <option>General Enquiry</option>
-            </select>
-          </div>
-          <div class="form-field">
-            <label>Your Message</label>
-            <textarea placeholder="Tell us about your project and goals..."></textarea>
-          </div>
-          <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;" id="submit-btn">
-            Send Message →
-          </button>
-        </form>
+  <div class="form-row">
+    <div class="form-field">
+      <label>First Name</label>
+      <input type="text" name="first_name" placeholder="Rahul" required />
+    </div>
+    <div class="form-field">
+      <label>Last Name</label>
+      <input type="text" name="last_name" placeholder="Sharma" required />
+    </div>
+  </div>
+  <div class="form-field">
+    <label>Email Address</label>
+    <input type="email" name="email" placeholder="rahul@company.com" required />
+  </div>
+  <div class="form-field">
+    <label>Service Interested In</label>
+    <select name="service">
+      <option value="">Select a service...</option>
+      <option>Project Planning & Controls</option>
+      <option>PM Software Training</option>
+      <option>Vendor & Supply Chain Mgmt</option>
+      <option>Digital PMO Implementation</option>
+      <option>Contractual Claim Support</option>
+      <option>Project Leadership / Interim PM</option>
+      <option>General Enquiry</option>
+    </select>
+  </div>
+  <div class="form-field">
+    <label>Your Message</label>
+    <textarea name="message" placeholder="Tell us about your project and goals..."></textarea>
+  </div>
+  <button type="submit" class="btn btn-gold" 
+          style="width:100%;justify-content:center;" id="submit-btn">
+    Send Message →
+  </button>
+</form>
       </div>
     </div>
   </div>
@@ -1935,21 +1936,59 @@ const counterObs = new IntersectionObserver(entries => {
 document.querySelectorAll('.counter').forEach(el => counterObs.observe(el));
 
 /* ---- Contact Form ---- */
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby5LVMpdjSwjx-mIB7KUccpPlDrVlfTIfLAL2rRBD-pTBgB9jlddab73m7TMqsPTc3y/exec"; // ← Step 5 URL
+
 function handleSubmit(e) {
   e.preventDefault();
   const btn = document.getElementById('submit-btn');
-  btn.textContent = 'Sending...';
+
+  // Collect form data
+  const formData = {
+    first_name: e.target.first_name.value.trim(),
+    last_name:  e.target.last_name.value.trim(),
+    email:      e.target.email.value.trim(),
+    service:    e.target.service.value,
+    message:    e.target.message.value.trim()
+  };
+
+  // Validate
+  if (!formData.first_name || !formData.email) {
+    alert("Please fill in all required fields.");
+    return;
+  }
+
+  // Show loading state
+  btn.textContent = "Sending...";
   btn.disabled = true;
-  setTimeout(() => {
-    btn.textContent = '✓ Message Sent!';
-    btn.style.background = '#2d8c4e';
+
+  fetch(GOOGLE_SCRIPT_URL, {
+    method: "POST",
+    mode: "no-cors", // Required for Google Apps Script
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(formData)
+  })
+  .then(() => {
+    // Success
+    btn.textContent = "✓ Message Sent!";
+    btn.style.background = "#2d8c4e";
+    btn.style.color = "#fff";
+    e.target.reset();
+
+    // Reset button after 4 seconds
     setTimeout(() => {
-      btn.textContent = 'Send Message →';
-      btn.style.background = '';
+      btn.textContent = "Send Message →";
+      btn.style.background = "";
+      btn.style.color = "";
       btn.disabled = false;
-      e.target.reset();
-    }, 3000);
-  }, 1200);
+    }, 4000);
+  })
+  .catch(() => {
+    // Error
+    btn.textContent = "Failed — Try Again";
+    btn.style.background = "#c0392b";
+    btn.style.color = "#fff";
+    btn.disabled = false;
+  });
 }
 </script>
 
