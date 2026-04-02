@@ -1,268 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <title>About Us | Industrial Project Specialists | Precision Project Solutions</title>
-    <meta name="description" content="Based in Vadodara, Precision Project Solutions specializes in the strategic success of EPC and industrial projects across Gujarat and India.">
-    
-    <meta property="og:title" content="About Precision Project Solutions | EPC Consultancy">
-    <meta property="og:description" content="Industrial project specialists dedicated to structural success and technical mastery in Engineering, Procurement, and Construction.">
-    <meta property="og:url" content="https://precisionprojectsolutions.github.io/Index/about.html">
-    <meta property="og:type" content="website">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>About Us | Precision Project Solutions</title>
+<meta name="description" content="Based in Vadodara, Precision Project Solutions specialises in strategic project success across EPC, IT, Manufacturing and Infrastructure sectors.">
+<link rel="canonical" href="https://www.precisionprojectsolutions.com/about.html">
+<link rel="icon" type="image/png" href="logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ── DESIGN TOKENS ── */
+:root{
+  --navy:#0d1b2e;--navy-mid:#162640;--navy-soft:#1e3354;
+  --gold:#c9a84c;--gold-light:#e8c97a;--gold-pale:#f5e9c8;
+  --cream:#faf8f4;--white:#ffffff;
+  --text-dark:#0d1b2e;--text-mid:#3a4a60;--text-soft:#6b7d96;
+  --font-display:'Cormorant Garamond',Georgia,serif;
+  --font-body:'DM Sans',system-ui,sans-serif;
+  --shadow-sm:0 2px 8px rgba(13,27,46,.08);
+  --shadow-md:0 8px 32px rgba(13,27,46,.12);
+  --shadow-lg:0 20px 60px rgba(13,27,46,.18);
+  --shadow-gold:0 8px 32px rgba(201,168,76,.25);
+  --ease-out:cubic-bezier(.22,1,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);background:var(--cream);color:var(--text-dark);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+img{max-width:100%;display:block;}
+a{text-decoration:none;}
+h1,h2,h3,h4{font-family:var(--font-display);color:var(--navy);line-height:1.2;font-weight:600;}
+p{color:var(--text-mid);}
+.wrapper{max-width:1160px;margin:0 auto;padding:0 2em;}
+section{padding:7em 0;}
 
-    <link rel="icon" type="image/png" sizes="32x32" href="logo.jpg">
-    <link rel="icon" type="image/png" sizes="16x16" href="logo.jpg">
-    <link rel="canonical" href="https://precisionprojectsolutions.github.io/Index/about.html">
+/* ── NOISE ── */
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:.4;}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+/* ── HEADER ── */
+.main-header{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:0 2em;height:76px;background:rgba(13,27,46,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 1px 0 rgba(201,168,76,.2);}
+.logo-link{display:flex;align-items:center;gap:.75em;}
+.logo-link img{height:42px;width:42px;border-radius:6px;border:1.5px solid rgba(201,168,76,.3);object-fit:cover;}
+.logo-name{font-family:var(--font-display);font-size:1.25rem;font-weight:600;color:var(--white);line-height:1.2;}
+.logo-sub{font-size:.65rem;color:var(--gold);letter-spacing:.12em;text-transform:uppercase;display:block;}
+.main-nav{display:flex;align-items:center;gap:2.2em;}
+.main-nav a{font-size:.88rem;font-weight:500;color:rgba(255,255,255,.75);letter-spacing:.04em;transition:color .2s;position:relative;padding-bottom:4px;}
+.main-nav a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1.5px;background:var(--gold);transition:width .3s var(--ease-out);}
+.main-nav a:hover,.main-nav a.active{color:var(--white);}
+.main-nav a:hover::after,.main-nav a.active::after{width:100%;}
+.nav-cta{font-size:.82rem!important;padding:.6em 1.4em;border:1.5px solid var(--gold);border-radius:4px;color:var(--gold)!important;transition:all .25s!important;}
+.nav-cta::after{display:none!important;}
+.nav-cta:hover{background:var(--gold)!important;color:var(--navy)!important;}
+.menu-toggle{display:none;background:none;border:none;color:var(--white);font-size:1.6rem;cursor:pointer;}
 
-    <style>
-        :root {
-          --color-primary: #1f2c45;
-          --color-secondary: #212534;
-          --color-accent: #fcca3e;
-          --color-accent-hover: #ffd86e;
-          --color-light: #ffffff;
-          --color-bg: #f8f9fb;
-          --font-main: 'Outfit', sans-serif;
-          --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-          --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        html { scroll-behavior: smooth; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-          font-family: var(--font-main); background: var(--color-bg);
-          color: var(--color-secondary); line-height: 1.7;
-        }
-        .container {
-          max-width: 1100px; margin: 0 auto;
-          padding: 4em 2em; overflow: hidden;
-        }
-        h1, h2, h3 {
-          color: var(--color-primary); font-weight: 600;
-          margin-bottom: 0.6em; line-height: 1.3;
-        }
-        h2 {
-          font-size: 2.4rem; text-align: center;
-          margin-bottom: 1.5em;
-        }
-        h3 { font-size: 1.5rem; }
-        p { margin-bottom: 1.2em; font-size: 1.1em; }
-        
-        .main-header {
-          background: var(--color-light); color: var(--color-primary);
-          display: flex; justify-content: space-between; align-items: center;
-          padding: 1.2em 2em; position: sticky; top: 0;
-          z-index: 1000; box-shadow: var(--shadow); height: 80px;
-        }
-        .logo-box, .logo-link { display: flex; align-items: center; gap: 0.8em; text-decoration: none; }
-        .logo-box img { height: 50px; border-radius: 8px; }
-        .logo-title {
-          font-weight: 700; font-size: 1.5rem;
-          color: var(--color-primary);
-        }
-        .main-nav { display: flex; gap: 2em; }
-        .main-nav a {
-          color: var(--color-secondary); text-decoration: none;
-          font-weight: 600; font-size: 1rem;
-          transition: color 0.3s ease; position: relative; padding-bottom: 5px;
-        }
-        .main-nav a::after {
-          content: ''; position: absolute; bottom: 0; left: 0;
-          width: 0; height: 3px; background: var(--color-accent);
-          transition: width 0.3s ease;
-        }
-        .main-nav a:hover, .main-nav a.active { color: var(--color-primary); }
-        .main-nav a:hover::after, .main-nav a.active::after { width: 100%; }
-        .menu-toggle { display: none; background: none; border: none; font-size: 2rem; color: var(--color-primary); cursor: pointer; z-index: 1002; }
+/* ── PAGE HERO ── */
+.page-hero{background:linear-gradient(135deg,#0a1520 0%,#0d1b2e 50%,#162640 100%);padding:9em 0 5em;position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(201,168,76,.07) 0%,transparent 65%);pointer-events:none;}
+.page-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.04) 1px,transparent 1px);background-size:60px 60px;animation:gridDrift 20s linear infinite;}
+@keyframes gridDrift{from{transform:translate(0,0);}to{transform:translate(60px,60px);}}
+.page-hero-content{position:relative;z-index:2;}
+.page-badge{display:inline-flex;align-items:center;gap:.5em;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);color:var(--gold-light);font-size:.78rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:.45em 1.1em;border-radius:100px;margin-bottom:1.2em;}
+.page-badge span{width:6px;height:6px;background:var(--gold);border-radius:50%;}
+.page-hero h1{font-family:var(--font-display);font-size:clamp(2.4rem,5vw,3.8rem);font-weight:600;color:var(--white);line-height:1.12;margin-bottom:.6em;}
+.page-hero h1 em{font-style:italic;color:var(--gold-light);}
+.page-hero p{color:rgba(255,255,255,.6);font-size:1.1rem;max-width:580px;line-height:1.8;}
+.breadcrumb{display:flex;align-items:center;gap:.5em;font-size:.82rem;color:rgba(255,255,255,.35);margin-bottom:1.5em;}
+.breadcrumb a{color:rgba(255,255,255,.45);transition:color .2s;}
+.breadcrumb a:hover{color:var(--gold);}
+.breadcrumb span{color:var(--gold);}
 
-        .about-grid {
-          display: grid;
-          grid-template-columns: 1fr 1.5fr; 
-          gap: 3em;
-          align-items: center;
-          margin-bottom: 3em;
-        }
-        .about-img img {
-          width: 100%;
-          border-radius: 14px;
-          box-shadow: var(--shadow-hover);
-        }
-        
-        .values {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-          gap: 1.5em;
-          margin-top: 2.5em;
-        }
-        .values div {
-          background: var(--color-light);
-          border-left: 6px solid var(--color-accent);
-          padding: 1.5em;
-          border-radius: 10px;
-          box-shadow: var(--shadow);
-          transition: transform 0.3s ease;
-        }
-        .values div:hover {
-          transform: translateY(-5px);
-          box-shadow: var(--shadow-hover);
-        }
-        .values strong {
-          color: var(--color-primary);
-          font-weight: 700;
-          font-size: 1.15em;
-          display: block;
-          margin-bottom: 0.4em;
-        }
+/* ── SECTION LABELS ── */
+.section-label{display:inline-flex;align-items:center;gap:.5em;font-family:var(--font-body);font-size:.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.75em;}
+.section-label::before{content:'';display:block;width:24px;height:1.5px;background:var(--gold);}
 
-        .cta-section {
-            text-align: center;
-            background: var(--color-primary);
-            color: var(--color-light);
-            padding: 4em 2em;
-            border-radius: 14px;
-            margin-top: 2em;
-        }
-        .btn-accent {
-            background: var(--color-accent);
-            color: var(--color-primary);
-            padding: 1em 2.5em;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
-            display: inline-block;
-            margin-top: 1.5em;
-            transition: 0.3s;
-        }
-        .btn-accent:hover {
-            background: var(--color-accent-hover);
-            transform: scale(1.05);
-        }
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;gap:.5em;font-family:var(--font-body);font-size:.9rem;font-weight:600;padding:.85em 2em;border-radius:4px;border:none;cursor:pointer;transition:all .3s var(--ease-out);letter-spacing:.03em;}
+.btn-gold{background:var(--gold);color:var(--navy);box-shadow:var(--shadow-gold);}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 12px 40px rgba(201,168,76,.4);}
+.btn-navy{background:var(--navy);color:var(--white);}
+.btn-navy:hover{background:var(--navy-soft);transform:translateY(-2px);}
+.btn-ghost{background:transparent;color:var(--navy);border:1.5px solid var(--navy);}
+.btn-ghost:hover{background:var(--navy);color:var(--white);transform:translateY(-2px);}
 
-        .main-footer {
-          background: var(--color-primary); color: #ccc;
-          padding: 3em 2em; margin-top: 4em;
-        }
-        .footer-content {
-          max-width: 1100px; margin: 0 auto; display: flex;
-          justify-content: space-between; align-items: center;
-          flex-wrap: wrap; gap: 1em;
-        }
-        .footer-links { display: flex; gap: 1.5em; }
-        .footer-links a { color: var(--color-accent-hover); text-decoration: none; }
+/* ── STORY SECTION ── */
+.story-layout{display:grid;grid-template-columns:1fr 1fr;gap:5em;align-items:center;}
+.story-visual{position:relative;}
+.story-img{width:100%;border-radius:12px;height:500px;object-fit:cover;box-shadow:var(--shadow-lg);}
+.story-badge{position:absolute;bottom:-20px;right:-20px;background:var(--navy);border:2px solid rgba(201,168,76,.3);border-radius:12px;padding:1.4em 1.8em;text-align:center;box-shadow:var(--shadow-lg);}
+.story-badge .num{font-family:var(--font-display);font-size:2.8rem;font-weight:700;color:var(--gold);display:block;line-height:1;}
+.story-badge .lbl{color:rgba(255,255,255,.6);font-size:.78rem;}
+.dot-deco{position:absolute;top:-20px;left:-20px;width:80px;height:80px;background-image:radial-gradient(circle,rgba(201,168,76,.4) 1px,transparent 1px);background-size:10px 10px;}
+.story-text p{color:var(--text-mid);font-size:1.05rem;line-height:1.85;margin-bottom:1.5em;}
+.story-text strong{color:var(--text-dark);font-weight:600;}
 
-        @media (max-width: 768px) {
-          .menu-toggle { display: block; }
-          .main-nav {
-            flex-direction: column; position: fixed;
-            top: 80px; left: 0; width: 100%;
-            height: calc(100vh - 80px);
-            background: var(--color-light);
-            padding: 2em; gap: 1.5em;
-            transform: translateX(-100%);
-            transition: transform 0.3s ease-in-out;
-            z-index: 1001;
-          }
-          .main-nav.active { transform: translateX(0); }
-          .about-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+/* ── VALUES GRID ── */
+.values-section{background:var(--white);padding:7em 0;}
+.values-intro{text-align:center;max-width:620px;margin:0 auto 4em;color:var(--text-mid);font-size:1.05rem;}
+.values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5em;}
+.val-card{background:var(--cream);border:1px solid rgba(13,27,46,.07);border-radius:12px;padding:2.2em 1.8em;text-align:center;transition:all .35s var(--ease-out);position:relative;overflow:hidden;}
+.val-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light));transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease-out);}
+.val-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:transparent;}
+.val-card:hover::before{transform:scaleX(1);}
+.val-icon{font-size:2.4rem;margin-bottom:1em;display:block;}
+.val-card h3{font-size:1.2rem;color:var(--navy);margin-bottom:.6em;}
+.val-card p{font-size:.88rem;color:var(--text-soft);line-height:1.7;}
+
+/* ── EXPERTISE SECTION ── */
+.expertise-section{padding:7em 0;background:var(--cream);}
+.expertise-layout{display:grid;grid-template-columns:1fr 1fr;gap:5em;align-items:start;}
+.expertise-text h2{font-size:clamp(2rem,3.5vw,2.8rem);margin-bottom:.8em;}
+.expertise-text p{color:var(--text-mid);font-size:1.05rem;line-height:1.85;margin-bottom:1.5em;}
+.expertise-list{list-style:none;display:flex;flex-direction:column;gap:1em;margin:1.8em 0;}
+.expertise-item{display:flex;align-items:flex-start;gap:1em;padding:1.2em 1.4em;background:var(--white);border-radius:8px;border:1px solid rgba(13,27,46,.06);transition:border-color .25s,box-shadow .25s;}
+.expertise-item:hover{border-color:var(--gold);box-shadow:var(--shadow-gold);}
+.exp-icon{font-size:1.4rem;flex-shrink:0;margin-top:.1em;}
+.exp-text strong{display:block;font-family:var(--font-display);font-size:1.05rem;font-weight:600;color:var(--navy);margin-bottom:.2em;}
+.exp-text span{font-size:.85rem;color:var(--text-soft);}
+.expertise-visual{display:flex;flex-direction:column;gap:1.5em;}
+.exp-stat-card{background:var(--navy);border-radius:12px;padding:2em;border:1px solid rgba(201,168,76,.1);transition:border-color .3s,transform .3s;}
+.exp-stat-card:hover{border-color:rgba(201,168,76,.3);transform:translateX(6px);}
+.exp-stat-num{font-family:var(--font-display);font-size:3rem;font-weight:700;color:var(--gold);display:block;line-height:1;margin-bottom:.2em;}
+.exp-stat-label{font-size:.9rem;color:rgba(255,255,255,.55);}
+.exp-industry-tags{display:flex;flex-wrap:wrap;gap:.6em;margin-top:.5em;}
+.exp-tag{background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);color:var(--gold-light);font-size:.75rem;padding:.3em .8em;border-radius:100px;font-weight:500;}
+
+/* ── TIMELINE / APPROACH ── */
+.approach-section{background:var(--navy);padding:7em 0;position:relative;overflow:hidden;}
+.approach-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,.06) 0%,transparent 65%);pointer-events:none;}
+.approach-header{text-align:center;margin-bottom:4em;}
+.approach-header h2{color:var(--white);}
+.approach-header p{color:rgba(255,255,255,.5);max-width:560px;margin:.8em auto 0;font-size:1.05rem;}
+.timeline{max-width:800px;margin:0 auto;position:relative;}
+.timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:1px;background:rgba(201,168,76,.2);transform:translateX(-50%);}
+.timeline-item{display:grid;grid-template-columns:1fr 1fr;gap:3em;margin-bottom:3em;position:relative;}
+.timeline-item:nth-child(even) .tl-content{grid-column:2;}
+.timeline-item:nth-child(even) .tl-spacer{grid-column:1;grid-row:1;}
+.tl-content{background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.12);border-radius:12px;padding:1.8em;transition:all .3s;}
+.tl-content:hover{background:rgba(255,255,255,.07);border-color:rgba(201,168,76,.3);}
+.tl-num{font-family:var(--font-display);font-size:.8rem;font-weight:600;letter-spacing:.12em;color:var(--gold);display:block;margin-bottom:.4em;}
+.tl-content h3{font-size:1.15rem;color:var(--white);margin-bottom:.5em;}
+.tl-content p{font-size:.88rem;color:rgba(255,255,255,.5);line-height:1.7;}
+.tl-dot{position:absolute;left:50%;top:1.8em;width:12px;height:12px;background:var(--gold);border-radius:50%;transform:translateX(-50%);border:2px solid var(--navy);}
+
+/* ── CTA BANNER ── */
+.cta-banner{background:linear-gradient(135deg,var(--navy-soft),var(--navy-mid));border:1px solid rgba(201,168,76,.15);border-radius:16px;padding:4em;text-align:center;margin-top:2em;}
+.cta-banner h2{color:var(--white);font-size:clamp(1.8rem,3vw,2.6rem);margin-bottom:.6em;}
+.cta-banner p{color:rgba(255,255,255,.55);font-size:1.05rem;margin-bottom:2em;max-width:520px;margin-left:auto;margin-right:auto;}
+.cta-actions{display:flex;gap:1em;justify-content:center;flex-wrap:wrap;}
+
+/* ── FOOTER ── */
+.main-footer{background:#080f1a;color:rgba(255,255,255,.4);padding:4em 0 2em;border-top:1px solid rgba(201,168,76,.1);}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:3em;margin-bottom:3em;padding-bottom:3em;border-bottom:1px solid rgba(255,255,255,.05);}
+.footer-col h4{font-family:var(--font-display);font-size:1rem;color:var(--white);margin-bottom:1.2em;}
+.footer-col ul{list-style:none;}
+.footer-col li{margin-bottom:.6em;}
+.footer-col a{color:rgba(255,255,255,.4);font-size:.88rem;transition:color .2s;}
+.footer-col a:hover{color:var(--gold);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1em;font-size:.82rem;}
+.footer-bottom a{color:rgba(255,255,255,.35);transition:color .2s;}
+.footer-bottom a:hover{color:var(--gold);}
+.footer-links-row{display:flex;gap:1.5em;}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-delay-1{transition-delay:.1s;}
+.reveal-delay-2{transition-delay:.2s;}
+.reveal-delay-3{transition-delay:.3s;}
+.reveal-delay-4{transition-delay:.4s;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){.values-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:768px){
+  .menu-toggle{display:block;}
+  .main-nav{display:flex;flex-direction:column;position:fixed;top:76px;left:0;width:100%;height:calc(100vh - 76px);background:var(--navy);padding:2.5em 2em;gap:2em;transform:translateX(-100%);transition:transform .35s var(--ease-out);z-index:1001;}
+  .main-nav.active{transform:translateX(0);}
+  .main-nav a{font-size:1.4rem;color:var(--white);}
+  .story-layout,.expertise-layout{grid-template-columns:1fr;}
+  .story-badge{display:none;}
+  .values-grid{grid-template-columns:1fr;}
+  .timeline::before{display:none;}
+  .timeline-item{grid-template-columns:1fr;}
+  .timeline-item:nth-child(even) .tl-content{grid-column:1;}
+  .timeline-item:nth-child(even) .tl-spacer{display:none;}
+  .tl-dot{display:none;}
+  .footer-top{grid-template-columns:1fr;}
+  section{padding:4em 0;}
+}
+</style>
 </head>
 <body>
 
 <header class="main-header">
-    <div class="logo-box">
-        <a href="index.html" class="logo-link">
-            <img src="logo.jpg" alt="Precision Project Solutions Logo" />
-            <span class="logo-title">Precision Project Solutions</span>
-        </a>
-    </div>
-    <nav class="main-nav" id="main-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html" class="active">About</a>
-        <a href="services.html">Services</a>
-        <a href="vendors.html">Vendors</a>
-        <a href="results.html">Results</a>
-        <a href="blog.html">Blog</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-    <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu">&#9776;</button>
+  <a href="index.html" class="logo-link">
+    <img src="logo.jpg" alt="PPS Logo"/>
+    <div><span class="logo-name">Precision Project Solutions</span><span class="logo-sub">Consultancy · Vadodara</span></div>
+  </a>
+  <nav class="main-nav" id="main-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About</a>
+    <a href="services.html">Services</a>
+    <a href="vendors.html">Vendors</a>
+    <a href="results.html">Results</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html" class="nav-cta">Get in Touch</a>
+  </nav>
+  <button class="menu-toggle" id="menu-toggle">&#9776;</button>
 </header>
 
-<main>
-    <section class="container" data-aos="fade-up">
-        <h2>Industrial Project Specialists</h2>
-        
-        <div class="about-grid">
-            <div class="about-img" data-aos="fade-right">
-                <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=800" alt="Precision Engineering Solutions Team" />
-            </div>
-            
-            <div class="about-content" data-aos="fade-left">
-                <p>Based in Vadodara, <strong>Precision Project Solutions</strong> is a premier consultancy dedicated to driving project success across a multitude of industries, including Information Technology, Infrastructure, 
-                    Manufacturing, Fabrication, and EPC. We recognize that while the deliverables change—from software deployments to facility construction—the core pillars of successful project management remain constant.</p>
-                <p>Our approach is highly adaptable. Whether implementing Agile methodologies for a tech startup or rigorous Waterfall controls for a heavy manufacturing plant, we integrate seamlessly with your team. We establish 
-                    robust frameworks, streamline communications, and enforce global standards combined with localized execution expertise.</p>
-                
-                <div class="values">
-                    <div data-aos="fade-up" data-aos-delay="100">
-                        <strong>Local Insight</strong>
-                        Deep understanding of Gujarat's industrial hubs and regulatory environment.
-                    </div>
-                    <div data-aos="fade-up" data-aos-delay="200">
-                        <strong>Technical Mastery</strong>
-                        Experts in Primavera P6, MS Project, and advanced Power BI dashboards.
-                    </div>
-                    <div data-aos="fade-up" data-aos-delay="300">
-                        <strong>Operational Rigor</strong>
-                        Focused on reducing 'Dead Time' on-site through predictive scheduling.
-                    </div>
-                    <div data-aos="fade-up" data-aos-delay="400">
-                        <strong>Proven ROI</strong>
-                        Strategies designed to save costs, optimize resources, and protect margins.
-                    </div>
-                </div>
-            </div>
-        </div>
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="wrapper page-hero-content">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <span>About Us</span></div>
+    <div class="page-badge"><span></span> Our Story</div>
+    <h1>Industrial Project <em>Specialists</em><br>Based in Vadodara</h1>
+    <p>A premier consultancy dedicated to driving project success across IT, Infrastructure, Manufacturing, Fabrication, and EPC — combining global standards with localized expertise.</p>
+  </div>
+</section>
 
-        <div class="cta-section" data-aos="zoom-in">
-            <h3>Ready to secure your project's timeline?</h3>
-            <p>Our consultants are ready to conduct a baseline audit for your current site operations.</p>
-            <a href="contact.html" class="btn-accent">Work With Us</a>
+<!-- STORY -->
+<section style="background:var(--white);">
+  <div class="wrapper">
+    <div class="story-layout">
+      <div class="story-visual reveal">
+        <div class="dot-deco"></div>
+        <img class="story-img" src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=900" alt="PPS team collaboration"/>
+        <div class="story-badge"><span class="num">5+</span><span class="lbl">Years of Expertise</span></div>
+      </div>
+      <div class="story-text">
+        <div class="section-label reveal">Who We Are</div>
+        <h2 style="font-size:clamp(2rem,3.5vw,2.8rem);margin-bottom:.8em;" class="reveal reveal-delay-1">Driving Success Across Every Project Phase</h2>
+        <p class="reveal reveal-delay-2">Based in Vadodara, <strong>Precision Project Solutions</strong> is a premier consultancy dedicated to driving project success across a multitude of industries, including Information Technology, Infrastructure, Manufacturing, Fabrication, and EPC.</p>
+        <p class="reveal reveal-delay-2">We recognize that while the deliverables change — from software deployments to facility construction — the core pillars of successful project management remain constant: clear communication, rigorous planning, and structured accountability.</p>
+        <p class="reveal reveal-delay-3">Our approach is highly adaptable. Whether implementing Agile methodologies for a tech startup or rigorous Waterfall controls for a heavy manufacturing plant, we integrate seamlessly with your team. We establish robust frameworks, streamline communications, and enforce global standards combined with localized execution expertise.</p>
+        <div class="reveal reveal-delay-3" style="margin-top:2em;">
+          <a href="contact.html" class="btn btn-gold">Start a Conversation →</a>
         </div>
-    </section>
-</main>
-
-<footer class="main-footer">
-    <div class="footer-content">
-        <p>&copy; 2026 Precision Project Solutions. Empowering India's Infrastructure.</p>
-        <div class="footer-links">
-            <a href="https://linkedin.com/company/precisionprojectsolutions" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="terms.html">Terms & Conditions</a>
-        </div>
+      </div>
     </div>
-</footer>
+  </div>
+</section>
 
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const menuToggle = document.getElementById('menu-toggle');
-        const mainNav = document.getElementById('main-nav');
-        if (menuToggle) {
-            menuToggle.addEventListener('click', () => {
-                mainNav.classList.toggle('active');
-                menuToggle.innerHTML = mainNav.classList.contains('active') ? '&#10005;' : '&#9776;';
-            });
-        }
-        AOS.init({ duration: 800, once: true });
-    });
-</script>
+<!-- VALUES -->
+<section class="values-section">
+  <div class="wrapper">
+    <div style="text-align:center;margin-bottom:4em;">
+      <div class="section-label reveal" style="justify-content:center;">Our Pillars</div>
+      <h2 style="font-size:clamp(2rem,3.5vw,2.8rem);" class="reveal reveal-delay-1">What Sets Us Apart</h2>
+      <p class="values-intro reveal reveal-delay-2">Four core principles that drive every engagement, every deliverable, every result.</p>
+    </div>
+    <div class="values-grid">
+      <div class="val-card reveal">
+        <span class="val-icon">🔍</span>
+        <h3>Dynamic Insight</h3>
+        <p>Deep understanding of diverse operational landscapes, from tech hubs to industrial floors across Gujarat and India.</p>
+      </div>
+      <div class="val-card reveal reveal-delay-1">
+        <span class="val-icon">⚙️</span>
+        <h3>Technical Mastery</h3>
+        <p>Experts in Primavera P6, MS Project, Jira, and advanced Power BI dashboards for real-time project visibility.</p>
+      </div>
+      <div class="val-card reveal reveal-delay-2">
+        <span class="val-icon">📐</span>
+        <h3>Operational Rigor</h3>
+        <p>Focused on reducing dead time and optimizing sprint cycles through predictive scheduling and proactive controls.</p>
+      </div>
+      <div class="val-card reveal reveal-delay-3">
+        <span class="val-icon">📈</span>
+        <h3>Proven ROI</h3>
+        <p>Strategies designed to save costs, optimize resources, and accelerate time-to-market with measurable outcomes.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-</body>
-</html>
+<!-- EXPERTISE -->
+<section class="expertise-section">
+  <div class="wrapper">
+    <div class="expertise-layout">
+      <div class="expertise-text">
+        <div class="section-label reveal">Our Expertise</div>
+        <h2 class="reveal reveal-delay-1">Cross-Industry Experience<br>That Delivers Results</h2>
+        <p class="reveal reveal-delay-2">We bring deep domain knowledge across industries where project complexity and risk are highest. Our consultants have hands-on experience managing projects from initiation through commissioning.</p>
+        <ul class="expertise-list">
+          <li class="expertise-item reveal reveal-delay-1">
+            <span 
