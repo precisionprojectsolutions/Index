@@ -122,7 +122,9 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1em;font-size:.82rem;}
 .footer-bottom a{color:rgba(255,255,255,.35);transition:color .2s;}.footer-bottom a:hover{color:var(--gold);}
 .footer-links-row{display:flex;gap:1.5em;}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out);}
+.reveal{opacity:1;transform:none;transition:opacity .7s var(--ease-out),transform .7s var(--ease-out);}
+.js-ready .reveal{opacity:0;transform:translateY(28px);}
+.js-ready .reveal.visible{opacity:1;transform:translateY(0);}
 .reveal.visible{opacity:1;transform:translateY(0);}
 .reveal-delay-1{transition-delay:.1s;}.reveal-delay-2{transition-delay:.2s;}.reveal-delay-3{transition-delay:.3s;}
 
@@ -228,4 +230,4 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
         <ul class="register-steps">
           <li class="reg-step"><span class="reg-step-n">1</span>Fill in your company details below</li>
           <li class="reg-step"><span class="reg-step-n">2</span>Our team reviews and verifies your profile within 3 business days</li>
-          <li class="reg-step"><span class="reg-step-n">3</span>You get listed in our database and start receiving project leads</li>
+          <li class="reg-s
