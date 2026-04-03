@@ -122,7 +122,9 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .footer-bottom a:hover{color:var(--gold);}
 .footer-links-row{display:flex;gap:1.5em;}
 
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out);}
+.reveal{opacity:1;transform:none;transition:opacity .7s var(--ease-out),transform .7s var(--ease-out);}
+.js-ready .reveal{opacity:0;transform:translateY(28px);}
+.js-ready .reveal.visible{opacity:1;transform:translateY(0);}
 .reveal.visible{opacity:1;transform:translateY(0);}
 .reveal-delay-1{transition-delay:.1s;}.reveal-delay-2{transition-delay:.2s;}.reveal-delay-3{transition-delay:.3s;}
 
@@ -275,7 +277,4 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   </div>
 </section>
 
-<!-- INDUSTRIES -->
-<section class="industries-section">
-  <div class="wrapper">
-    <div class="industries-header">
+<!-- INDU
