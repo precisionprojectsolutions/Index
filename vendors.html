@@ -1,450 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <title>Vendor Portal | Precision Project Solutions</title>
-    <meta name="description" content="Vendor registration and verified vendor database.">
-    
-    <link rel="icon" type="image/png" sizes="32x32" href="logo.jpg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Vendor Network | Precision Project Solutions</title>
+<meta name="description" content="Connect with verified vendors and suppliers in Vadodara and Gujarat. Find or register as a vendor in our curated project management supply network.">
+<link rel="canonical" href="https://www.precisionprojectsolutions.com/vendors.html">
+<link rel="icon" type="image/png" href="logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d1b2e;--navy-mid:#162640;--navy-soft:#1e3354;--gold:#c9a84c;--gold-light:#e8c97a;--cream:#faf8f4;--white:#ffffff;--text-dark:#0d1b2e;--text-mid:#3a4a60;--text-soft:#6b7d96;--font-display:'Cormorant Garamond',Georgia,serif;--font-body:'DM Sans',system-ui,sans-serif;--shadow-lg:0 20px 60px rgba(13,27,46,.18);--shadow-gold:0 8px 32px rgba(201,168,76,.25);--ease-out:cubic-bezier(.22,1,.36,1);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);background:var(--cream);color:var(--text-dark);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+img{max-width:100%;display:block;}a{text-decoration:none;}
+h1,h2,h3,h4{font-family:var(--font-display);color:var(--navy);line-height:1.2;font-weight:600;}p{color:var(--text-mid);}
+.wrapper{max-width:1160px;margin:0 auto;padding:0 2em;}section{padding:7em 0;}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:.4;}
+.main-header{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:0 2em;height:76px;background:rgba(13,27,46,.92);backdrop-filter:blur(20px);box-shadow:0 1px 0 rgba(201,168,76,.2);}
+.logo-link{display:flex;align-items:center;gap:.75em;}
+.logo-link img{height:42px;width:42px;border-radius:6px;border:1.5px solid rgba(201,168,76,.3);object-fit:cover;}
+.logo-name{font-family:var(--font-display);font-size:1.25rem;font-weight:600;color:var(--white);line-height:1.2;}
+.logo-sub{font-size:.65rem;color:var(--gold);letter-spacing:.12em;text-transform:uppercase;display:block;}
+.main-nav{display:flex;align-items:center;gap:2.2em;}
+.main-nav a{font-size:.88rem;font-weight:500;color:rgba(255,255,255,.75);letter-spacing:.04em;transition:color .2s;position:relative;padding-bottom:4px;}
+.main-nav a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1.5px;background:var(--gold);transition:width .3s;}
+.main-nav a:hover,.main-nav a.active{color:var(--white);}
+.main-nav a:hover::after,.main-nav a.active::after{width:100%;}
+.nav-cta{font-size:.82rem!important;padding:.6em 1.4em;border:1.5px solid var(--gold);border-radius:4px;color:var(--gold)!important;}
+.nav-cta::after{display:none!important;}.nav-cta:hover{background:var(--gold)!important;color:var(--navy)!important;}
+.menu-toggle{display:none;background:none;border:none;color:var(--white);font-size:1.6rem;cursor:pointer;}
+.page-hero{background:linear-gradient(135deg,#0a1520 0%,#0d1b2e 50%,#162640 100%);padding:9em 0 5em;position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 40%,rgba(201,168,76,.07) 0%,transparent 65%);pointer-events:none;}
+.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.04) 1px,transparent 1px);background-size:60px 60px;animation:gridDrift 20s linear infinite;}
+@keyframes gridDrift{from{transform:translate(0,0);}to{transform:translate(60px,60px);}}
+.page-hero-content{position:relative;z-index:2;}
+.page-badge{display:inline-flex;align-items:center;gap:.5em;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);color:var(--gold-light);font-size:.78rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:.45em 1.1em;border-radius:100px;margin-bottom:1.2em;}
+.page-badge span{width:6px;height:6px;background:var(--gold);border-radius:50%;}
+.page-hero h1{font-family:var(--font-display);font-size:clamp(2.4rem,5vw,3.8rem);font-weight:600;color:var(--white);line-height:1.12;margin-bottom:.6em;}
+.page-hero h1 em{font-style:italic;color:var(--gold-light);}
+.page-hero p{color:rgba(255,255,255,.6);font-size:1.1rem;max-width:560px;line-height:1.8;}
+.breadcrumb{display:flex;align-items:center;gap:.5em;font-size:.82rem;color:rgba(255,255,255,.35);margin-bottom:1.5em;}
+.breadcrumb a{color:rgba(255,255,255,.45);}.breadcrumb a:hover{color:var(--gold);}.breadcrumb span{color:var(--gold);}
+.section-label{display:inline-flex;align-items:center;gap:.5em;font-size:.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.75em;}
+.section-label::before{content:'';display:block;width:24px;height:1.5px;background:var(--gold);}
+.btn{display:inline-flex;align-items:center;gap:.5em;font-family:var(--font-body);font-size:.9rem;font-weight:600;padding:.85em 2em;border-radius:4px;border:none;cursor:pointer;transition:all .3s var(--ease-out);}
+.btn-gold{background:var(--gold);color:var(--navy);box-shadow:var(--shadow-gold);}.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);}
+.btn-outline{background:transparent;color:var(--gold);border:1.5px solid rgba(201,168,76,.4);}.btn-outline:hover{background:var(--gold);color:var(--navy);transform:translateY(-2px);}
+.btn-navy{background:var(--navy);color:var(--white);}.btn-navy:hover{background:var(--navy-soft);transform:translateY(-2px);}
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+/* Vendor Split */
+.vendor-split{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.vendor-panel{padding:5em 4em;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;}
+.vendor-panel.find-panel{background:var(--white);}
+.vendor-panel.join-panel{background:var(--navy);}
+.vendor-panel.join-panel::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(201,168,76,.07) 0%,transparent 70%);pointer-events:none;}
+.panel-icon{font-size:3rem;margin-bottom:1em;display:block;}
+.find-panel h2{font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:.6em;}
+.find-panel p{font-size:1rem;color:var(--text-mid);line-height:1.8;margin-bottom:1.8em;}
+.join-panel h2{font-size:clamp(1.8rem,3vw,2.4rem);color:var(--white);margin-bottom:.6em;}
+.join-panel p{font-size:1rem;color:rgba(255,255,255,.55);line-height:1.8;margin-bottom:1.8em;}
+.panel-stats{display:flex;gap:2em;margin-bottom:2em;}
+.panel-stat .n{font-family:var(--font-display);font-size:2.2rem;font-weight:700;color:var(--gold);display:block;line-height:1;}
+.panel-stat .l{font-size:.78rem;color:var(--text-soft);}
+.join-panel .panel-stat .l{color:rgba(255,255,255,.4);}
 
-    <style>
-        /* ==================================================
-           GLOBAL & LAYOUT STYLES
-        =================================================== */
-        :root {
-          --color-primary: #1f2c45; 
-          --color-secondary: #212534; 
-          --color-accent: #fcca3e; 
-          --color-accent-hover: #ffd86e; 
-          --color-light: #ffffff;
-          --color-bg: #f8f9fb;
-          --font-main: 'Outfit', sans-serif;
-          --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
+/* Benefits */
+.benefits-section{background:var(--cream);padding:7em 0;}
+.benefits-header{text-align:center;margin-bottom:4em;}
+.benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2em;}
+.benefit-card{background:var(--white);border:1px solid rgba(13,27,46,.07);border-radius:12px;padding:2.2em;transition:all .35s var(--ease-out);position:relative;overflow:hidden;}
+.benefit-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light));transform:scaleX(0);transform-origin:left;transition:transform .35s;}
+.benefit-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:transparent;}
+.benefit-card:hover::before{transform:scaleX(1);}
+.benefit-icon{font-size:2rem;margin-bottom:.8em;display:block;}
+.benefit-card h3{font-size:1.15rem;color:var(--navy);margin-bottom:.5em;}
+.benefit-card p{font-size:.88rem;color:var(--text-soft);line-height:1.7;}
 
-        html { scroll-behavior: smooth; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: var(--font-main); background: var(--color-bg); color: var(--color-secondary); line-height: 1.7; }
-        
-        .container { max-width: 1100px; margin: 0 auto; padding: 4em 2em; }
-        h1, h2, h3 { color: var(--color-primary); font-weight: 600; }
-        h2 { font-size: 2.4rem; text-align: center; margin-bottom: 1.5em; position: relative;}
-        h2::after { content: ''; display: block; width: 60px; height: 4px; background: var(--color-accent); margin: 0.5em auto 0; border-radius: 2px; }
+/* Categories */
+.categories-section{background:var(--navy);padding:6em 0;}
+.categories-header{text-align:center;margin-bottom:3.5em;}
+.categories-header h2{color:var(--white);}
+.categories-header p{color:rgba(255,255,255,.5);max-width:540px;margin:.8em auto 0;}
+.categories-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5em;}
+.cat-card{background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.1);border-radius:12px;padding:1.8em;text-align:center;transition:all .3s;}
+.cat-card:hover{background:rgba(255,255,255,.08);border-color:rgba(201,168,76,.3);transform:translateY(-4px);}
+.cat-icon{font-size:2rem;margin-bottom:.6em;display:block;}
+.cat-card h4{font-family:var(--font-display);font-size:1rem;color:var(--white);margin-bottom:.3em;}
+.cat-card p{font-size:.78rem;color:rgba(255,255,255,.4);}
 
-        /* Navigation */
-        .main-header { background: var(--color-light); display: flex; justify-content: space-between; align-items: center; padding: 1.2em 2em; position: sticky; top: 0; z-index: 1000; box-shadow: var(--shadow); height: 80px; }
-        .logo-box { display: flex; align-items: center; gap: 0.8em; }
-        .logo-link { display: flex; align-items: center; gap: 0.8em; text-decoration: none; }
-        .logo-box img { height: 50px; border-radius: 8px; }
-        .logo-title { font-weight: 700; font-size: 1.5rem; color: var(--color-primary); }
-        .main-nav { display: flex; gap: 2em; }
-        .main-nav a { color: var(--color-secondary); text-decoration: none; font-weight: 600; transition: color 0.3s; position: relative; padding-bottom: 5px; }
-        .main-nav a:hover, .main-nav a.active { color: var(--color-primary); }
-        .main-nav a:hover::after, .main-nav a.active::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: var(--color-accent); }
-        
-        /* Mobile Toggle Icon */
-        .menu-toggle { display: none; background: none; border: none; font-size: 2rem; cursor: pointer; color: var(--color-primary); z-index: 1002;}
+/* Register form */
+.register-section{background:var(--white);padding:7em 0;}
+.register-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:5em;align-items:start;}
+.register-text h2{font-size:clamp(2rem,3.5vw,2.8rem);margin-bottom:.8em;}
+.register-text p{font-size:1.05rem;color:var(--text-mid);line-height:1.85;margin-bottom:1.5em;}
+.register-steps{list-style:none;display:flex;flex-direction:column;gap:.8em;margin:1.8em 0;}
+.reg-step{display:flex;align-items:center;gap:.8em;font-size:.9rem;color:var(--text-mid);}
+.reg-step-n{width:28px;height:28px;background:var(--gold);color:var(--navy);font-size:.72rem;font-weight:700;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 
-        /* Page Header */
-        .page-header { background: linear-gradient(rgba(31,44,69,0.9), rgba(31,44,69,0.8)), url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; color: var(--color-light); padding: 6em 2em 4em; text-align: center; margin-bottom: 2em; }
-        .page-header h1 { font-size: 3rem; margin-bottom: 0.2em; color: #fff; }
-        .page-header p { color: #eee; }
+.reg-form{background:var(--cream);border:1px solid rgba(13,27,46,.08);border-radius:16px;padding:2.8em;}
+.reg-form h3{font-family:var(--font-display);font-size:1.6rem;color:var(--navy);margin-bottom:.4em;}
+.reg-form>p{font-size:.9rem;color:var(--text-soft);margin-bottom:2em;}
+.form-field{margin-bottom:1.2em;}
+.form-field label{display:block;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-soft);margin-bottom:.5em;}
+.form-field input,.form-field textarea,.form-field select{width:100%;background:var(--white);border:1px solid rgba(13,27,46,.1);border-radius:6px;padding:.85em 1.1em;color:var(--text-dark);font-family:var(--font-body);font-size:.93rem;outline:none;transition:border-color .25s;}
+.form-field input:focus,.form-field textarea:focus,.form-field select:focus{border-color:var(--gold);}
+.form-field textarea{height:100px;resize:none;}
+.form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:1em;}
+.submit-btn{width:100%;display:flex;justify-content:center;align-items:center;gap:.5em;font-family:var(--font-body);font-size:.95rem;font-weight:600;padding:1em;background:var(--navy);color:var(--white);border:none;border-radius:6px;cursor:pointer;transition:all .3s;}
+.submit-btn:hover{background:var(--navy-soft);transform:translateY(-2px);box-shadow:var(--shadow-lg);}
 
-        /* ==================================================
-           DATABASE & PAGINATION STYLES
-        =================================================== */
-        .db-controls {
-            display: flex; gap: 1em; margin-bottom: 1.5em; flex-wrap: wrap; justify-content: space-between;
-            background: var(--color-light); padding: 1.5em; border-radius: 12px; box-shadow: var(--shadow);
-            align-items: center;
-        }
-        .control-group { display: flex; gap: 1em; flex: 1; min-width: 200px; }
-        .search-group { flex: 10; } 
-        
-        .db-input {
-            width: 100%; padding: 0.8em 1em; border: 2px solid #eee; border-radius: 8px;
-            font-family: var(--font-main); font-size: 1rem; outline: none; transition: border-color 0.3s;
-        }
-        .db-input:focus { border-color: var(--color-primary); }
-        .db-label { font-weight: 600; font-size: 0.9rem; margin-bottom: 0.3em; display: block; color: #666; }
+.main-footer{background:#080f1a;color:rgba(255,255,255,.4);padding:4em 0 2em;border-top:1px solid rgba(201,168,76,.1);}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:3em;margin-bottom:3em;padding-bottom:3em;border-bottom:1px solid rgba(255,255,255,.05);}
+.footer-col h4{font-family:var(--font-display);font-size:1rem;color:var(--white);margin-bottom:1.2em;}
+.footer-col ul{list-style:none;}
+.footer-col li{margin-bottom:.6em;}
+.footer-col a{color:rgba(255,255,255,.4);font-size:.88rem;transition:color .2s;}
+.footer-col a:hover{color:var(--gold);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1em;font-size:.82rem;}
+.footer-bottom a{color:rgba(255,255,255,.35);transition:color .2s;}.footer-bottom a:hover{color:var(--gold);}
+.footer-links-row{display:flex;gap:1.5em;}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-delay-1{transition-delay:.1s;}.reveal-delay-2{transition-delay:.2s;}.reveal-delay-3{transition-delay:.3s;}
 
-        .table-container { overflow-x: auto; border-radius: 12px; box-shadow: var(--shadow); background: var(--color-light); min-height: 400px; }
-        .vendor-table { width: 100%; border-collapse: collapse; min-width: 800px; }
-        .vendor-table thead { background: var(--color-primary); color: var(--color-light); }
-        .vendor-table th, .vendor-table td { padding: 1.2em 1.5em; text-align: left; }
-        .vendor-table tbody tr { border-bottom: 1px solid #eee; transition: background 0.2s; }
-        .vendor-table tbody tr:hover { background: #fdfdfd; }
-        
-        .v-name { font-weight: 700; color: var(--color-primary); }
-        .badge { padding: 0.4em 1em; border-radius: 50px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
-        .badge-verified { background: #e3f9e5; color: #1b5e20; }
-        .badge-pending { background: #fff8e1; color: #f57f17; }
-        .badge-new { background: #e3f2fd; color: #0d47a1; }
-
-        .btn-view {
-            background: transparent; border: 2px solid var(--color-primary); color: var(--color-primary);
-            padding: 0.5em 1.2em; border-radius: 6px; font-weight: 600; font-size: 0.9rem;
-            cursor: pointer; transition: all 0.3s ease; white-space: nowrap;
-        }
-        .btn-view:hover {
-            background: var(--color-primary); color: var(--color-light); box-shadow: 0 4px 10px rgba(31, 44, 69, 0.2);
-        }
-
-        /* --- MODAL (POPUP) STYLES --- */
-        .modal-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.6); z-index: 2000;
-            display: none; justify-content: center; align-items: center; backdrop-filter: blur(3px);
-        }
-        .modal-box {
-            background: white; width: 90%; max-width: 500px; padding: 2.5em; border-radius: 12px;
-            text-align: center; position: relative; box-shadow: 0 15px 40px rgba(0,0,0,0.2); animation: popIn 0.3s ease-out;
-        }
-        @keyframes popIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-        .close-modal { position: absolute; top: 15px; right: 20px; font-size: 1.5rem; cursor: pointer; color: #888; }
-        .modal-title { font-size: 1.6rem; margin-bottom: 0.5em; color: var(--color-primary); }
-        .modal-text { color: #555; margin-bottom: 2em; }
-        .btn-modal {
-            background: var(--color-accent); color: var(--color-primary); padding: 1em 2em; text-decoration: none; border-radius: 8px; font-weight: 700; display: inline-block; transition: 0.3s;
-        }
-        .btn-modal:hover { background: var(--color-accent-hover); transform: translateY(-2px); }
-
-        /* Pagination */
-        .pagination-wrapper { display: flex; justify-content: space-between; align-items: center; padding: 1.5em 0; margin-top: 1em; flex-wrap: wrap; gap: 1em; }
-        .page-info { color: #666; font-size: 0.95rem; }
-        .pagination-controls { display: flex; gap: 0.5em; }
-        .page-btn { background: var(--color-light); border: 1px solid #ddd; color: var(--color-primary); width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-weight: 600; transition: all 0.3s; }
-        .page-btn:hover { background: #eee; }
-        .page-btn.active { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-primary); transform: scale(1.1); }
-        .page-btn:disabled { opacity: 0.5; cursor: not-allowed; }
-
-        /* Footer */
-        .main-footer { background: var(--color-primary); color: #ccc; padding: 3em 2em; margin-top: 4em; text-align: center; }
-        .form-wrapper { background: var(--color-light); padding: 2em; border-radius: 12px; box-shadow: var(--shadow); text-align: center; margin-top: 4em; }
-        .responsive-iframe-container { position: relative; padding-bottom: 100%; height: 0; overflow: hidden; max-width: 100%; }
-        .responsive-iframe-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-
-        /* ==================================================
-           MOBILE STYLES (FIXED)
-        =================================================== */
-        @media (max-width: 768px) {
-            .db-controls { flex-direction: column; align-items: stretch; }
-            .pagination-wrapper { flex-direction: column; justify-content: center; }
-            
-            /* Toggle Button Visible on Mobile */
-            .menu-toggle { display: block; }
-
-            /* Navigation Drawer Style */
-            .main-nav { 
-                display: flex; 
-                flex-direction: column; 
-                position: fixed; 
-                top: 80px; 
-                left: 0; 
-                width: 100%; 
-                height: calc(100vh - 80px); 
-                background: var(--color-light); 
-                padding: 2em; 
-                gap: 1.5em; 
-                transform: translateX(-100%); /* Hidden by default */
-                transition: transform 0.3s ease-in-out; 
-                z-index: 1001; 
-            }
-            
-            /* The 'Active' class brings it into view */
-            .main-nav.active { 
-                transform: translateX(0); 
-            }
-            
-            .main-nav a { font-size: 1.5rem; }
-        }
-    </style>
+@media(max-width:1024px){.categories-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:768px){
+  .menu-toggle{display:block;}
+  .main-nav{display:flex;flex-direction:column;position:fixed;top:76px;left:0;width:100%;height:calc(100vh - 76px);background:var(--navy);padding:2.5em 2em;gap:2em;transform:translateX(-100%);transition:transform .35s var(--ease-out);z-index:1001;}
+  .main-nav.active{transform:translateX(0);}
+  .main-nav a{font-size:1.4rem;color:var(--white);}
+  .vendor-split,.register-layout{grid-template-columns:1fr;}
+  .vendor-panel{padding:4em 2em;}
+  .benefits-grid,.categories-grid{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr;}
+  section{padding:4em 0;}
+  .form-row-2{grid-template-columns:1fr;}
+}
+</style>
 </head>
 <body>
-
 <header class="main-header">
-    <div class="logo-box">
-        <a href="index.html" class="logo-link">
-            <img src="logo.jpg" alt="Precision Project Solutions Logo" />
-            <span class="logo-title">Precision Project Solutions</span>
-        </a>
-    </div>
-    <nav class="main-nav" id="main-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="vendors.html" class="active">Vendors</a>
-        <a href="results.html">Results</a>
-        <a href="blog.html">Blog</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-    <button class="menu-toggle" id="menu-toggle" aria-label="Open menu">&#9776;</button>
+  <a href="index.html" class="logo-link"><img src="logo.jpg" alt="PPS Logo"/><div><span class="logo-name">Precision Project Solutions</span><span class="logo-sub">Consultancy · Vadodara</span></div></a>
+  <nav class="main-nav" id="main-nav">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="vendors.html" class="active">Vendors</a><a href="results.html">Results</a><a href="blog.html">Blog</a><a href="contact.html" class="nav-cta">Get in Touch</a>
+  </nav>
+  <button class="menu-toggle" id="menu-toggle">&#9776;</button>
 </header>
 
-<main>
-    <section class="page-header" data-aos="fade-in">
-        <h1>Vendor Portal</h1>
-        <p>Verified Database & Registration</p>
-        <p>Reduce procurement costs and lead times by up to 20%. We bridge the gap between project managers and verified suppliers, contractors, 
-            and IT service providers to ensure your project materials and technical resources arrive on time, every time.</p>
-        
-    </section>
+<section class="page-hero">
+  <div class="hero-grid-bg"></div>
+  <div class="wrapper page-hero-content">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <span>Vendor Network</span></div>
+    <div class="page-badge"><span></span> Strategic Partnerships</div>
+    <h1>Gujarat's Premier<br><em>Vendor Ecosystem</em></h1>
+    <p>Connect with verified suppliers, contractors, and material vendors in Vadodara and across Gujarat — reducing procurement costs and lead times by up to 20%.</p>
+  </div>
+</section>
 
-    <div class="container">
-        
-        <section id="database" data-aos="fade-up">
-            <h2>Vendor Database</h2>
-
-            <div class="db-controls">
-                <div style="flex: 0 0 120px;">
-                    <label class="db-label">Show Rows</label>
-                    <select id="rowsPerPage" class="db-input">
-                        <option value="25">25</option>
-                        <option value="50">50</option>
-                        <option value="100">100</option>
-                    </select>
-                </div>
-                
-                <div class="control-group search-group">
-                    <div style="width: 100%">
-                        <label class="db-label">Search</label>
-                        <input type="text" id="searchInput" class="db-input" placeholder="Search name or location...">
-                    </div>
-                </div>
-            </div>
-
-            <div class="table-container">
-                <table class="vendor-table" id="vendorTable">
-                    <thead>
-                        <tr>
-                            <th>Company / ID</th>
-                            <th>Category</th>
-                            <th>Location</th>
-                            <th>Status</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tableBody">
-                        <tr><td colspan="5" style="text-align:center;">Loading data...</td></tr>
-                    </tbody>
-                </table>
-                <div id="noResults" style="display:none; text-align:center; padding: 2em; color: #777;">
-                    No results found.
-                </div>
-            </div>
-
-            <div class="pagination-wrapper">
-                <div class="page-info" id="pageInfo">Showing 0 entries</div>
-                <div class="pagination-controls" id="paginationBtnContainer"></div>
-            </div>
-        </section>
-
-        <div style="margin: 4em 0; border-top: 1px solid #ddd;"></div>
-
-        <section id="register" data-aos="fade-up">
-            <h2>Vendor Registration</h2>
-            <div class="form-wrapper">
-                <div class="responsive-iframe-container">
-                    
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd2i9-sffF8EdTbklh0gby9zoxxUgY1OczaimuCpvp-rQioTA/viewform?embedded=true" 
-                        width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-                    
-                </div>
-            </div>
-        </section>
-
-    </div>
-</main>
-
-<footer class="main-footer">
-    <p>&copy; 2025 Precision Project Solutions.</p>
-</footer>
-
-<div class="modal-overlay" id="leadModal">
-    <div class="modal-box">
-        <span class="close-modal" onclick="closeModal()">&times;</span>
-        <h3 class="modal-title">Unlock Vendor Details</h3>
-        <p class="modal-text">
-            Access to contact numbers and email addresses is available for <b>FREE</b> to registered users.
-            <br><br>
-            Please register your inquiry to view full details instantly.
-        </p>
-        
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd2i9-sffF8EdTbklh0gby9zoxxUgY1OczaimuCpvp-rQioTA/viewform?usp=dialog" target="_blank" class="btn-modal">
-            Register for Free Access
-        </a>
-    </div>
+<!-- SPLIT PANELS -->
+<div class="vendor-split">
+  <div class="vendor-panel find-panel reveal">
+    <span class="panel-icon">🔍</span>
+    <div class="panel-stats"><div class="panel-stat"><span class="n">200+</span><span class="l">Verified Vendors</span></div><div class="panel-stat"><span class="n">20%</span><span class="l">Avg Cost Savings</span></div></div>
+    <h2>Find the Right Vendor</h2>
+    <p>Access our curated database of pre-qualified vendors, contractors, and material suppliers in Vadodara and nearby regions. Save procurement time and ensure quality from day one.</p>
+    <a href="contact.html" class="btn btn-navy">Request Vendor List →</a>
+  </div>
+  <div class="vendor-panel join-panel reveal reveal-delay-2" id="register">
+    <span class="panel-icon">🤝</span>
+    <div class="panel-stats"><div class="panel-stat"><span class="n">50+</span><span class="l">Active Projects</span></div><div class="panel-stat"><span class="n">100%</span><span class="l">Free to Join</span></div></div>
+    <h2>Join the Network</h2>
+    <p>Are you a supplier or contractor? Register to increase your visibility to top-tier project managers across Gujarat and receive direct leads for upcoming projects.</p>
+    <a href="#vendor-register" class="btn btn-outline">Register as Vendor →</a>
+  </div>
 </div>
 
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-    AOS.init({ offset: 100, duration: 800, once: true });
+<!-- BENEFITS -->
+<section class="benefits-section">
+  <div class="wrapper">
+    <div class="benefits-header">
+      <div class="section-label reveal" style="justify-content:center;">Why Our Network</div>
+      <h2 style="font-size:clamp(2rem,3.5vw,2.8rem);" class="reveal reveal-delay-1">The PPS Vendor Advantage</h2>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card reveal"><span class="benefit-icon">✅</span><h3>Pre-Qualified &amp; Verified</h3><p>Every vendor in our network is audited for quality compliance, financial stability, and delivery track record before listing.</p></div>
+      <div class="benefit-card reveal reveal-delay-1"><span class="benefit-icon">⚡</span><h3>Faster Procurement</h3><p>Reduce vendor search time from weeks to days. Our curated database means you spend less time shortlisting and more time delivering.</p></div>
+      <div class="benefit-card reveal reveal-delay-2"><span class="benefit-icon">💰</span><h3>Cost Optimisation</h3><p>Competitive rates negotiated at scale. Our vendor relationships deliver an average 20% cost reduction across procurement categories.</p></div>
+      <div class="benefit-card reveal reveal-delay-1"><span class="benefit-icon">📍</span><h3>Local Expertise</h3><p>Vadodara and Gujarat-based suppliers who understand local logistics, lead times, and regulatory requirements inside out.</p></div>
+      <div class="benefit-card reveal reveal-delay-2"><span class="benefit-icon">📊</span><h3>Performance Tracking</h3><p>Vendor KPI dashboards track on-time delivery, quality scores, and compliance metrics throughout your project lifecycle.</p></div>
+      <div class="benefit-card reveal reveal-delay-3"><span class="benefit-icon">🔄</span><h3>End-to-End Support</h3><p>From RFQ and LOI to final delivery and invoice — we manage the full procurement cycle on your behalf.</p></div>
+    </div>
+  </div>
+</section>
 
-    // =========================================================
-    // !!! CHANGE THIS TO YOUR CSV LINK !!!
-    // =========================================================
-    const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT7D7v6hix-Defu4Y0SJz1cWBFq-2BiiyGgSteygTdrfN3kz5VRvfdvAS28_ZJZywX4VJtaSlZPyu7w/pub?output=csv";
+<!-- CATEGORIES -->
+<section class="categories-section">
+  <div class="wrapper">
+    <div class="categories-header">
+      <div class="section-label reveal" style="justify-content:center;color:var(--gold);">Vendor Categories</div>
+      <h2 class="reveal reveal-delay-1">What We Source</h2>
+      <p class="reveal reveal-delay-2">Our network covers all major procurement categories for EPC, manufacturing, and IT projects.</p>
+    </div>
+    <div class="categories-grid">
+      <div class="cat-card reveal"><span class="cat-icon">🔩</span><h4>Structural &amp; Civil</h4><p>Steel, concrete, fabrication</p></div>
+      <div class="cat-card reveal reveal-delay-1"><span class="cat-icon">⚡</span><h4>Electrical &amp; Instrumentation</h4><p>Panels, cables, sensors</p></div>
+      <div class="cat-card reveal reveal-delay-2"><span class="cat-icon">⚙️</span><h4>Mechanical &amp; Equipment</h4><p>Pumps, valves, machinery</p></div>
+      <div class="cat-card reveal reveal-delay-3"><span class="cat-icon">🏗️</span><h4>Civil Contractors</h4><p>Construction &amp; finishing</p></div>
+      <div class="cat-card reveal"><span class="cat-icon">💻</span><h4>IT &amp; Technology</h4><p>Hardware, software, networks</p></div>
+      <div class="cat-card reveal reveal-delay-1"><span class="cat-icon">🚚</span><h4>Logistics &amp; Transport</h4><p>Heavy haulage, freight</p></div>
+      <div class="cat-card reveal reveal-delay-2"><span class="cat-icon">🛡️</span><h4>Safety &amp; PPE</h4><p>HSE equipment &amp; training</p></div>
+      <div class="cat-card reveal reveal-delay-3"><span class="cat-icon">🔧</span><h4>Maintenance &amp; Repair</h4><p>AMC, overhauling services</p></div>
+    </div>
+  </div>
+</section>
 
-    // --- LOGIC ---
-    const tableBody = document.getElementById('tableBody');
-    const searchInput = document.getElementById('searchInput');
-    const rowsPerPageSelect = document.getElementById('rowsPerPage');
-    const paginationContainer = document.getElementById('paginationBtnContainer');
-    const pageInfo = document.getElementById('pageInfo');
-    const noResults = document.getElementById('noResults');
-    const modal = document.getElementById('leadModal');
-
-    let allRows = [];
-    let currentFilteredRows = [];
-    let currentPage = 1;
-    let rowsPerPage = parseInt(rowsPerPageSelect.value);
-
-    // Modal Logic
-    function openModal() {
-        modal.style.display = 'flex';
-    }
-    function closeModal() {
-        modal.style.display = 'none';
-    }
-    // Close modal if clicking outside the box
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            closeModal();
-        }
-    }
-
-    function loadSheetData() {
-        Papa.parse(SHEET_URL, {
-            download: true,
-            header: true, 
-            complete: function(results) {
-                const data = results.data;
-                tableBody.innerHTML = '';
-                allRows = [];
-
-                data.forEach(item => {
-                    if(!item.Name) return; 
-
-                    const tr = document.createElement('tr');
-                    
-                    let badgeClass = 'badge-pending';
-                    if(item.Status && item.Status.toLowerCase() === 'verified') badgeClass = 'badge-verified';
-                    if(item.Status && item.Status.toLowerCase() === 'new') badgeClass = 'badge-new';
-
-                    tr.innerHTML = `
-                        <td>
-                            <div class="v-name">${item.Name}</div>
-                            <small>ID: ${item.ID || ''}</small>
-                        </td>
-                        <td style="text-transform:capitalize">${item.Category || ''}</td>
-                        <td>📍 ${item.Location || ''}</td>
-                        <td><span class="badge ${badgeClass}">${item.Status || 'Pending'}</span></td>
-                        <td>
-                            <button class="btn-view" onclick="openModal()">
-                                Get Details <span style="font-size:0.8em; color: green;">(Free)</span>
-                            </button>
-                        </td>
-                    `;
-                    allRows.push(tr);
-                });
-                updateTableLogic();
-            },
-            error: function(err) {
-                console.error("Error:", err);
-                tableBody.innerHTML = '<tr><td colspan="5" style="text-align:center; color:red;">Could not load data. Check CSV link.</td></tr>';
-            }
-        });
-    }
-
-    function updateTableLogic() {
-        const searchTerm = searchInput.value.toLowerCase();
-        
-        currentFilteredRows = allRows.filter(row => {
-            const textContent = row.innerText.toLowerCase();
-            const matchesSearch = textContent.includes(searchTerm);
-            return matchesSearch;
-        });
-
-        const totalItems = currentFilteredRows.length;
-        const totalPages = Math.ceil(totalItems / rowsPerPage);
-
-        if(totalItems === 0) {
-            noResults.style.display = 'block';
-            tableBody.innerHTML = ''; 
-            paginationContainer.innerHTML = '';
-            pageInfo.innerText = '0 entries';
-            return;
-        } else {
-            noResults.style.display = 'none';
-        }
-
-        if (currentPage > totalPages) currentPage = 1;
-        const startIndex = (currentPage - 1) * rowsPerPage;
-        const endIndex = startIndex + rowsPerPage;
-        const rowsToShow = currentFilteredRows.slice(startIndex, endIndex);
-
-        tableBody.innerHTML = ''; 
-        rowsToShow.forEach(row => tableBody.appendChild(row));
-        renderPaginationControls(totalPages, totalItems, startIndex + 1, Math.min(endIndex, totalItems));
-    }
-
-    function renderPaginationControls(totalPages, totalItems, startItem, endItem) {
-        pageInfo.innerText = `Showing ${startItem} to ${endItem} of ${totalItems} entries`;
-        paginationContainer.innerHTML = '';
-
-        const createBtn = (text, onClick, disabled, active) => {
-            const btn = document.createElement('button');
-            btn.className = `page-btn ${active ? 'active' : ''}`;
-            btn.innerHTML = text;
-            btn.disabled = disabled;
-            btn.onclick = onClick;
-            paginationContainer.appendChild(btn);
-        };
-
-        createBtn('&laquo;', () => { currentPage--; updateTableLogic(); }, currentPage === 1, false);
-        
-        let startPage = Math.max(1, currentPage - 1);
-        let endPage = Math.min(totalPages, currentPage + 1);
-        if(totalPages > 3) {
-            if(currentPage === 1) endPage = 3;
-            if(currentPage === totalPages) startPage = totalPages - 2;
-        }
-
-        for(let i = startPage; i <= endPage; i++) {
-            createBtn(i, () => { currentPage = i; updateTableLogic(); }, false, i === currentPage);
-        }
-
-        createBtn('&raquo;', () => { currentPage++; updateTableLogic(); }, currentPage === totalPages, false);
-    }
-
-    searchInput.addEventListener('input', () => { currentPage = 1; updateTableLogic(); });
-    rowsPerPageSelect.addEventListener('change', (e) => { rowsPerPage = parseInt(e.target.value); currentPage = 1; updateTableLogic(); });
-    
-    // --- FIXED MENU TOGGLE LOGIC ---
-    document.querySelector('.menu-toggle').addEventListener('click', () => {
-        const mainNav = document.getElementById('main-nav');
-        const menuToggle = document.getElementById('menu-toggle');
-        
-        mainNav.classList.toggle('active');
-        
-        // Change Icon from Hamburger (☰) to Close (X)
-        if(mainNav.classList.contains('active')) {
-            menuToggle.innerHTML = '&#10005;'; // X icon
-        } else {
-            menuToggle.innerHTML = '&#9776;'; // Hamburger icon
-        }
-    });
-
-    loadSheetData();
-</script>
-
-</body>
-</html>
+<!-- REGISTER FORM -->
+<section class="register-section" id="vendor-register">
+  <div class="wrapper">
+    <div class="register-layout">
+      <div class="register-text reveal">
+        <div class="section-label">Join the Network</div>
+        <h2>Register as a Vendor Partner</h2>
+        <p>Gain direct visibility to project managers handling major EPC, manufacturing, and IT projects across Gujarat. Registration is completely free.</p>
+        <ul class="register-steps">
+          <li class="reg-step"><span class="reg-step-n">1</span>Fill in your company details below</li>
+          <li class="reg-step"><span class="reg-step-n">2</span>Our team reviews and verifies your profile within 3 business days</li>
+          <li class="reg-step"><span class="reg-step-n">3</span>You get listed in our database and start receiving project leads</li>
