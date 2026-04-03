@@ -112,7 +112,9 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1em;font-size:.82rem;}
 .footer-bottom a{color:rgba(255,255,255,.35);transition:color .2s;}.footer-bottom a:hover{color:var(--gold);}
 .footer-links-row{display:flex;gap:1.5em;}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out);}
+.reveal{opacity:1;transform:none;transition:opacity .7s var(--ease-out),transform .7s var(--ease-out);}
+.js-ready .reveal{opacity:0;transform:translateY(28px);}
+.js-ready .reveal.visible{opacity:1;transform:translateY(0);}
 .reveal.visible{opacity:1;transform:translateY(0);}
 .reveal-delay-1{transition-delay:.1s;}.reveal-delay-2{transition-delay:.2s;}.reveal-delay-3{transition-delay:.3s;}
 @media(max-width:1024px){.kpi-strip-grid{grid-template-columns:1fr 1fr;}.testimonials-grid{grid-template-columns:1fr 1fr;}}
@@ -225,4 +227,88 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <section class="testimonials-section">
   <div class="wrapper">
     <div class="testimonials-header">
-      <div class="section-label reveal" style="justify-content:center;color:var(--g
+      <div class="section-label reveal" style="justify-content:center;color:var(--gold);">Client Voices</div>
+      <h2 class="reveal reveal-delay-1">What Our Clients Say</h2>
+      <p class="reveal reveal-delay-2">Feedback from the project managers and senior leaders we've partnered with.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testi-card reveal">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <blockquote>"Our infrastructure projects achieved 25% higher efficiency through PPS leadership. The structured frameworks they implemented transformed our delivery capability."</blockquote>
+        <div class="testi-author"><div class="testi-avatar">👔</div><div><div class="testi-name">Senior Manager</div><div class="testi-role">InfraCo · Infrastructure</div></div></div>
+      </div>
+      <div class="testi-card reveal reveal-delay-1">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <blockquote>"The Primavera P6 training delivered by PPS completely changed how our team handles scheduling. We now have full visibility and control we never had before."</blockquote>
+        <div class="testi-author"><div class="testi-avatar">🏭</div><div><div class="testi-name">Project Director</div><div class="testi-role">ManufactureCo · Fabrication</div></div></div>
+      </div>
+      <div class="testi-card reveal reveal-delay-2">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <blockquote>"Setting up our PMO with PPS was the best decision we made. From tool selection to onboarding — the entire process was smooth, fast and incredibly well-organised."</blockquote>
+        <div class="testi-author"><div class="testi-avatar">💻</div><div><div class="testi-name">CTO</div><div class="testi-role">TechStart · IT</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-section">
+  <div class="wrapper">
+    <div class="process-layout">
+      <div class="process-text reveal">
+        <div class="section-label">How We Deliver</div>
+        <h2>A Process Built for Results</h2>
+        <p>Every engagement follows a structured, transparent approach — from discovery through to optimisation — ensuring results are measurable and sustainable long after we're done.</p>
+        <a href="contact.html" class="btn btn-gold" style="margin-top:.5em;">Start Your Project →</a>
+      </div>
+      <div class="process-steps-visual reveal reveal-delay-2">
+        <div class="proc-step"><div class="proc-num">1</div><div class="proc-text"><strong>Discovery &amp; Assessment</strong><span>Deep audit of your current project environment, tools, and challenges.</span></div></div>
+        <div class="proc-step"><div class="proc-num">2</div><div class="proc-text"><strong>Strategy &amp; Roadmap</strong><span>Custom engagement plan with clear milestones and KPIs from day one.</span></div></div>
+        <div class="proc-step"><div class="proc-num">3</div><div class="proc-text"><strong>Implementation</strong><span>Hands-on integration with your team — tools, frameworks, and training.</span></div></div>
+        <div class="proc-step"><div class="proc-num">4</div><div class="proc-text"><strong>Monitoring &amp; Optimisation</strong><span>Ongoing review cycles and proactive adjustments to keep you on track.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding:5em 0;background:var(--white);">
+  <div class="wrapper">
+    <div class="cta-banner reveal">
+      <h2>Want Results Like These?</h2>
+      <p>Book a free consultation and let's discuss how we can deliver measurable improvements for your project — starting from day one.</p>
+      <div class="cta-actions"><a href="contact.html" class="btn btn-gold">Book Free Consultation →</a><a href="services.html" class="btn btn-ghost">Explore Services</a></div>
+    </div>
+  </div>
+</section>
+
+<footer class="main-footer">
+  <div class="wrapper">
+    <div class="footer-top">
+      <div class="footer-col"><a href="index.html" class="logo-link" style="margin-bottom:1em;display:inline-flex;"><img src="logo.jpg" alt="PPS" style="height:38px;width:38px;border-radius:6px;border:1px solid rgba(201,168,76,.3);object-fit:cover;"/><div style="margin-left:.75em;"><span class="logo-name" style="font-size:1rem;">Precision Project Solutions</span><span class="logo-sub">Excellence in Every Delivery</span></div></a><p style="font-size:.88rem;line-height:1.7;max-width:240px;margin-top:1em;">Expert PM consultancy across IT, EPC, Manufacturing &amp; Infrastructure.</p></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">All Services</a></li><li><a href="services.html#project-planning-controls">Planning &amp; Controls</a></li><li><a href="services.html#digital-pmo">Digital PMO</a></li><li><a href="services.html#contractual-claims">Claim Support</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="results.html">Results</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms.html">Terms &amp; Conditions</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2025 Precision Project Solutions. All Rights Reserved.</p><div class="footer-links-row"><a href="privacy-policy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a></div></div>
+  </div>
+</footer>
+
+<script>
+const toggle=document.getElementById('menu-toggle'),nav=document.getElementById('main-nav');
+toggle.addEventListener('click',()=>{nav.classList.toggle('active');toggle.innerHTML=nav.classList.contains('active')?'&#10005;':'&#9776;';});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('active');toggle.innerHTML='&#9776;';}));
+document.body.classList.add('js-ready');
+const revealEls=document.querySelectorAll('.reveal');
+setTimeout(()=>revealEls.forEach(el=>el.classList.add('visible')),600);
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.01});
+revealEls.forEach(el=>io.observe(el));
+function animateCounter(el){const t=parseInt(el.dataset.target),d=1800,s=performance.now();function tick(n){const p=Math.min((n-s)/d,1),e=1-Math.pow(1-p,3);el.textContent=Math.floor(e*t);if(p<1)requestAnimationFrame(tick);else el.textContent=t;}requestAnimationFrame(tick);}
+const co=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){animateCounter(x.target);co.unobserve(x.target);}});},{threshold:.5});
+document.querySelectorAll('.counter').forEach(el=>co.observe(el));
+</script>
+</body>
+</html>
