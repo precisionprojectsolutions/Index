@@ -115,7 +115,9 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .footer-bottom a:hover{color:var(--gold);}
 .footer-links-row{display:flex;gap:1.5em;}
 
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out);}
+.reveal{opacity:1;transform:none;transition:opacity .7s var(--ease-out),transform .7s var(--ease-out);}
+.js-ready .reveal{opacity:0;transform:translateY(28px);}
+.js-ready .reveal.visible{opacity:1;transform:translateY(0);}
 .reveal.visible{opacity:1;transform:translateY(0);}
 .reveal-delay-1{transition-delay:.1s;}.reveal-delay-2{transition-delay:.2s;}.reveal-delay-3{transition-delay:.3s;}
 
@@ -161,7 +163,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
         <div class="contact-items">
           <div class="contact-item">
             <div class="ci-icon">✉️</div>
-            <div><span class="ci-label">Email</span><div class="ci-val"><a href="mailto:info.precision.project.solutions@gmail.com">info.precision.project.solutions@gmail.com</a></div></div>
+            <div><span class="ci-label">Email</span><div class="ci-val"><a href="/cdn-cgi/l/email-protection#f0999e969fde808295939983999f9ede80829f9a959384de839f9c8584999f9e83b0979d91999cde939f9d"><span class="__cf_email__" data-cfemail="5831363e3776282a3d3b312b31373676282a37323d3b2c762b37342d2c3137362b183f35393134763b3735">[email&#160;protected]</span></a></div></div>
           </div>
           <div class="contact-item">
             <div class="ci-icon">📱</div>
@@ -268,8 +270,4 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   </div>
 </footer>
 
-<script>
-// ---- Mobile Menu ----
-const toggle=document.getElementById('menu-toggle'),nav=document.getElementById('main-nav');
-toggle.addEventListener('click',()=>{nav.classList.toggle('active');toggle.innerHTML=nav.classList.contains('active')?'&#10005;':'&#9776;';});
-nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.rem
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudfla
