@@ -163,8 +163,9 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .footer-links-row{display:flex;gap:1.5em;}
 
 /* ── REVEAL ── */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out);}
-.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal{opacity:1;transform:none;transition:opacity .7s var(--ease-out),transform .7s var(--ease-out);}
+.js-ready .reveal{opacity:0;transform:translateY(28px);}
+.js-ready .reveal.visible{opacity:1;transform:translateY(0);}
 .reveal-delay-1{transition-delay:.1s;}
 .reveal-delay-2{transition-delay:.2s;}
 .reveal-delay-3{transition-delay:.3s;}
@@ -286,4 +287,167 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
         <p class="reveal reveal-delay-2">We bring deep domain knowledge across industries where project complexity and risk are highest. Our consultants have hands-on experience managing projects from initiation through commissioning.</p>
         <ul class="expertise-list">
           <li class="expertise-item reveal reveal-delay-1">
-            <span 
+            <span class="exp-icon">🏗️</span>
+            <div class="exp-text"><strong>EPC & Infrastructure</strong><span>End-to-end project controls for engineering, procurement, and construction projects across Gujarat.</span></div>
+          </li>
+          <li class="expertise-item reveal reveal-delay-2">
+            <span class="exp-icon">🏭</span>
+            <div class="exp-text"><strong>Manufacturing & Fabrication</strong><span>Scheduling, resource optimization, and vendor management for industrial production facilities.</span></div>
+          </li>
+          <li class="expertise-item reveal reveal-delay-3">
+            <span class="exp-icon">💻</span>
+            <div class="exp-text"><strong>IT & Digital Projects</strong><span>Agile and hybrid delivery for software implementations, PMO setup, and digital transformation programs.</span></div>
+          </li>
+        </ul>
+        <div class="reveal reveal-delay-3">
+          <a href="services.html" class="btn btn-navy">Explore Our Services →</a>
+        </div>
+      </div>
+      <div class="expertise-visual reveal reveal-delay-2">
+        <div class="exp-stat-card">
+          <span class="exp-stat-num">25%</span>
+          <span class="exp-stat-label">Average project efficiency increase for our clients</span>
+          <div class="exp-industry-tags" style="margin-top:1em;">
+            <span class="exp-tag">Infrastructure</span><span class="exp-tag">EPC</span>
+          </div>
+        </div>
+        <div class="exp-stat-card">
+          <span class="exp-stat-num">20%</span>
+          <span class="exp-stat-label">Reduction in cost overruns for manufacturing clients</span>
+          <div class="exp-industry-tags" style="margin-top:1em;">
+            <span class="exp-tag">Manufacturing</span><span class="exp-tag">Fabrication</span>
+          </div>
+        </div>
+        <div class="exp-stat-card">
+          <span class="exp-stat-num">50+</span>
+          <span class="exp-stat-label">Successful projects delivered across 5+ industries</span>
+          <div class="exp-industry-tags" style="margin-top:1em;">
+            <span class="exp-tag">IT</span><span class="exp-tag">EPC</span><span class="exp-tag">Industrial</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH TIMELINE -->
+<section class="approach-section">
+  <div class="wrapper">
+    <div class="approach-header">
+      <div class="section-label reveal" style="justify-content:center;color:var(--gold);">How We Work</div>
+      <h2 class="reveal reveal-delay-1">Our Engagement Approach</h2>
+      <p class="reveal reveal-delay-2">A structured, transparent process from first contact to final delivery — designed to maximise impact at every phase.</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="tl-content">
+          <span class="tl-num">PHASE 01</span>
+          <h3>Discovery & Assessment</h3>
+          <p>We audit your current project landscape — tools, processes, team structure, and pain points — to understand exactly where we can create the most value.</p>
+        </div>
+        <div class="tl-spacer"></div>
+        <div class="tl-dot"></div>
+      </div>
+      <div class="timeline-item reveal reveal-delay-1">
+        <div class="tl-spacer"></div>
+        <div class="tl-content">
+          <span class="tl-num">PHASE 02</span>
+          <h3>Strategy & Roadmap</h3>
+          <p>We design a custom engagement roadmap aligned to your goals, timelines, and budget — with clear milestones and measurable KPIs from day one.</p>
+        </div>
+        <div class="tl-dot"></div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="tl-content">
+          <span class="tl-num">PHASE 03</span>
+          <h3>Implementation</h3>
+          <p>Hands-on integration with your team — embedding frameworks, setting up tools, training staff, and managing critical project phases directly.</p>
+        </div>
+        <div class="tl-spacer"></div>
+        <div class="tl-dot"></div>
+      </div>
+      <div class="timeline-item reveal reveal-delay-1">
+        <div class="tl-spacer"></div>
+        <div class="tl-content">
+          <span class="tl-num">PHASE 04</span>
+          <h3>Monitoring & Optimisation</h3>
+          <p>Continuous review cycles, dashboard reporting, and proactive course corrections to keep your project on track and your team empowered.</p>
+        </div>
+        <div class="tl-dot"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding:5em 0;background:var(--cream);">
+  <div class="wrapper">
+    <div class="cta-banner reveal">
+      <h2>Ready to Work Together?</h2>
+      <p>Let's discuss how Precision Project Solutions can help you deliver your next project with confidence, precision, and measurable results.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-gold">Book Free Consultation →</a>
+        <a href="services.html" class="btn btn-ghost">Explore Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="main-footer">
+  <div class="wrapper">
+    <div class="footer-top">
+      <div class="footer-col">
+        <a href="index.html" class="logo-link" style="margin-bottom:1em;display:inline-flex;">
+          <img src="logo.jpg" alt="PPS Logo" style="height:38px;width:38px;border-radius:6px;border:1px solid rgba(201,168,76,.3);object-fit:cover;"/>
+          <div style="margin-left:.75em;"><span class="logo-name" style="font-size:1rem;">Precision Project Solutions</span><span class="logo-sub">Excellence in Every Delivery</span></div>
+        </a>
+        <p style="font-size:.88rem;line-height:1.7;max-width:240px;margin-top:1em;">Expert project management consultancy across IT, EPC, Manufacturing &amp; Infrastructure.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html#project-planning-controls">Planning &amp; Controls</a></li>
+          <li><a href="services.html#pm-software-training">PM Training</a></li>
+          <li><a href="services.html#vendor-supply-chain">Vendor Management</a></li>
+          <li><a href="services.html#digital-pmo">Digital PMO</a></li>
+          <li><a href="services.html#contractual-claims">Claim Support</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="results.html">Case Studies</a></li>
+          <li><a href="vendors.html">Vendor Network</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Precision Project Solutions. All Rights Reserved.</p>
+      <div class="footer-links-row"><a href="privacy-policy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const toggle=document.getElementById('menu-toggle'),nav=document.getElementById('main-nav');
+toggle.addEventListener('click',()=>{nav.classList.toggle('active');toggle.innerHTML=nav.classList.contains('active')?'&#10005;':'&#9776;';});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('active');toggle.innerHTML='&#9776;';}));
+document.body.classList.add('js-ready');
+const revealEls=document.querySelectorAll('.reveal');
+setTimeout(()=>revealEls.forEach(el=>el.classList.add('visible')),600);
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.01});
+revealEls.forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
