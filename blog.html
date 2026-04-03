@@ -111,7 +111,9 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1em;font-size:.82rem;}
 .footer-bottom a{color:rgba(255,255,255,.35);}.footer-bottom a:hover{color:var(--gold);}
 .footer-links-row{display:flex;gap:1.5em;}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out);}
+.reveal{opacity:1;transform:none;transition:opacity .7s var(--ease-out),transform .7s var(--ease-out);}
+.js-ready .reveal{opacity:0;transform:translateY(28px);}
+.js-ready .reveal.visible{opacity:1;transform:translateY(0);}
 .reveal.visible{opacity:1;transform:translateY(0);}
 .reveal-delay-1{transition-delay:.1s;}.reveal-delay-2{transition-delay:.2s;}.reveal-delay-3{transition-delay:.3s;}
 @media(max-width:1024px){.blog-main-grid{grid-template-columns:1fr;}.sidebar{flex-direction:row;flex-wrap:wrap;}.sidebar-widget{flex:1;min-width:280px;}}
@@ -232,5 +234,4 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
           </a>
 
           <a href="blog/agile-manufacturing.html" class="post-card reveal reveal-delay-1" data-category="strategy">
-            <div class="post-img"><img src="https://images.unsplash.com/photo-1565372195458-9de0b320ef04?auto=format&fit=crop&q=80&w=500" alt="Agile in manufacturing"/></div>
-            <div class="post-body"
+            <div class="post-img"><img src="https://images.unsplash.com/photo-1565372195458-9de0b320ef
