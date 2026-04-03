@@ -277,4 +277,80 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   </div>
 </section>
 
-<!-- INDU
+<!-- INDUSTRIES -->
+<section class="industries-section">
+  <div class="wrapper">
+    <div class="industries-header">
+      <div class="section-label reveal" style="justify-content:center;color:var(--gold);">Industries Served</div>
+      <h2 class="reveal reveal-delay-1">We Work Across These Sectors</h2>
+      <p class="reveal reveal-delay-2">Our consultants bring hands-on experience from the most demanding project environments.</p>
+    </div>
+    <div class="industries-grid">
+      <div class="industry-card reveal"><span class="industry-icon">🏗️</span><h4>EPC</h4><p>Engineering, Procurement &amp; Construction</p></div>
+      <div class="industry-card reveal reveal-delay-1"><span class="industry-icon">🏭</span><h4>Manufacturing</h4><p>Industrial &amp; Fabrication Plants</p></div>
+      <div class="industry-card reveal reveal-delay-2"><span class="industry-icon">💻</span><h4>IT &amp; Software</h4><p>Agile, Scrum &amp; Digital Projects</p></div>
+      <div class="industry-card reveal reveal-delay-3"><span class="industry-icon">🏛️</span><h4>Infrastructure</h4><p>Civic, Roads &amp; Utilities</p></div>
+      <div class="industry-card reveal reveal-delay-4"><span class="industry-icon">⚡</span><h4>Energy</h4><p>Power, Oil &amp; Gas Projects</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section class="tools-section">
+  <div class="wrapper">
+    <div class="tools-header">
+      <div class="section-label reveal" style="justify-content:center;">Tools &amp; Platforms</div>
+      <h2 class="reveal reveal-delay-1">Technology We Master</h2>
+    </div>
+    <div class="tools-grid">
+      <div class="tool-pill reveal"><span>📅</span>Primavera P6</div>
+      <div class="tool-pill reveal reveal-delay-1"><span>📊</span>MS Project</div>
+      <div class="tool-pill reveal reveal-delay-2"><span>📈</span>Power BI</div>
+      <div class="tool-pill reveal reveal-delay-3"><span>🔵</span>Jira</div>
+      <div class="tool-pill reveal reveal-delay-1"><span>📋</span>MS Excel</div>
+      <div class="tool-pill reveal reveal-delay-2"><span>☁️</span>SharePoint</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding:5em 0;background:var(--cream);">
+  <div class="wrapper">
+    <div class="cta-banner reveal">
+      <h2>Need a Specific Service?</h2>
+      <p>Tell us about your project and we'll recommend the right combination of services to deliver the best outcome for your organisation.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-gold">Book Free Consultation →</a>
+        <a href="about.html" class="btn btn-ghost">Learn About Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="main-footer">
+  <div class="wrapper">
+    <div class="footer-top">
+      <div class="footer-col">
+        <a href="index.html" class="logo-link" style="margin-bottom:1em;display:inline-flex;"><img src="logo.jpg" alt="PPS" style="height:38px;width:38px;border-radius:6px;border:1px solid rgba(201,168,76,.3);object-fit:cover;"/><div style="margin-left:.75em;"><span class="logo-name" style="font-size:1rem;">Precision Project Solutions</span><span class="logo-sub">Excellence in Every Delivery</span></div></a>
+        <p style="font-size:.88rem;line-height:1.7;max-width:240px;margin-top:1em;">Expert project management consultancy across IT, EPC, Manufacturing &amp; Infrastructure.</p>
+      </div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="#project-planning-controls">Planning &amp; Controls</a></li><li><a href="#pm-software-training">PM Training</a></li><li><a href="#vendor-supply-chain">Vendor Management</a></li><li><a href="#digital-pmo">Digital PMO</a></li><li><a href="#contractual-claims">Claim Support</a></li><li><a href="#onsite-leadership">Project Leadership</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="results.html">Case Studies</a></li><li><a href="vendors.html">Vendor Network</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms.html">Terms &amp; Conditions</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2025 Precision Project Solutions. All Rights Reserved.</p><div class="footer-links-row"><a href="privacy-policy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a></div></div>
+  </div>
+</footer>
+
+<script>
+const toggle=document.getElementById('menu-toggle'),nav=document.getElementById('main-nav');
+toggle.addEventListener('click',()=>{nav.classList.toggle('active');toggle.innerHTML=nav.classList.contains('active')?'&#10005;':'&#9776;';});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('active');toggle.innerHTML='&#9776;';}));
+document.body.classList.add('js-ready');
+const revealEls=document.querySelectorAll('.reveal');
+setTimeout(()=>revealEls.forEach(el=>el.classList.add('visible')),600);
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.01});
+revealEls.forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
