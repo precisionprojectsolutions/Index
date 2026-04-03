@@ -1,244 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <title>Contact Us | Precision Project Solutions</title>
-    <meta name="description" content="Get in touch with Precision Project Solutions for a free consultation. Contact us via our form, email, or phone.">
-    
-    <meta property="og:title" content="Contact Us | Precision Project Solutions">
-    <meta property="og:description" content="Let's discuss your project. Reach out for a free, no-obligation consultation.">
-    <meta property="og:url" content="https://www.precisionprojectsolutions.com/contact.html">
-    <meta property="og:type" content="website">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contact Us | Precision Project Solutions</title>
+<meta name="description" content="Get in touch with Precision Project Solutions for a free consultation on your project management needs.">
+<link rel="canonical" href="https://www.precisionprojectsolutions.com/contact.html">
+<link rel="icon" type="image/png" href="logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d1b2e;--navy-mid:#162640;--navy-soft:#1e3354;--gold:#c9a84c;--gold-light:#e8c97a;--cream:#faf8f4;--white:#ffffff;--text-dark:#0d1b2e;--text-mid:#3a4a60;--text-soft:#6b7d96;--font-display:'Cormorant Garamond',Georgia,serif;--font-body:'DM Sans',system-ui,sans-serif;--shadow-lg:0 20px 60px rgba(13,27,46,.18);--shadow-gold:0 8px 32px rgba(201,168,76,.25);--ease-out:cubic-bezier(.22,1,.36,1);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);background:var(--cream);color:var(--text-dark);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+img{max-width:100%;display:block;}a{text-decoration:none;}
+h1,h2,h3,h4{font-family:var(--font-display);color:var(--navy);line-height:1.2;font-weight:600;}p{color:var(--text-mid);}
+.wrapper{max-width:1160px;margin:0 auto;padding:0 2em;}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:.4;}
+.main-header{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:0 2em;height:76px;background:rgba(13,27,46,.92);backdrop-filter:blur(20px);box-shadow:0 1px 0 rgba(201,168,76,.2);}
+.logo-link{display:flex;align-items:center;gap:.75em;}
+.logo-link img{height:42px;width:42px;border-radius:6px;border:1.5px solid rgba(201,168,76,.3);object-fit:cover;}
+.logo-name{font-family:var(--font-display);font-size:1.25rem;font-weight:600;color:var(--white);line-height:1.2;}
+.logo-sub{font-size:.65rem;color:var(--gold);letter-spacing:.12em;text-transform:uppercase;display:block;}
+.main-nav{display:flex;align-items:center;gap:2.2em;}
+.main-nav a{font-size:.88rem;font-weight:500;color:rgba(255,255,255,.75);letter-spacing:.04em;transition:color .2s;position:relative;padding-bottom:4px;}
+.main-nav a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1.5px;background:var(--gold);transition:width .3s;}
+.main-nav a:hover,.main-nav a.active{color:var(--white);}
+.main-nav a:hover::after,.main-nav a.active::after{width:100%;}
+.nav-cta{font-size:.82rem!important;padding:.6em 1.4em;border:1.5px solid var(--gold);border-radius:4px;color:var(--gold)!important;}
+.nav-cta::after{display:none!important;}.nav-cta:hover{background:var(--gold)!important;color:var(--navy)!important;}
+.menu-toggle{display:none;background:none;border:none;color:var(--white);font-size:1.6rem;cursor:pointer;}
 
-    <link rel="icon" type="image/png" sizes="32x32" href="logo.jpg">
-    <link rel="icon" type="image/png" sizes="16x16" href="logo.jpg">
-    <link rel="canonical" href="https://www.precisionprojectsolutions.com/contact.html">
+.page-hero{background:linear-gradient(135deg,#0a1520 0%,#0d1b2e 50%,#162640 100%);padding:9em 0 5em;position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(201,168,76,.07) 0%,transparent 65%);pointer-events:none;}
+.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.04) 1px,transparent 1px);background-size:60px 60px;animation:gridDrift 20s linear infinite;}
+@keyframes gridDrift{from{transform:translate(0,0);}to{transform:translate(60px,60px);}}
+.page-hero-content{position:relative;z-index:2;}
+.page-badge{display:inline-flex;align-items:center;gap:.5em;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);color:var(--gold-light);font-size:.78rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:.45em 1.1em;border-radius:100px;margin-bottom:1.2em;}
+.page-badge span{width:6px;height:6px;background:var(--gold);border-radius:50%;}
+.page-hero h1{font-family:var(--font-display);font-size:clamp(2.4rem,5vw,3.8rem);font-weight:600;color:var(--white);line-height:1.12;margin-bottom:.6em;}
+.page-hero h1 em{font-style:italic;color:var(--gold-light);}
+.page-hero p{color:rgba(255,255,255,.6);font-size:1.1rem;max-width:560px;line-height:1.8;}
+.breadcrumb{display:flex;align-items:center;gap:.5em;font-size:.82rem;color:rgba(255,255,255,.35);margin-bottom:1.5em;}
+.breadcrumb a{color:rgba(255,255,255,.45);}
+.breadcrumb a:hover{color:var(--gold);}
+.breadcrumb span{color:var(--gold);}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+.section-label{display:inline-flex;align-items:center;gap:.5em;font-size:.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.75em;}
+.section-label::before{content:'';display:block;width:24px;height:1.5px;background:var(--gold);}
 
-    <style>
-        /* Global styles copied from index.html */
-        :root {
-          --color-primary: #1f2c45;
-          --color-secondary: #212534;
-          --color-accent: #fcca3e;
-          --color-accent-hover: #ffd86e;
-          --color-light: #ffffff;
-          --color-bg: #f8f9fb;
-          --font-main: 'Outfit', sans-serif;
-          --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-          --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        html { scroll-behavior: smooth; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-          font-family: var(--font-main); background: var(--color-bg);
-          color: var(--color-secondary); line-height: 1.7;
-        }
-        .container {
-          max-width: 1100px; margin: 0 auto;
-          padding: 4em 2em; overflow: hidden;
-        }
-        h1, h2, h3 {
-          color: var(--color-primary); font-weight: 600;
-          margin-bottom: 0.6em; line-height: 1.3;
-        }
-        h2 {
-          font-size: 2.4rem; text-align: center;
-          margin-bottom: 1.5em;
-        }
-        
-        /* Header & Nav */
-        .main-header {
-          background: var(--color-light); color: var(--color-primary);
-          display: flex; justify-content: space-between; align-items: center;
-          padding: 1.2em 2em; position: sticky; top: 0;
-          z-index: 1000; box-shadow: var(--shadow); height: 80px;
-        }
-        .logo-box { display: flex; align-items: center; gap: 0.8em; }
-        .logo-link { display: flex; align-items: center; gap: 0.8em; text-decoration: none; }
-        .logo-box img { height: 50px; border-radius: 8px; }
-        .logo-title {
-          font-weight: 700; font-size: 1.5rem;
-          color: var(--color-primary);
-        }
-        .main-nav { display: flex; gap: 2em; }
-        .main-nav a {
-          color: var(--color-secondary); text-decoration: none;
-          font-weight: 600; font-size: 1rem;
-          transition: color 0.3s ease; position: relative; padding-bottom: 5px;
-        }
-        .main-nav a::after {
-          content: ''; position: absolute; bottom: 0; left: 0;
-          width: 0; height: 3px; background: var(--color-accent);
-          transition: width 0.3s ease;
-        }
-        .main-nav a:hover, .main-nav a.active { color: var(--color-primary); }
-        .main-nav a:hover::after, .main-nav a.active::after { width: 100%; }
-        .menu-toggle { display: none; background: none; border: none; font-size: 2rem; color: var(--color-primary); cursor: pointer; z-index: 1002; }
+/* Contact Layout */
+.contact-section{background:var(--navy);padding:7em 0;position:relative;overflow:hidden;}
+.contact-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,.07) 0%,transparent 65%);pointer-events:none;}
+.contact-layout{display:grid;grid-template-columns:1fr 1.1fr;gap:5em;align-items:start;position:relative;}
 
-        /* Footer */
-        .main-footer {
-          background: var(--color-primary); color: #ccc;
-          padding: 3em 2em; margin-top: 4em;
-        }
-        .footer-content {
-          max-width: 1100px; margin: 0 auto; display: flex;
-          justify-content: space-between; align-items: center;
-          flex-wrap: wrap; gap: 1em;
-        }
-        .footer-links { display: flex; gap: 1.5em; }
-        .footer-links a { color: var(--color-accent-hover); text-decoration: none; }
-        .footer-links a:hover { text-decoration: underline; }
+.contact-text .section-label{color:var(--gold);}
+.contact-text h2{color:var(--white);font-size:clamp(2rem,3.5vw,2.8rem);margin-bottom:.6em;}
+.contact-text>p{color:rgba(255,255,255,.55);font-size:1.05rem;line-height:1.8;margin-bottom:2.5em;}
 
-        /* Page-Specific Styles for Contact */
-        .contact-form {
-          border: none;
-          width: 100%;
-          min-height: 850px;
-          border-radius: 14px;
-          box-shadow: var(--shadow-hover);
-        }
-        .contact-info {
-          margin-top: 2.5em;
-          text-align: center;
-          font-size: 1.15rem;
-          line-height: 1.8;
-          color: var(--color-secondary);
-        }
-        .contact-info p { margin: 0.5em 0; }
-        .contact-info a {
-          color: var(--color-primary);
-          font-weight: 600;
-          text-decoration: none;
-          transition: color 0.3s;
-        }
-        .contact-info a:hover {
-          color: var(--color-accent);
-          text-decoration: underline;
-        }
+.contact-items{display:flex;flex-direction:column;gap:1.2em;margin-bottom:2.5em;}
+.contact-item{display:flex;align-items:center;gap:1em;padding:1.2em 1.4em;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:10px;transition:border-color .25s,background .25s;}
+.contact-item:hover{border-color:rgba(201,168,76,.25);background:rgba(255,255,255,.06);}
+.ci-icon{font-size:1.3rem;width:40px;text-align:center;flex-shrink:0;}
+.ci-label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.2em;}
+.ci-val{font-size:.93rem;color:rgba(255,255,255,.65);}
+.ci-val a{color:rgba(255,255,255,.65);transition:color .2s;}
+.ci-val a:hover{color:var(--white);}
 
-        /* Responsive */
-        @media (max-width: 768px) {
-          .menu-toggle { display: block; }
-          .main-nav {
-            flex-direction: column; position: fixed;
-            top: 80px; left: 0; width: 100%;
-            height: calc(100vh - 80px);
-            background: var(--color-light);
-            padding: 2em; gap: 1.5em;
-            transform: translateX(-100%);
-            transition: transform 0.3s ease-in-out;
-            z-index: 1001;
-          }
-          .main-nav.active { transform: translateX(0); }
-          .main-nav a { font-size: 1.5rem; }
-          .container { padding: 3em 1em; }
-          .footer-content { flex-direction: column; text-align: center; }
-        }
-    </style>
+.response-badge{display:flex;align-items:center;gap:.8em;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.15);border-radius:8px;padding:1em 1.4em;}
+.response-badge span{font-size:1.4rem;}
+.response-badge p{font-size:.88rem;color:rgba(255,255,255,.5);margin:0;}
+.response-badge strong{color:var(--gold-light);}
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Precision Project Solutions",
-      "image": "https://www.precisionprojectsolutions.com/logo.jpg",
-      "@id": "https://www.precisionprojectsolutions.com",
-      "url": "https://www.precisionprojectsolutions.com",
-      "telephone": "+91-82334-98737",
-      "email": "info.precision.project.solutions@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "M503, Aarya Empire, Atladara",
-        "addressLocality": "Vadodara",
-        "addressRegion": "Gujarat",
-        "postalCode": "390012",
-        "addressCountry": "IN"
-      },
-      "description": "Expert project management consultancy specializing in PMO setup, risk management, and training.",
-      "sameAs": [
-        "https://linkedin.com/company/precisionprojectsolutions"
-      ]
-    }
-    </script>
+/* Form Card */
+.form-card{background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.15);border-radius:16px;padding:2.8em;backdrop-filter:blur(10px);}
+.form-card h3{font-family:var(--font-display);font-size:1.7rem;color:var(--white);margin-bottom:.4em;}
+.form-card>p{color:rgba(255,255,255,.4);font-size:.92rem;margin-bottom:2em;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1em;}
+.form-field{margin-bottom:1.2em;}
+.form-field label{display:block;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.5em;}
+.form-field input,.form-field textarea,.form-field select{width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:.85em 1.1em;color:var(--white);font-family:var(--font-body);font-size:.93rem;outline:none;transition:border-color .25s,background .25s;resize:none;}
+.form-field input::placeholder,.form-field textarea::placeholder{color:rgba(255,255,255,.22);}
+.form-field input:focus,.form-field textarea:focus,.form-field select:focus{border-color:var(--gold);background:rgba(255,255,255,.08);}
+.form-field select option{background:var(--navy-mid);}
+.form-field textarea{height:110px;}
+.submit-btn{width:100%;display:flex;justify-content:center;align-items:center;gap:.5em;font-family:var(--font-body);font-size:.95rem;font-weight:600;padding:1em;background:var(--gold);color:var(--navy);border:none;border-radius:6px;cursor:pointer;transition:all .3s;letter-spacing:.03em;}
+.submit-btn:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:var(--shadow-gold);}
+.submit-btn:disabled{opacity:.7;transform:none;cursor:not-allowed;}
+
+/* Map/office section */
+.office-section{background:var(--white);padding:6em 0;}
+.office-layout{display:grid;grid-template-columns:1fr 1fr;gap:4em;align-items:center;}
+.office-text .section-label{}
+.office-text h2{font-size:clamp(2rem,3.5vw,2.8rem);margin-bottom:.8em;}
+.office-text p{font-size:1.05rem;color:var(--text-mid);line-height:1.85;margin-bottom:1.5em;}
+.office-details{display:flex;flex-direction:column;gap:.8em;margin-top:1.5em;}
+.office-row{display:flex;align-items:flex-start;gap:.8em;font-size:.95rem;color:var(--text-mid);}
+.office-row strong{color:var(--navy);min-width:60px;display:block;}
+.map-embed{border-radius:14px;overflow:hidden;box-shadow:var(--shadow-lg);height:380px;}
+.map-embed iframe{width:100%;height:100%;border:0;border-radius:14px;}
+
+/* Footer */
+.main-footer{background:#080f1a;color:rgba(255,255,255,.4);padding:4em 0 2em;border-top:1px solid rgba(201,168,76,.1);}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:3em;margin-bottom:3em;padding-bottom:3em;border-bottom:1px solid rgba(255,255,255,.05);}
+.footer-col h4{font-family:var(--font-display);font-size:1rem;color:var(--white);margin-bottom:1.2em;}
+.footer-col ul{list-style:none;}
+.footer-col li{margin-bottom:.6em;}
+.footer-col a{color:rgba(255,255,255,.4);font-size:.88rem;transition:color .2s;}
+.footer-col a:hover{color:var(--gold);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1em;font-size:.82rem;}
+.footer-bottom a{color:rgba(255,255,255,.35);transition:color .2s;}
+.footer-bottom a:hover{color:var(--gold);}
+.footer-links-row{display:flex;gap:1.5em;}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-delay-1{transition-delay:.1s;}.reveal-delay-2{transition-delay:.2s;}.reveal-delay-3{transition-delay:.3s;}
+
+@media(max-width:768px){
+  .menu-toggle{display:block;}
+  .main-nav{display:flex;flex-direction:column;position:fixed;top:76px;left:0;width:100%;height:calc(100vh - 76px);background:var(--navy);padding:2.5em 2em;gap:2em;transform:translateX(-100%);transition:transform .35s var(--ease-out);z-index:1001;}
+  .main-nav.active{transform:translateX(0);}
+  .main-nav a{font-size:1.4rem;color:var(--white);}
+  .contact-layout,.office-layout{grid-template-columns:1fr;}
+  .form-row{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr;}
+  .contact-section,.office-section{padding:4em 0;}
+}
+</style>
 </head>
 <body>
-
 <header class="main-header">
-    <div class="logo-box">
-        <a href="index.html" class="logo-link">
-            <img src="logo.jpg" alt="Precision Project Solutions Logo" />
-            <span class="logo-title">Precision Project Solutions</span>
-        </a>
-    </div>
-    <nav class="main-nav" id="main-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html"">About</a>
-        <a href="services.html">Services</a>
-        <a href="vendors.html">Vendors</a>
-        <a href="results.html">Results</a>
-        <a href="blog.html">Blog</a>
-        <a href="contact.html" class="active>Contact</a>
-    </nav>
-    <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu">
-        &#9776; 
-    </button>
+  <a href="index.html" class="logo-link"><img src="logo.jpg" alt="PPS Logo"/><div><span class="logo-name">Precision Project Solutions</span><span class="logo-sub">Consultancy · Vadodara</span></div></a>
+  <nav class="main-nav" id="main-nav">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="vendors.html">Vendors</a><a href="results.html">Results</a><a href="blog.html">Blog</a><a href="contact.html" class="active nav-cta">Get in Touch</a>
+  </nav>
+  <button class="menu-toggle" id="menu-toggle">&#9776;</button>
 </header>
 
-<main>
-    <section class="container" data-aos="fade-up">
-        <h2>Contact Us</h2>
-        <iframe class="contact-form" src="https://docs.google.com/forms/d/e/1FAIpQLSezVUhFuGXzA5ZdY5Jia9rz2XvJil9p7JjHTvzmcXE-ZFDQtw/viewform?embedded=true" title="Contact Form"></iframe>
-        
-        <div class="contact-info" data-aos="fade-up" data-aos-delay="200">
-            <p><strong>Office:</strong> Precision Project Solutions, M503, Aarya Empire, Atladara, Vadodara</p>
-            <p><strong>Email:</strong> <a href="mailto:info.precision.project.solutions@gmail.com">info.precision.project.solutions@gmail.com</a></p>
-            <p><strong>Phone / WhatsApp:</strong> <a href="https://wa.me/+918233498737">+91 82334 98737</a></p>
-            <p><a href="https://linkedin.com/company/precisionprojectsolutions" target="_blank" rel="noopener">Follow us on LinkedIn</a></p>
+<section class="page-hero">
+  <div class="hero-grid-bg"></div>
+  <div class="wrapper page-hero-content">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <span>Contact</span></div>
+    <div class="page-badge"><span></span> Get in Touch</div>
+    <h1>Start Your <em>Project Success</em><br>Story Today</h1>
+    <p>Let's discuss your project goals. Reach out for a free, no-obligation consultation — we'll respond within 24 hours on business days.</p>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="contact-section">
+  <div class="wrapper">
+    <div class="contact-layout">
+      <div class="contact-text reveal">
+        <div class="section-label">Reach Us</div>
+        <h2>Let's Talk About Your Project</h2>
+        <p>Whether you have a specific challenge to solve or just want to explore how we can help, we're here to listen. Every engagement starts with a conversation.</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="ci-icon">✉️</div>
+            <div><span class="ci-label">Email</span><div class="ci-val"><a href="mailto:info.precision.project.solutions@gmail.com">info.precision.project.solutions@gmail.com</a></div></div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon">📱</div>
+            <div><span class="ci-label">Phone / WhatsApp</span><div class="ci-val"><a href="https://wa.me/+918233498737">+91 82334 98737</a></div></div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon">📍</div>
+            <div><span class="ci-label">Office</span><div class="ci-val">M-503, Aarya Empire, Atladara, Vadodara — 390012, Gujarat</div></div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon">🔗</div>
+            <div><span class="ci-label">LinkedIn</span><div class="ci-val"><a href="https://linkedin.com/company/precisionprojectsolutions" target="_blank" rel="noopener">linkedin.com/company/precisionprojectsolutions</a></div></div>
+          </div>
         </div>
-    </section>
-</main>
+        <div class="response-badge">
+          <span>⏱️</span>
+          <p><strong>Fast Response Guarantee</strong> — We respond to all enquiries within <strong>24 hours</strong> on business days.</p>
+        </div>
+      </div>
+
+      <div class="form-card reveal reveal-delay-2">
+        <h3>Send Us a Message</h3>
+        <p>Fill in the form below and we'll get back to you shortly.</p>
+        <form onsubmit="handleSubmit(event)" id="contact-form">
+          <div class="form-row">
+            <div class="form-field">
+              <label>First Name *</label>
+              <input type="text" name="first_name" placeholder="Rahul" required/>
+            </div>
+            <div class="form-field">
+              <label>Last Name *</label>
+              <input type="text" name="last_name" placeholder="Sharma" required/>
+            </div>
+          </div>
+          <div class="form-field">
+            <label>Email Address *</label>
+            <input type="email" name="email" placeholder="rahul@company.com" required/>
+          </div>
+          <div class="form-field">
+            <label>Company / Organisation</label>
+            <input type="text" name="company" placeholder="Your Company Ltd."/>
+          </div>
+          <div class="form-field">
+            <label>Phone Number</label>
+            <input type="tel" name="phone" placeholder="+91 98765 43210"/>
+          </div>
+          <div class="form-field">
+            <label>Service Interested In *</label>
+            <select name="service" required>
+              <option value="">Select a service...</option>
+              <option>Project Planning &amp; Controls</option>
+              <option>PM Software Training</option>
+              <option>Vendor &amp; Supply Chain Management</option>
+              <option>Digital PMO Implementation</option>
+              <option>Contractual Claim Support</option>
+              <option>Project Leadership / Interim PM</option>
+              <option>General Enquiry</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label>Your Message *</label>
+            <textarea name="message" placeholder="Tell us about your project, timeline, and what you're hoping to achieve..." required></textarea>
+          </div>
+          <button type="submit" class="submit-btn" id="submit-btn">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFICE / MAP -->
+<section class="office-section">
+  <div class="wrapper">
+    <div class="office-layout">
+      <div class="office-text reveal">
+        <div class="section-label">Our Location</div>
+        <h2>Find Us in Vadodara</h2>
+        <p>We're based in the heart of Gujarat's industrial corridor, giving us unmatched access to the region's leading manufacturing, EPC, and IT project environments.</p>
+        <div class="office-details">
+          <div class="office-row"><strong>Address</strong> M-503, Aarya Empire, Atladara, Vadodara, Gujarat — 390012</div>
+          <div class="office-row"><strong>Hours</strong> Monday – Saturday, 9:00 AM – 6:00 PM IST</div>
+          <div class="office-row"><strong>Phone</strong> <a href="tel:+918233498737" style="color:var(--navy);font-weight:600;">+91 82334 98737</a></div>
+        </div>
+      </div>
+      <div class="map-embed reveal reveal-delay-2">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.0!2d73.1678!3d22.2743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDE2JzI3LjUiTiA3M8KwMTAnMDQuMSJF!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" title="Precision Project Solutions Office Location"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer class="main-footer">
-    <div class="footer-content">
-        <p>&copy; 2025 Precision Project Solutions. All Rights Reserved.</p>
-        <div class="footer-links">
-            <a href="https://linkedin.com/company/precisionprojectsolutions" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="terms.html">Terms & Conditions</a>
-        </div>
+  <div class="wrapper">
+    <div class="footer-top">
+      <div class="footer-col">
+        <a href="index.html" class="logo-link" style="margin-bottom:1em;display:inline-flex;"><img src="logo.jpg" alt="PPS" style="height:38px;width:38px;border-radius:6px;border:1px solid rgba(201,168,76,.3);object-fit:cover;"/><div style="margin-left:.75em;"><span class="logo-name" style="font-size:1rem;">Precision Project Solutions</span><span class="logo-sub">Excellence in Every Delivery</span></div></a>
+        <p style="font-size:.88rem;line-height:1.7;max-width:240px;margin-top:1em;">Expert project management consultancy across IT, EPC, Manufacturing &amp; Infrastructure.</p>
+      </div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html#project-planning-controls">Planning &amp; Controls</a></li><li><a href="services.html#pm-software-training">PM Training</a></li><li><a href="services.html#vendor-supply-chain">Vendor Management</a></li><li><a href="services.html#digital-pmo">Digital PMO</a></li><li><a href="services.html#contractual-claims">Claim Support</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="results.html">Case Studies</a></li><li><a href="vendors.html">Vendor Network</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms.html">Terms &amp; Conditions</a></li></ul></div>
     </div>
+    <div class="footer-bottom"><p>&copy; 2025 Precision Project Solutions. All Rights Reserved.</p><div class="footer-links-row"><a href="privacy-policy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a></div></div>
+  </div>
 </footer>
 
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Mobile Menu Toggle
-        const menuToggle = document.getElementById('menu-toggle');
-        const mainNav = document.getElementById('main-nav');
-        if (menuToggle) {
-            menuToggle.addEventListener('click', () => {
-                mainNav.classList.toggle('active');
-                menuToggle.innerHTML = mainNav.classList.contains('active') ? '&#10005;' : '&#9776;';
-            });
-        }
-
-        // AOS Initialization
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true,
-            delay: 100,
-            offset: 120
-        });
-    });
-</script>
-
-</body>
-</html>
+// ---- Mobile Menu ----
+const toggle=document.getElementById('menu-toggle'),nav=document.getElementById('main-nav');
+toggle.addEventListener('click',()=>{nav.classList.toggle('active');toggle.innerHTML=nav.classList.contains('active')?'&#10005;':'&#9776;';});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.rem
