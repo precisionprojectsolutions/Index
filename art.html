@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priya's Art Cart</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #e67e22;
+            --light: #f9f9f9;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0; padding: 0; color: #333; line-height: 1.6;
+        }
+        header {
+            background: var(--primary); color: white; padding: 1rem 5%;
+            display: flex; justify-content: space-between; align-items: center;
+            position: sticky; top: 0; z-index: 100;
+        }
+        header h1 { margin: 0; font-size: 1.8rem; }
+        nav a {
+            color: white; text-decoration: none; margin-left: 20px; font-weight: bold;
+        }
+        nav a:hover { color: var(--secondary); }
+        .cart-btn {
+            background: var(--secondary); border: none; color: white;
+            padding: 8px 15px; cursor: pointer; border-radius: 5px; font-weight: bold;
+        }
+        section { padding: 4rem 5%; }
+        h2 { text-align: center; font-size: 2.5rem; margin-bottom: 2rem; color: var(--primary); }
+        
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80') center/cover;
+            color: white; text-align: center; padding: 8rem 5%;
+        }
+        #hero h2 { color: white; font-size: 3.5rem; margin-bottom: 1rem; }
+        
+        /* Services Section */
+        #services { background: var(--light); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .card {
+            background: white; padding: 20px; border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;
+        }
+        
+        /* Products Section */
+        .product-card {
+            border: 1px solid #ddd; border-radius: 8px; padding: 15px; text-align: center;
+        }
+        .product-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 5px; }
+        .price { color: var(--secondary); font-size: 1.2rem; font-weight: bold; margin: 10px 0; }
+        .add-to-cart {
+            background: var(--primary); color: white; border: none; padding: 10px 20px;
+            cursor: pointer; border-radius: 5px; width: 100%; transition: 0.3s;
+        }
+        .add-to-cart:hover { background: var(--secondary); }
+        
+        /* Contact Section */
+        #contact { background: var(--light); text-align: center; }
+        form { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
+        input, textarea { padding: 10px; border: 1px solid #ccc; border-radius: 5px; width: 100%; }
+        button[type="submit"] {
+            background: var(--primary); color: white; padding: 10px; border: none;
+            border-radius: 5px; cursor: pointer; font-size: 1.1rem;
+        }
+
+        /* Cart Modal (Hidden by default) */
+        #cart-modal {
+            display: none; position: fixed; top: 0; right: 0; width: 300px; height: 100%;
+            background: white; box-shadow: -4px 0 10px rgba(0,0,0,0.1); z-index: 1000;
+            padding: 20px; flex-direction: column;
+        }
+        #cart-modal.active { display: flex; }
+        .close-cart { cursor: pointer; color: red; font-weight: bold; text-align: right; }
+        #cart-items { flex-grow: 1; overflow-y: auto; margin-top: 20px; }
+        .cart-item { border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 10px; }
+        #checkout-btn {
+            background: var(--secondary); color: white; padding: 15px; border: none;
+            width: 100%; cursor: pointer; font-weight: bold; border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Priya's Art Cart</h1>
+        <nav>
+            <a href="#hero">Home</a>
+            <a href="#services">Services</a>
+            <a href="#shop">Shop</a>
+            <a href="#contact">Contact</a>
+            <button class="cart-btn" onclick="toggleCart()">Cart (<span id="cart-count">0</span>)</button>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h2>Welcome to Priya's Art Cart</h2>
+        <p>Handcrafted masterworks, bespoke sketches, and custom art to bring your vision to life.</p>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="grid">
+            <div class="card"><h3>Custom Painting</h3><p>Paintings tailored to your specific aesthetic and space.</p></div>
+            <div class="card"><h3>Custom Art Pieces</h3><p>Unique installations and multi-media artwork.</p></div>
+            <div class="card"><h3>Pencil Sketch</h3><p>Detailed and highly realistic pencil shading portraits.</p></div>
+            <div class="card"><h3>Charcoal Sketch</h3><p>Bold, high-contrast charcoal illustrations.</p></div>
+            <div class="card"><h3>Wall Painting</h3><p>Large-scale murals and decorative wall designs.</p></div>
+            <div class="card"><h3>Commission Artwork</h3><p>Personalized projects built strictly to your requirements.</p></div>
+        </div>
+    </section>
+
+    <section id="shop">
+        <h2>Gallery & Shop</h2>
+        <div class="grid">
+            <div class="product-card">
+                <div style="background:#ddd; height:200px; display:flex; align-items:center; justify-content:center; border-radius:5px;">[Image: Pencil Portrait]</div>
+                <h3>Custom Pencil Portrait</h3>
+                <p class="price">₹2,500</p>
+                <button class="add-to-cart" onclick="addToCart('Custom Pencil Portrait', 2500)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div style="background:#ddd; height:200px; display:flex; align-items:center; justify-content:center; border-radius:5px;">[Image: Resin Jewelry]</div>
+                <h3>Handcrafted Resin Jewelry Set</h3>
+                <p class="price">₹1,200</p>
+                <button class="add-to-cart" onclick="addToCart('Handcrafted Resin Jewelry Set', 1200)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div style="background:#ddd; height:200px; display:flex; align-items:center; justify-content:center; border-radius:5px;">[Image: Resin Tray]</div>
+                <h3>Ocean Theme Resin Tray</h3>
+                <p class="price">₹3,000</p>
+                <button class="add-to-cart" onclick="addToCart('Ocean Theme Resin Tray', 3000)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div style="background:#ddd; height:200px; display:flex; align-items:center; justify-content:center; border-radius:5px;">[Image: Charcoal Art]</div>
+                <h3>Abstract Charcoal Wall Art</h3>
+                <p class="price">₹4,500</p>
+                <button class="add-to-cart" onclick="addToCart('Abstract Charcoal Wall Art', 4500)">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Based in Vadodara, Gujarat. We ship nationwide!</p>
+        <form onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="5" placeholder="Tell us about your custom request..." required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <div id="cart-modal">
+        <div class="close-cart" onclick="toggleCart()">X Close</div>
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <h3 style="text-align: right;">Total: ₹<span id="cart-total">0</span></h3>
+        <button id="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+    </div>
+
+    <script>
+        let cart = [];
+        let total = 0;
+
+        function addToCart(name, price) {
+            cart.push({name, price});
+            total += price;
+            updateCartUI();
+            alert(name + " added to your cart!");
+        }
+
+        function updateCartUI() {
+            document.getElementById('cart-count').innerText = cart.length;
+            const cartItemsDiv = document.getElementById('cart-items');
+            cartItemsDiv.innerHTML = '';
+            cart.forEach((item, index) => {
+                cartItemsDiv.innerHTML += `<div class="cart-item">${item.name} - ₹${item.price}</div>`;
+            });
+            document.getElementById('cart-total').innerText = total;
+        }
+
+        function toggleCart() {
+            const modal = document.getElementById('cart-modal');
+            modal.classList.toggle('active');
+        }
+
+        function checkout() {
+            if(cart.length === 0) {
+                alert("Your cart is empty!");
+            } else {
+                alert("Redirecting to secure payment gateway... (Backend required)");
+                cart = []; total = 0; updateCartUI(); toggleCart();
+            }
+        }
+    </script>
+</body>
+</html>
